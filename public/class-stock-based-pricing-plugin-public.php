@@ -127,20 +127,23 @@ class Stock_based_pricing_plugin_Public {
 				$sbpp_data         = get_post_meta( $variation_id, '_price_acc_to_stock_var' ); // assigning post meta data to the sbpp_data variable.
 				$sbpp_pricing_list = json_decode( $sbpp_data[0], true ); // Convert the post meta into array and assign it to variable.
 
-				foreach ( $sbpp_pricing_list as $key => $value ) {
-					$amount = $value['Amount']; // set the amount of each list.
-					if ( $sbpp_min_to_display == 0 ) {
-						$sbpp_min_to_display = $amount; // if sbpp_min_to_display is 0 then amount will be assigned.
-					} else {
-						if ( $amount < $sbpp_min_to_display ) {
-							if ( $amount != '' ) {
-								$sbpp_min_to_display = $amount; // assign value of amount if amount will be less than.
+				if ( ! empty( $sbpp_pricing_list )){
+
+					foreach ( $sbpp_pricing_list as $key => $value ) {
+						$amount = $value['Amount']; // set the amount of each list.
+						if ( $sbpp_min_to_display == 0 ) {
+							$sbpp_min_to_display = $amount; // if sbpp_min_to_display is 0 then amount will be assigned.
+						} else {
+							if ( $amount < $sbpp_min_to_display ) {
+								if ( $amount != '' ) {
+									$sbpp_min_to_display = $amount; // assign value of amount if amount will be less than.
+								}
 							}
 						}
-					}
-					if ( $amount > $sbpp_max_to_display ) {
-						if ( $amount != '' ) {
-							$sbpp_max_to_display = $amount; // assign value of amount if amount will be greater than sbpp_max_to_display.
+						if ( $amount > $sbpp_max_to_display ) {
+							if ( $amount != '' ) {
+								$sbpp_max_to_display = $amount; // assign value of amount if amount will be greater than sbpp_max_to_display.
+							}
 						}
 					}
 				}

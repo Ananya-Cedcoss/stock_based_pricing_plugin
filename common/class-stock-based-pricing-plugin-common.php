@@ -90,36 +90,79 @@ class Stock_based_pricing_plugin_Common {
 		$flag              = false; // assign the boolean value.
 		$sbpp_product_type = get_the_terms( $post->ID, 'product_type' )[0]->slug; // assign the type of product.
 
-		if ( $sbpp_product_type == 'simple' ) {
-			$sbpp_product = wc_get_product( $post->ID );// assigning the product data to the variable.
-			if ( ! is_cart() ) {
-				$stock = $sbpp_product->get_stock_quantity(); // get the quantity of stock.
+
+
+		if ( is_product()) {
+
+			if ( $sbpp_product_type == 'simple' ) {
+				$sbpp_product = wc_get_product( $post->ID );// assigning the product data to the variable.
+				if ( ! is_cart() ) {
+					$stock = $sbpp_product->get_stock_quantity(); // get the quantity of stock.
+				}
+
+				$sbpp_data = get_post_meta( $post->ID, '_price_acc_to_stock' ); // assign post meta to the variable.
+
+				$pricing = json_decode( $sbpp_data[0], true ); // converting the data to the array and storing it.
+
+				$priceofstock = ''; // new blank variable declaration.
+
+				if ( ! empty( $pricing ) ) {	
+					foreach ( $pricing as $key => $value ) {
+
+						$minimum_val = $value['Min']; // assigning the min value.
+						$max_value   = $value['Max']; // assigning the max value.
+						$amount      = $value['Amount']; // assigning the amount value.
+
+						if ( $stock >= $minimum_val && $stock <= $max_value ) {
+
+							$priceofstock = $amount; // assigning amount value to the variable.
+							$flag = true; // assign bool variable.
+							update_post_meta( $post->ID, 'Price_of_Selected_variation', $priceofstock );// used to update the post meta data.
+						}
+				}
+				}	
 			}
+			if ( $flag === true ) {
+				return get_woocommerce_currency_symbol() . $priceofstock; // return the price according to stock based pricing.
+			} else {
+				return $price;// return the regular price.
+			}
+		} else {
 
-			$sbpp_data = get_post_meta( $post->ID, '_price_acc_to_stock' ); // assign post meta to the variable.
+			if ( $sbpp_product_type == 'simple' ) {
+				$sbpp_product = wc_get_product( $post->ID );// assigning the product data to the variable.
+				if ( ! is_cart() ) {
+					$stock = $sbpp_product->get_stock_quantity(); // get the quantity of stock.
+				}
 
-			$pricing = json_decode( $sbpp_data[0], true ); // converting the data to the array and storing it.
+				$sbpp_data = get_post_meta( $post->ID, '_price_acc_to_stock' ); // assign post meta to the variable.
 
-			$priceofstock = ''; // new blank variable declaration.
+				$pricing = json_decode( $sbpp_data[0], true ); // converting the data to the array and storing it.
 
-			foreach ( $pricing as $key => $value ) {
+				$priceofstock = ''; // new blank variable declaration.
 
-				$minimum_val = $value['Min']; // assigning the min value.
-				$max_value   = $value['Max']; // assigning the max value.
-				$amount      = $value['Amount']; // assigning the amount value.
+			if ( ! empty( $pricing ) ) {	
+					foreach ( $pricing as $key => $value ) {
 
-				if ( $stock >= $minimum_val && $stock <= $max_value ) {
+						$minimum_val = $value['Min']; // assigning the min value.
+						$max_value   = $value['Max']; // assigning the max value.
+						$amount      = $value['Amount']; // assigning the amount value.
 
-					$priceofstock = $amount; // assigning amount value to the variable.
-					$flag = true; // assign bool variable.
-					update_post_meta( $post->ID, 'Price_of_Selected_variation', $priceofstock );// used to update the post meta data.
+						if ( $stock >= $minimum_val && $stock <= $max_value ) {
+
+							$priceofstock = $amount; // assigning amount value to the variable.
+							$flag = true; // assign bool variable.
+							update_post_meta( $post->ID, 'Price_of_Selected_variation', $priceofstock );// used to update the post meta data.
+						}
+					}
 				}
 			}
-		}
-		if ( $flag === true ) {
-			return get_woocommerce_currency_symbol() . $priceofstock; // return the price according to stock based pricing.
-		} else {
-			return $price;// return the regular price.
+			if ( $flag === true ) {
+				echo get_woocommerce_currency_symbol() . $priceofstock; // return the price according to stock based pricing.
+			} else {
+				echo $price;// return the regular price.
+			}
+
 		}
 
 	}
