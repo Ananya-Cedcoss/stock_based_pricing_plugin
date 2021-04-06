@@ -373,7 +373,7 @@ class Stock_based_pricing_plugin_Admin {
 							} else {
 								update_option( $sbpp_genaral_setting['id'], '' );
 							}
-						}else{
+						} else {
 							$mwb_sbpp_gen_flag = true;
 						}
 					}
@@ -381,7 +381,7 @@ class Stock_based_pricing_plugin_Admin {
 				if ( $mwb_sbpp_gen_flag ) {
 					$mwb_sbpp_error_text = esc_html__( 'Id of some field is missing', 'stock-based-pricing-plugin' );
 					$sbpp_mwb_sbpp_obj->mwb_sbpp_plug_admin_notice( $mwb_sbpp_error_text, 'error' );
-				}else{
+				} else {
 					$mwb_sbpp_error_text = esc_html__( 'Settings saved !', 'stock-based-pricing-plugin' );
 					$sbpp_mwb_sbpp_obj->mwb_sbpp_plug_admin_notice( $mwb_sbpp_error_text, 'success' );
 				}
@@ -416,11 +416,11 @@ class Stock_based_pricing_plugin_Admin {
 
 		$sbpp_data       = get_post_meta( $post->ID, '_price_acc_to_stock' );// storing post meta of _price_acc_to_stock to sbpp_data variable.
 
-		if ( ! empty( $sbpp_data )) {
+		if ( ! empty( $sbpp_data ) ) {
 			$sbpp_pricing    = json_decode( $sbpp_data[0], true );// it is used to encode it into array and store it to pricing.
 			$sbpp_count_data = count( $sbpp_pricing );// it is used to get number of data in array.
 
-		} else{
+		} else {
 			$sbpp_count_data = 0;
 		}
 

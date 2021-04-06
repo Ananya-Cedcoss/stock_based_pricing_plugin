@@ -92,7 +92,7 @@ class Stock_based_pricing_plugin_Common {
 
 
 
-		if ( is_product()) {
+		if ( is_product() ) {
 
 			if ( $sbpp_product_type == 'simple' ) {
 				$sbpp_product = wc_get_product( $post->ID );// assigning the product data to the variable.
@@ -106,7 +106,7 @@ class Stock_based_pricing_plugin_Common {
 
 				$priceofstock = ''; // new blank variable declaration.
 
-				if ( ! empty( $pricing ) ) {	
+				if ( ! empty( $pricing ) ) {		
 					foreach ( $pricing as $key => $value ) {
 
 						$minimum_val = $value['Min']; // assigning the min value.

@@ -1,0 +1,2066 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData @popperjs/core
+20 silly mapToRegistry name @popperjs/core
+21 silly mapToRegistry scope (from package name) @popperjs
+22 verbose mapToRegistry no registry URL found in name for scope @popperjs
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry uri https://registry.npmjs.org/@popperjs%2fcore
+26 silly fetchNamedPackageData autoprefixer
+27 silly mapToRegistry name autoprefixer
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry uri https://registry.npmjs.org/autoprefixer
+31 silly fetchNamedPackageData browser-sync
+32 silly mapToRegistry name browser-sync
+33 silly mapToRegistry using default registry
+34 silly mapToRegistry registry https://registry.npmjs.org/
+35 silly mapToRegistry uri https://registry.npmjs.org/browser-sync
+36 silly fetchNamedPackageData child_process
+37 silly mapToRegistry name child_process
+38 silly mapToRegistry using default registry
+39 silly mapToRegistry registry https://registry.npmjs.org/
+40 silly mapToRegistry uri https://registry.npmjs.org/child_process
+41 silly fetchNamedPackageData core-util-is
+42 silly mapToRegistry name core-util-is
+43 silly mapToRegistry using default registry
+44 silly mapToRegistry registry https://registry.npmjs.org/
+45 silly mapToRegistry uri https://registry.npmjs.org/core-util-is
+46 silly fetchNamedPackageData cssnano
+47 silly mapToRegistry name cssnano
+48 silly mapToRegistry using default registry
+49 silly mapToRegistry registry https://registry.npmjs.org/
+50 silly mapToRegistry uri https://registry.npmjs.org/cssnano
+51 silly fetchNamedPackageData del
+52 silly mapToRegistry name del
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/del
+56 silly fetchNamedPackageData gulp
+57 silly mapToRegistry name gulp
+58 silly mapToRegistry using default registry
+59 silly mapToRegistry registry https://registry.npmjs.org/
+60 silly mapToRegistry uri https://registry.npmjs.org/gulp
+61 silly fetchNamedPackageData gulp-concat
+62 silly mapToRegistry name gulp-concat
+63 silly mapToRegistry using default registry
+64 silly mapToRegistry registry https://registry.npmjs.org/
+65 silly mapToRegistry uri https://registry.npmjs.org/gulp-concat
+66 silly fetchNamedPackageData gulp-newer
+67 silly mapToRegistry name gulp-newer
+68 silly mapToRegistry using default registry
+69 silly mapToRegistry registry https://registry.npmjs.org/
+70 silly mapToRegistry uri https://registry.npmjs.org/gulp-newer
+71 silly fetchNamedPackageData gulp-plumber
+72 silly mapToRegistry name gulp-plumber
+73 silly mapToRegistry using default registry
+74 silly mapToRegistry registry https://registry.npmjs.org/
+75 silly mapToRegistry uri https://registry.npmjs.org/gulp-plumber
+76 silly fetchNamedPackageData gulp-postcss
+77 silly mapToRegistry name gulp-postcss
+78 silly mapToRegistry using default registry
+79 silly mapToRegistry registry https://registry.npmjs.org/
+80 silly mapToRegistry uri https://registry.npmjs.org/gulp-postcss
+81 silly fetchNamedPackageData gulp-rename
+82 silly mapToRegistry name gulp-rename
+83 silly mapToRegistry using default registry
+84 silly mapToRegistry registry https://registry.npmjs.org/
+85 silly mapToRegistry uri https://registry.npmjs.org/gulp-rename
+86 silly fetchNamedPackageData gulp-sass
+87 silly mapToRegistry name gulp-sass
+88 silly mapToRegistry using default registry
+89 silly mapToRegistry registry https://registry.npmjs.org/
+90 silly mapToRegistry uri https://registry.npmjs.org/gulp-sass
+91 silly fetchNamedPackageData gulp-uglify
+92 silly mapToRegistry name gulp-uglify
+93 silly mapToRegistry using default registry
+94 silly mapToRegistry registry https://registry.npmjs.org/
+95 silly mapToRegistry uri https://registry.npmjs.org/gulp-uglify
+96 verbose request uri https://registry.npmjs.org/@popperjs%2fcore
+97 verbose request no auth needed
+98 info attempt registry request try #1 at 7:22:12 PM
+99 verbose request id 3aa6f5b429793b0f
+100 verbose etag W/"01af9bcc539d3674d7d8d7968a675602"
+101 verbose lastModified Thu, 01 Apr 2021 15:14:12 GMT
+102 http request GET https://registry.npmjs.org/@popperjs%2fcore
+103 verbose request uri https://registry.npmjs.org/autoprefixer
+104 verbose request no auth needed
+105 info attempt registry request try #1 at 7:22:12 PM
+106 verbose etag W/"9f33b8556c605283866cbf7530c86ebb"
+107 verbose lastModified Fri, 05 Mar 2021 14:43:04 GMT
+108 http request GET https://registry.npmjs.org/autoprefixer
+109 verbose request uri https://registry.npmjs.org/child_process
+110 verbose request no auth needed
+111 info attempt registry request try #1 at 7:22:12 PM
+112 verbose etag W/"e2fee2a4a0f16eba38e975a8baaa4c27"
+113 verbose lastModified Sat, 26 May 2018 19:46:00 GMT
+114 http request GET https://registry.npmjs.org/child_process
+115 verbose request uri https://registry.npmjs.org/core-util-is
+116 verbose request no auth needed
+117 info attempt registry request try #1 at 7:22:12 PM
+118 verbose etag W/"8076d16a76bac5764f6fda9911b2b501"
+119 verbose lastModified Sat, 26 May 2018 21:08:01 GMT
+120 http request GET https://registry.npmjs.org/core-util-is
+121 verbose request uri https://registry.npmjs.org/cssnano
+122 verbose request no auth needed
+123 info attempt registry request try #1 at 7:22:12 PM
+124 verbose etag W/"ebf40f2e2171e6a9477deac9c814e766"
+125 verbose lastModified Tue, 06 Apr 2021 12:19:45 GMT
+126 http request GET https://registry.npmjs.org/cssnano
+127 verbose request uri https://registry.npmjs.org/del
+128 verbose request no auth needed
+129 info attempt registry request try #1 at 7:22:12 PM
+130 verbose etag W/"0d6b08f280a8b0e076f3a906c700ad34"
+131 verbose lastModified Sat, 26 Sep 2020 00:02:08 GMT
+132 http request GET https://registry.npmjs.org/del
+133 verbose request uri https://registry.npmjs.org/gulp
+134 verbose request no auth needed
+135 info attempt registry request try #1 at 7:22:12 PM
+136 verbose etag W/"75161e67bbd8bbdfe6a6767daea2737e"
+137 verbose lastModified Fri, 26 Jun 2020 20:53:36 GMT
+138 http request GET https://registry.npmjs.org/gulp
+139 verbose request uri https://registry.npmjs.org/gulp-concat
+140 verbose request no auth needed
+141 info attempt registry request try #1 at 7:22:12 PM
+142 verbose etag W/"ad836ac74041c44c35a3d2c8b844b0cb"
+143 verbose lastModified Thu, 02 Aug 2018 09:54:25 GMT
+144 http request GET https://registry.npmjs.org/gulp-concat
+145 verbose request uri https://registry.npmjs.org/gulp-newer
+146 verbose request no auth needed
+147 info attempt registry request try #1 at 7:22:12 PM
+148 verbose etag W/"cc2a7b5e30078221522f55b52bc1b4b6"
+149 verbose lastModified Thu, 12 Jul 2018 19:35:55 GMT
+150 http request GET https://registry.npmjs.org/gulp-newer
+151 verbose request uri https://registry.npmjs.org/gulp-plumber
+152 verbose request no auth needed
+153 info attempt registry request try #1 at 7:22:12 PM
+154 verbose etag W/"c37d46f57f111859a884a9a4ac0133b1"
+155 verbose lastModified Wed, 16 Jan 2019 19:40:09 GMT
+156 http request GET https://registry.npmjs.org/gulp-plumber
+157 verbose request uri https://registry.npmjs.org/browser-sync
+158 verbose request no auth needed
+159 info attempt registry request try #1 at 7:22:12 PM
+160 verbose etag W/"49423f0c707a895b15911f9905486de1"
+161 verbose lastModified Sun, 24 Jan 2021 18:52:10 GMT
+162 http request GET https://registry.npmjs.org/browser-sync
+163 verbose request uri https://registry.npmjs.org/gulp-rename
+164 verbose request no auth needed
+165 info attempt registry request try #1 at 7:22:12 PM
+166 verbose etag W/"07d3aebc52213e764362eefa20660c84"
+167 verbose lastModified Wed, 04 Dec 2019 16:50:10 GMT
+168 http request GET https://registry.npmjs.org/gulp-rename
+169 verbose request uri https://registry.npmjs.org/gulp-postcss
+170 verbose request no auth needed
+171 info attempt registry request try #1 at 7:22:12 PM
+172 verbose etag W/"acb6ab2c94dbf05f6317071a8c446551"
+173 verbose lastModified Wed, 23 Sep 2020 18:12:11 GMT
+174 http request GET https://registry.npmjs.org/gulp-postcss
+175 verbose request uri https://registry.npmjs.org/gulp-uglify
+176 verbose request no auth needed
+177 info attempt registry request try #1 at 7:22:12 PM
+178 verbose etag W/"dc404c16a1c9084678c3c02b2b13d59f"
+179 verbose lastModified Fri, 01 Mar 2019 19:21:28 GMT
+180 http request GET https://registry.npmjs.org/gulp-uglify
+181 verbose request uri https://registry.npmjs.org/gulp-sass
+182 verbose request no auth needed
+183 info attempt registry request try #1 at 7:22:12 PM
+184 verbose etag W/"5ff9b346e52a2af3ee45b2795cee24c7"
+185 verbose lastModified Thu, 23 Apr 2020 10:19:44 GMT
+186 http request GET https://registry.npmjs.org/gulp-sass
+187 http 304 https://registry.npmjs.org/autoprefixer
+188 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+188 verbose headers   connection: 'keep-alive',
+188 verbose headers   'set-cookie':
+188 verbose headers    [ '__cfduid=d06d7a7f7cb5a9dafae4e4afed154a8c81617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+188 verbose headers   'cf-ray': '63bb7ed04b493977-MAA',
+188 verbose headers   age: '3520',
+188 verbose headers   'cache-control': 'public, max-age=300',
+188 verbose headers   etag: '"9f33b8556c605283866cbf7530c86ebb"',
+188 verbose headers   'last-modified': 'Fri, 05 Mar 2021 14:43:04 GMT',
+188 verbose headers   vary: 'Accept-Encoding',
+188 verbose headers   'cf-cache-status': 'HIT',
+188 verbose headers   'cf-request-id': '09490d962e000039776a261000000001',
+188 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+188 verbose headers   server: 'cloudflare' }
+189 silly get cb [ 304,
+189 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+189 silly get     connection: 'keep-alive',
+189 silly get     'set-cookie':
+189 silly get      [ '__cfduid=d06d7a7f7cb5a9dafae4e4afed154a8c81617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+189 silly get     'cf-ray': '63bb7ed04b493977-MAA',
+189 silly get     age: '3520',
+189 silly get     'cache-control': 'public, max-age=300',
+189 silly get     etag: '"9f33b8556c605283866cbf7530c86ebb"',
+189 silly get     'last-modified': 'Fri, 05 Mar 2021 14:43:04 GMT',
+189 silly get     vary: 'Accept-Encoding',
+189 silly get     'cf-cache-status': 'HIT',
+189 silly get     'cf-request-id': '09490d962e000039776a261000000001',
+189 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+189 silly get     server: 'cloudflare' } ]
+190 verbose etag https://registry.npmjs.org/autoprefixer from cache
+191 verbose get saving autoprefixer to /home/cedcoss/.npm/registry.npmjs.org/autoprefixer/.cache.json
+192 http 304 https://registry.npmjs.org/browser-sync
+193 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+193 verbose headers   connection: 'keep-alive',
+193 verbose headers   'set-cookie':
+193 verbose headers    [ '__cfduid=dbc6c73dceacf36867a99daa432c02e9c1617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+193 verbose headers   'cf-ray': '63bb7ed05d6e3990-MAA',
+193 verbose headers   age: '600',
+193 verbose headers   'cache-control': 'public, max-age=300',
+193 verbose headers   etag: '"49423f0c707a895b15911f9905486de1"',
+193 verbose headers   'last-modified': 'Sun, 24 Jan 2021 18:52:10 GMT',
+193 verbose headers   vary: 'Accept-Encoding',
+193 verbose headers   'cf-cache-status': 'HIT',
+193 verbose headers   'cf-request-id': '09490d96340000399033363000000001',
+193 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+193 verbose headers   server: 'cloudflare' }
+194 silly get cb [ 304,
+194 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+194 silly get     connection: 'keep-alive',
+194 silly get     'set-cookie':
+194 silly get      [ '__cfduid=dbc6c73dceacf36867a99daa432c02e9c1617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+194 silly get     'cf-ray': '63bb7ed05d6e3990-MAA',
+194 silly get     age: '600',
+194 silly get     'cache-control': 'public, max-age=300',
+194 silly get     etag: '"49423f0c707a895b15911f9905486de1"',
+194 silly get     'last-modified': 'Sun, 24 Jan 2021 18:52:10 GMT',
+194 silly get     vary: 'Accept-Encoding',
+194 silly get     'cf-cache-status': 'HIT',
+194 silly get     'cf-request-id': '09490d96340000399033363000000001',
+194 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+194 silly get     server: 'cloudflare' } ]
+195 verbose etag https://registry.npmjs.org/browser-sync from cache
+196 verbose get saving browser-sync to /home/cedcoss/.npm/registry.npmjs.org/browser-sync/.cache.json
+197 http 304 https://registry.npmjs.org/gulp-postcss
+198 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+198 verbose headers   connection: 'keep-alive',
+198 verbose headers   'set-cookie':
+198 verbose headers    [ '__cfduid=dbc6c73dceacf36867a99daa432c02e9c1617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+198 verbose headers   'cf-ray': '63bb7ed06d8b3990-MAA',
+198 verbose headers   age: '52',
+198 verbose headers   'cache-control': 'public, max-age=300',
+198 verbose headers   etag: '"acb6ab2c94dbf05f6317071a8c446551"',
+198 verbose headers   'last-modified': 'Wed, 23 Sep 2020 18:12:11 GMT',
+198 verbose headers   vary: 'Accept-Encoding',
+198 verbose headers   'cf-cache-status': 'HIT',
+198 verbose headers   'cf-request-id': '09490d963c00003990e1a24000000001',
+198 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+198 verbose headers   server: 'cloudflare' }
+199 silly get cb [ 304,
+199 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+199 silly get     connection: 'keep-alive',
+199 silly get     'set-cookie':
+199 silly get      [ '__cfduid=dbc6c73dceacf36867a99daa432c02e9c1617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+199 silly get     'cf-ray': '63bb7ed06d8b3990-MAA',
+199 silly get     age: '52',
+199 silly get     'cache-control': 'public, max-age=300',
+199 silly get     etag: '"acb6ab2c94dbf05f6317071a8c446551"',
+199 silly get     'last-modified': 'Wed, 23 Sep 2020 18:12:11 GMT',
+199 silly get     vary: 'Accept-Encoding',
+199 silly get     'cf-cache-status': 'HIT',
+199 silly get     'cf-request-id': '09490d963c00003990e1a24000000001',
+199 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+199 silly get     server: 'cloudflare' } ]
+200 verbose etag https://registry.npmjs.org/gulp-postcss from cache
+201 verbose get saving gulp-postcss to /home/cedcoss/.npm/registry.npmjs.org/gulp-postcss/.cache.json
+202 http 304 https://registry.npmjs.org/gulp-sass
+203 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+203 verbose headers   connection: 'keep-alive',
+203 verbose headers   'set-cookie':
+203 verbose headers    [ '__cfduid=dbc6c73dceacf36867a99daa432c02e9c1617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+203 verbose headers   'cf-ray': '63bb7ed05d783990-MAA',
+203 verbose headers   age: '52',
+203 verbose headers   'cache-control': 'public, max-age=300',
+203 verbose headers   etag: '"5ff9b346e52a2af3ee45b2795cee24c7"',
+203 verbose headers   'last-modified': 'Thu, 23 Apr 2020 10:19:44 GMT',
+203 verbose headers   vary: 'Accept-Encoding',
+203 verbose headers   'cf-cache-status': 'HIT',
+203 verbose headers   'cf-request-id': '09490d963600003990343a5000000001',
+203 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+203 verbose headers   server: 'cloudflare' }
+204 silly get cb [ 304,
+204 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+204 silly get     connection: 'keep-alive',
+204 silly get     'set-cookie':
+204 silly get      [ '__cfduid=dbc6c73dceacf36867a99daa432c02e9c1617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+204 silly get     'cf-ray': '63bb7ed05d783990-MAA',
+204 silly get     age: '52',
+204 silly get     'cache-control': 'public, max-age=300',
+204 silly get     etag: '"5ff9b346e52a2af3ee45b2795cee24c7"',
+204 silly get     'last-modified': 'Thu, 23 Apr 2020 10:19:44 GMT',
+204 silly get     vary: 'Accept-Encoding',
+204 silly get     'cf-cache-status': 'HIT',
+204 silly get     'cf-request-id': '09490d963600003990343a5000000001',
+204 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+204 silly get     server: 'cloudflare' } ]
+205 verbose etag https://registry.npmjs.org/gulp-sass from cache
+206 verbose get saving gulp-sass to /home/cedcoss/.npm/registry.npmjs.org/gulp-sass/.cache.json
+207 http 304 https://registry.npmjs.org/del
+208 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+208 verbose headers   connection: 'keep-alive',
+208 verbose headers   'set-cookie':
+208 verbose headers    [ '__cfduid=d3d884a3ecee0c52abcb934344696ef441617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+208 verbose headers   'cf-ray': '63bb7ed06dc0396b-MAA',
+208 verbose headers   age: '2272',
+208 verbose headers   'cache-control': 'public, max-age=300',
+208 verbose headers   etag: '"0d6b08f280a8b0e076f3a906c700ad34"',
+208 verbose headers   'last-modified': 'Sat, 26 Sep 2020 00:02:08 GMT',
+208 verbose headers   vary: 'Accept-Encoding',
+208 verbose headers   'cf-cache-status': 'HIT',
+208 verbose headers   'cf-request-id': '09490d96440000396b24236000000001',
+208 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+208 verbose headers   server: 'cloudflare' }
+209 silly get cb [ 304,
+209 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+209 silly get     connection: 'keep-alive',
+209 silly get     'set-cookie':
+209 silly get      [ '__cfduid=d3d884a3ecee0c52abcb934344696ef441617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+209 silly get     'cf-ray': '63bb7ed06dc0396b-MAA',
+209 silly get     age: '2272',
+209 silly get     'cache-control': 'public, max-age=300',
+209 silly get     etag: '"0d6b08f280a8b0e076f3a906c700ad34"',
+209 silly get     'last-modified': 'Sat, 26 Sep 2020 00:02:08 GMT',
+209 silly get     vary: 'Accept-Encoding',
+209 silly get     'cf-cache-status': 'HIT',
+209 silly get     'cf-request-id': '09490d96440000396b24236000000001',
+209 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+209 silly get     server: 'cloudflare' } ]
+210 verbose etag https://registry.npmjs.org/del from cache
+211 verbose get saving del to /home/cedcoss/.npm/registry.npmjs.org/del/.cache.json
+212 http 304 https://registry.npmjs.org/@popperjs%2fcore
+213 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+213 verbose headers   connection: 'keep-alive',
+213 verbose headers   'set-cookie':
+213 verbose headers    [ '__cfduid=da8fb1f210941e2792bb8c7d6b2b590031617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+213 verbose headers   'cf-ray': '63bb7ed04c893989-MAA',
+213 verbose headers   age: '4773',
+213 verbose headers   'cache-control': 'public, max-age=300',
+213 verbose headers   etag: '"01af9bcc539d3674d7d8d7968a675602"',
+213 verbose headers   'last-modified': 'Thu, 01 Apr 2021 15:14:12 GMT',
+213 verbose headers   vary: 'Accept-Encoding',
+213 verbose headers   'cf-cache-status': 'HIT',
+213 verbose headers   'cf-request-id': '09490d963100003989e98f2000000001',
+213 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+213 verbose headers   server: 'cloudflare' }
+214 silly get cb [ 304,
+214 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+214 silly get     connection: 'keep-alive',
+214 silly get     'set-cookie':
+214 silly get      [ '__cfduid=da8fb1f210941e2792bb8c7d6b2b590031617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+214 silly get     'cf-ray': '63bb7ed04c893989-MAA',
+214 silly get     age: '4773',
+214 silly get     'cache-control': 'public, max-age=300',
+214 silly get     etag: '"01af9bcc539d3674d7d8d7968a675602"',
+214 silly get     'last-modified': 'Thu, 01 Apr 2021 15:14:12 GMT',
+214 silly get     vary: 'Accept-Encoding',
+214 silly get     'cf-cache-status': 'HIT',
+214 silly get     'cf-request-id': '09490d963100003989e98f2000000001',
+214 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+214 silly get     server: 'cloudflare' } ]
+215 verbose etag https://registry.npmjs.org/@popperjs%2fcore from cache
+216 verbose get saving @popperjs/core to /home/cedcoss/.npm/registry.npmjs.org/_40popperjs_252fcore/.cache.json
+217 http 304 https://registry.npmjs.org/child_process
+218 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+218 verbose headers   connection: 'keep-alive',
+218 verbose headers   'set-cookie':
+218 verbose headers    [ '__cfduid=d3d884a3ecee0c52abcb934344696ef441617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+218 verbose headers   'cf-ray': '63bb7ed06dbb396b-MAA',
+218 verbose headers   age: '52',
+218 verbose headers   'cache-control': 'public, max-age=300',
+218 verbose headers   etag: '"e2fee2a4a0f16eba38e975a8baaa4c27"',
+218 verbose headers   'last-modified': 'Sat, 26 May 2018 19:46:00 GMT',
+218 verbose headers   vary: 'Accept-Encoding',
+218 verbose headers   'cf-cache-status': 'HIT',
+218 verbose headers   'cf-request-id': '09490d96420000396b49bd0000000001',
+218 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+218 verbose headers   server: 'cloudflare' }
+219 silly get cb [ 304,
+219 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+219 silly get     connection: 'keep-alive',
+219 silly get     'set-cookie':
+219 silly get      [ '__cfduid=d3d884a3ecee0c52abcb934344696ef441617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+219 silly get     'cf-ray': '63bb7ed06dbb396b-MAA',
+219 silly get     age: '52',
+219 silly get     'cache-control': 'public, max-age=300',
+219 silly get     etag: '"e2fee2a4a0f16eba38e975a8baaa4c27"',
+219 silly get     'last-modified': 'Sat, 26 May 2018 19:46:00 GMT',
+219 silly get     vary: 'Accept-Encoding',
+219 silly get     'cf-cache-status': 'HIT',
+219 silly get     'cf-request-id': '09490d96420000396b49bd0000000001',
+219 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+219 silly get     server: 'cloudflare' } ]
+220 verbose etag https://registry.npmjs.org/child_process from cache
+221 verbose get saving child_process to /home/cedcoss/.npm/registry.npmjs.org/child_process/.cache.json
+222 http 304 https://registry.npmjs.org/gulp-uglify
+223 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+223 verbose headers   connection: 'keep-alive',
+223 verbose headers   'set-cookie':
+223 verbose headers    [ '__cfduid=d0a5d201de1cca5c2c8310c0f27effada1617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+223 verbose headers   'cf-ray': '63bb7ed07cebdc91-MAA',
+223 verbose headers   age: '52',
+223 verbose headers   'cache-control': 'public, max-age=300',
+223 verbose headers   etag: '"dc404c16a1c9084678c3c02b2b13d59f"',
+223 verbose headers   'last-modified': 'Fri, 01 Mar 2019 19:21:28 GMT',
+223 verbose headers   vary: 'Accept-Encoding',
+223 verbose headers   'cf-cache-status': 'HIT',
+223 verbose headers   'cf-request-id': '09490d96470000dc916f9ff000000001',
+223 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+223 verbose headers   server: 'cloudflare' }
+224 silly get cb [ 304,
+224 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+224 silly get     connection: 'keep-alive',
+224 silly get     'set-cookie':
+224 silly get      [ '__cfduid=d0a5d201de1cca5c2c8310c0f27effada1617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+224 silly get     'cf-ray': '63bb7ed07cebdc91-MAA',
+224 silly get     age: '52',
+224 silly get     'cache-control': 'public, max-age=300',
+224 silly get     etag: '"dc404c16a1c9084678c3c02b2b13d59f"',
+224 silly get     'last-modified': 'Fri, 01 Mar 2019 19:21:28 GMT',
+224 silly get     vary: 'Accept-Encoding',
+224 silly get     'cf-cache-status': 'HIT',
+224 silly get     'cf-request-id': '09490d96470000dc916f9ff000000001',
+224 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+224 silly get     server: 'cloudflare' } ]
+225 verbose etag https://registry.npmjs.org/gulp-uglify from cache
+226 verbose get saving gulp-uglify to /home/cedcoss/.npm/registry.npmjs.org/gulp-uglify/.cache.json
+227 http 304 https://registry.npmjs.org/gulp-concat
+228 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+228 verbose headers   connection: 'keep-alive',
+228 verbose headers   'set-cookie':
+228 verbose headers    [ '__cfduid=d54ba3ae93fa933da0d77dac889fb74251617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+228 verbose headers   'cf-ray': '63bb7ed068afdcb1-MAA',
+228 verbose headers   age: '52',
+228 verbose headers   'cache-control': 'public, max-age=300',
+228 verbose headers   etag: '"ad836ac74041c44c35a3d2c8b844b0cb"',
+228 verbose headers   'last-modified': 'Thu, 02 Aug 2018 09:54:25 GMT',
+228 verbose headers   vary: 'Accept-Encoding',
+228 verbose headers   'cf-cache-status': 'HIT',
+228 verbose headers   'cf-request-id': '09490d963f0000dcb1a314c000000001',
+228 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+228 verbose headers   server: 'cloudflare' }
+229 silly get cb [ 304,
+229 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+229 silly get     connection: 'keep-alive',
+229 silly get     'set-cookie':
+229 silly get      [ '__cfduid=d54ba3ae93fa933da0d77dac889fb74251617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+229 silly get     'cf-ray': '63bb7ed068afdcb1-MAA',
+229 silly get     age: '52',
+229 silly get     'cache-control': 'public, max-age=300',
+229 silly get     etag: '"ad836ac74041c44c35a3d2c8b844b0cb"',
+229 silly get     'last-modified': 'Thu, 02 Aug 2018 09:54:25 GMT',
+229 silly get     vary: 'Accept-Encoding',
+229 silly get     'cf-cache-status': 'HIT',
+229 silly get     'cf-request-id': '09490d963f0000dcb1a314c000000001',
+229 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+229 silly get     server: 'cloudflare' } ]
+230 verbose etag https://registry.npmjs.org/gulp-concat from cache
+231 verbose get saving gulp-concat to /home/cedcoss/.npm/registry.npmjs.org/gulp-concat/.cache.json
+232 http 304 https://registry.npmjs.org/gulp
+233 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+233 verbose headers   connection: 'keep-alive',
+233 verbose headers   'set-cookie':
+233 verbose headers    [ '__cfduid=de75db0dffe51771a0c880c71408aef801617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+233 verbose headers   'cf-ray': '63bb7ed07fa3dc85-MAA',
+233 verbose headers   age: '1950',
+233 verbose headers   'cache-control': 'public, max-age=300',
+233 verbose headers   etag: '"75161e67bbd8bbdfe6a6767daea2737e"',
+233 verbose headers   'last-modified': 'Fri, 26 Jun 2020 20:53:36 GMT',
+233 verbose headers   vary: 'Accept-Encoding',
+233 verbose headers   'cf-cache-status': 'HIT',
+233 verbose headers   'cf-request-id': '09490d96490000dc852081a000000001',
+233 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+233 verbose headers   server: 'cloudflare' }
+234 silly get cb [ 304,
+234 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+234 silly get     connection: 'keep-alive',
+234 silly get     'set-cookie':
+234 silly get      [ '__cfduid=de75db0dffe51771a0c880c71408aef801617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+234 silly get     'cf-ray': '63bb7ed07fa3dc85-MAA',
+234 silly get     age: '1950',
+234 silly get     'cache-control': 'public, max-age=300',
+234 silly get     etag: '"75161e67bbd8bbdfe6a6767daea2737e"',
+234 silly get     'last-modified': 'Fri, 26 Jun 2020 20:53:36 GMT',
+234 silly get     vary: 'Accept-Encoding',
+234 silly get     'cf-cache-status': 'HIT',
+234 silly get     'cf-request-id': '09490d96490000dc852081a000000001',
+234 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+234 silly get     server: 'cloudflare' } ]
+235 verbose etag https://registry.npmjs.org/gulp from cache
+236 verbose get saving gulp to /home/cedcoss/.npm/registry.npmjs.org/gulp/.cache.json
+237 http 304 https://registry.npmjs.org/core-util-is
+238 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+238 verbose headers   connection: 'keep-alive',
+238 verbose headers   'set-cookie':
+238 verbose headers    [ '__cfduid=d420cbd4fab494cec18b29e2a4cbd078f1617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+238 verbose headers   'cf-ray': '63bb7ed07a8a396c-MAA',
+238 verbose headers   age: '6016',
+238 verbose headers   'cache-control': 'public, max-age=300',
+238 verbose headers   etag: '"8076d16a76bac5764f6fda9911b2b501"',
+238 verbose headers   'last-modified': 'Sat, 26 May 2018 21:08:01 GMT',
+238 verbose headers   vary: 'Accept-Encoding',
+238 verbose headers   'cf-cache-status': 'HIT',
+238 verbose headers   'cf-request-id': '09490d964c0000396c182f9000000001',
+238 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+238 verbose headers   server: 'cloudflare' }
+239 silly get cb [ 304,
+239 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+239 silly get     connection: 'keep-alive',
+239 silly get     'set-cookie':
+239 silly get      [ '__cfduid=d420cbd4fab494cec18b29e2a4cbd078f1617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+239 silly get     'cf-ray': '63bb7ed07a8a396c-MAA',
+239 silly get     age: '6016',
+239 silly get     'cache-control': 'public, max-age=300',
+239 silly get     etag: '"8076d16a76bac5764f6fda9911b2b501"',
+239 silly get     'last-modified': 'Sat, 26 May 2018 21:08:01 GMT',
+239 silly get     vary: 'Accept-Encoding',
+239 silly get     'cf-cache-status': 'HIT',
+239 silly get     'cf-request-id': '09490d964c0000396c182f9000000001',
+239 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+239 silly get     server: 'cloudflare' } ]
+240 verbose etag https://registry.npmjs.org/core-util-is from cache
+241 verbose get saving core-util-is to /home/cedcoss/.npm/registry.npmjs.org/core-util-is/.cache.json
+242 http 304 https://registry.npmjs.org/cssnano
+243 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+243 verbose headers   connection: 'keep-alive',
+243 verbose headers   'set-cookie':
+243 verbose headers    [ '__cfduid=ddc293a77fd45c40abc5e4e597e68b7a71617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+243 verbose headers   'cf-ray': '63bb7ed08f09398f-MAA',
+243 verbose headers   age: '5185',
+243 verbose headers   'cache-control': 'public, max-age=300',
+243 verbose headers   etag: '"ebf40f2e2171e6a9477deac9c814e766"',
+243 verbose headers   'last-modified': 'Tue, 06 Apr 2021 12:19:45 GMT',
+243 verbose headers   vary: 'Accept-Encoding',
+243 verbose headers   'cf-cache-status': 'HIT',
+243 verbose headers   'cf-request-id': '09490d96510000398f6db8a000000001',
+243 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+243 verbose headers   server: 'cloudflare' }
+244 silly get cb [ 304,
+244 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+244 silly get     connection: 'keep-alive',
+244 silly get     'set-cookie':
+244 silly get      [ '__cfduid=ddc293a77fd45c40abc5e4e597e68b7a71617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+244 silly get     'cf-ray': '63bb7ed08f09398f-MAA',
+244 silly get     age: '5185',
+244 silly get     'cache-control': 'public, max-age=300',
+244 silly get     etag: '"ebf40f2e2171e6a9477deac9c814e766"',
+244 silly get     'last-modified': 'Tue, 06 Apr 2021 12:19:45 GMT',
+244 silly get     vary: 'Accept-Encoding',
+244 silly get     'cf-cache-status': 'HIT',
+244 silly get     'cf-request-id': '09490d96510000398f6db8a000000001',
+244 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+244 silly get     server: 'cloudflare' } ]
+245 verbose etag https://registry.npmjs.org/cssnano from cache
+246 verbose get saving cssnano to /home/cedcoss/.npm/registry.npmjs.org/cssnano/.cache.json
+247 http 304 https://registry.npmjs.org/gulp-newer
+248 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+248 verbose headers   connection: 'keep-alive',
+248 verbose headers   'set-cookie':
+248 verbose headers    [ '__cfduid=d78ff02e922d42335c720cd1f01b82ad41617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+248 verbose headers   'cf-ray': '63bb7ed08a071d4f-MAA',
+248 verbose headers   age: '4489',
+248 verbose headers   'cache-control': 'public, max-age=300',
+248 verbose headers   etag: '"cc2a7b5e30078221522f55b52bc1b4b6"',
+248 verbose headers   'last-modified': 'Thu, 12 Jul 2018 19:35:55 GMT',
+248 verbose headers   vary: 'Accept-Encoding',
+248 verbose headers   'cf-cache-status': 'HIT',
+248 verbose headers   'cf-request-id': '09490d965800001d4fa91bf000000001',
+248 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+248 verbose headers   server: 'cloudflare' }
+249 silly get cb [ 304,
+249 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+249 silly get     connection: 'keep-alive',
+249 silly get     'set-cookie':
+249 silly get      [ '__cfduid=d78ff02e922d42335c720cd1f01b82ad41617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+249 silly get     'cf-ray': '63bb7ed08a071d4f-MAA',
+249 silly get     age: '4489',
+249 silly get     'cache-control': 'public, max-age=300',
+249 silly get     etag: '"cc2a7b5e30078221522f55b52bc1b4b6"',
+249 silly get     'last-modified': 'Thu, 12 Jul 2018 19:35:55 GMT',
+249 silly get     vary: 'Accept-Encoding',
+249 silly get     'cf-cache-status': 'HIT',
+249 silly get     'cf-request-id': '09490d965800001d4fa91bf000000001',
+249 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+249 silly get     server: 'cloudflare' } ]
+250 verbose etag https://registry.npmjs.org/gulp-newer from cache
+251 verbose get saving gulp-newer to /home/cedcoss/.npm/registry.npmjs.org/gulp-newer/.cache.json
+252 http 304 https://registry.npmjs.org/gulp-plumber
+253 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+253 verbose headers   connection: 'keep-alive',
+253 verbose headers   'set-cookie':
+253 verbose headers    [ '__cfduid=db953d79c4c09ace93a392b39b2554e181617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+253 verbose headers   'cf-ray': '63bb7ed09f943966-MAA',
+253 verbose headers   age: '4489',
+253 verbose headers   'cache-control': 'public, max-age=300',
+253 verbose headers   etag: '"c37d46f57f111859a884a9a4ac0133b1"',
+253 verbose headers   'last-modified': 'Wed, 16 Jan 2019 19:40:09 GMT',
+253 verbose headers   vary: 'Accept-Encoding',
+253 verbose headers   'cf-cache-status': 'HIT',
+253 verbose headers   'cf-request-id': '09490d965d0000396660057000000001',
+253 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+253 verbose headers   server: 'cloudflare' }
+254 silly get cb [ 304,
+254 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+254 silly get     connection: 'keep-alive',
+254 silly get     'set-cookie':
+254 silly get      [ '__cfduid=db953d79c4c09ace93a392b39b2554e181617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+254 silly get     'cf-ray': '63bb7ed09f943966-MAA',
+254 silly get     age: '4489',
+254 silly get     'cache-control': 'public, max-age=300',
+254 silly get     etag: '"c37d46f57f111859a884a9a4ac0133b1"',
+254 silly get     'last-modified': 'Wed, 16 Jan 2019 19:40:09 GMT',
+254 silly get     vary: 'Accept-Encoding',
+254 silly get     'cf-cache-status': 'HIT',
+254 silly get     'cf-request-id': '09490d965d0000396660057000000001',
+254 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+254 silly get     server: 'cloudflare' } ]
+255 verbose etag https://registry.npmjs.org/gulp-plumber from cache
+256 verbose get saving gulp-plumber to /home/cedcoss/.npm/registry.npmjs.org/gulp-plumber/.cache.json
+257 http 304 https://registry.npmjs.org/gulp-rename
+258 verbose headers { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+258 verbose headers   connection: 'keep-alive',
+258 verbose headers   'set-cookie':
+258 verbose headers    [ '__cfduid=d1f462f394e137807e89779eee01a49f71617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+258 verbose headers   'cf-ray': '63bb7ed08ca81d53-MAA',
+258 verbose headers   age: '52',
+258 verbose headers   'cache-control': 'public, max-age=300',
+258 verbose headers   etag: '"07d3aebc52213e764362eefa20660c84"',
+258 verbose headers   'last-modified': 'Wed, 04 Dec 2019 16:50:10 GMT',
+258 verbose headers   vary: 'Accept-Encoding',
+258 verbose headers   'cf-cache-status': 'HIT',
+258 verbose headers   'cf-request-id': '09490d965400001d533f251000000001',
+258 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+258 verbose headers   server: 'cloudflare' }
+259 silly get cb [ 304,
+259 silly get   { date: 'Tue, 06 Apr 2021 13:52:12 GMT',
+259 silly get     connection: 'keep-alive',
+259 silly get     'set-cookie':
+259 silly get      [ '__cfduid=d1f462f394e137807e89779eee01a49f71617717132; expires=Thu, 06-May-21 13:52:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+259 silly get     'cf-ray': '63bb7ed08ca81d53-MAA',
+259 silly get     age: '52',
+259 silly get     'cache-control': 'public, max-age=300',
+259 silly get     etag: '"07d3aebc52213e764362eefa20660c84"',
+259 silly get     'last-modified': 'Wed, 04 Dec 2019 16:50:10 GMT',
+259 silly get     vary: 'Accept-Encoding',
+259 silly get     'cf-cache-status': 'HIT',
+259 silly get     'cf-request-id': '09490d965400001d533f251000000001',
+259 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+259 silly get     server: 'cloudflare' } ]
+260 verbose etag https://registry.npmjs.org/gulp-rename from cache
+261 verbose get saving gulp-rename to /home/cedcoss/.npm/registry.npmjs.org/gulp-rename/.cache.json
+262 silly resolveWithNewModule autoprefixer@9.8.6 checking installable status
+263 silly cache add args [ 'autoprefixer@^9.6.1', null ]
+264 verbose cache add spec autoprefixer@^9.6.1
+265 silly cache add parsed spec Result {
+265 silly cache add   raw: 'autoprefixer@^9.6.1',
+265 silly cache add   scope: null,
+265 silly cache add   name: 'autoprefixer',
+265 silly cache add   rawSpec: '^9.6.1',
+265 silly cache add   spec: '>=9.6.1 <10.0.0',
+265 silly cache add   type: 'range' }
+266 silly addNamed autoprefixer@>=9.6.1 <10.0.0
+267 verbose addNamed ">=9.6.1 <10.0.0" is a valid semver range for autoprefixer
+268 silly addNameRange { name: 'autoprefixer',
+268 silly addNameRange   range: '>=9.6.1 <10.0.0',
+268 silly addNameRange   hasData: false }
+269 silly mapToRegistry name autoprefixer
+270 silly mapToRegistry using default registry
+271 silly mapToRegistry registry https://registry.npmjs.org/
+272 silly mapToRegistry uri https://registry.npmjs.org/autoprefixer
+273 verbose addNameRange registry:https://registry.npmjs.org/autoprefixer not in flight; fetching
+274 silly resolveWithNewModule browser-sync@2.26.14 checking installable status
+275 silly cache add args [ 'browser-sync@^2.26.12', null ]
+276 verbose cache add spec browser-sync@^2.26.12
+277 silly cache add parsed spec Result {
+277 silly cache add   raw: 'browser-sync@^2.26.12',
+277 silly cache add   scope: null,
+277 silly cache add   name: 'browser-sync',
+277 silly cache add   rawSpec: '^2.26.12',
+277 silly cache add   spec: '>=2.26.12 <3.0.0',
+277 silly cache add   type: 'range' }
+278 silly addNamed browser-sync@>=2.26.12 <3.0.0
+279 verbose addNamed ">=2.26.12 <3.0.0" is a valid semver range for browser-sync
+280 silly addNameRange { name: 'browser-sync',
+280 silly addNameRange   range: '>=2.26.12 <3.0.0',
+280 silly addNameRange   hasData: false }
+281 silly mapToRegistry name browser-sync
+282 silly mapToRegistry using default registry
+283 silly mapToRegistry registry https://registry.npmjs.org/
+284 silly mapToRegistry uri https://registry.npmjs.org/browser-sync
+285 verbose addNameRange registry:https://registry.npmjs.org/browser-sync not in flight; fetching
+286 silly resolveWithNewModule gulp-postcss@8.0.0 checking installable status
+287 silly cache add args [ 'gulp-postcss@^8.0.0', null ]
+288 verbose cache add spec gulp-postcss@^8.0.0
+289 silly cache add parsed spec Result {
+289 silly cache add   raw: 'gulp-postcss@^8.0.0',
+289 silly cache add   scope: null,
+289 silly cache add   name: 'gulp-postcss',
+289 silly cache add   rawSpec: '^8.0.0',
+289 silly cache add   spec: '>=8.0.0 <9.0.0',
+289 silly cache add   type: 'range' }
+290 silly addNamed gulp-postcss@>=8.0.0 <9.0.0
+291 verbose addNamed ">=8.0.0 <9.0.0" is a valid semver range for gulp-postcss
+292 silly addNameRange { name: 'gulp-postcss', range: '>=8.0.0 <9.0.0', hasData: false }
+293 silly mapToRegistry name gulp-postcss
+294 silly mapToRegistry using default registry
+295 silly mapToRegistry registry https://registry.npmjs.org/
+296 silly mapToRegistry uri https://registry.npmjs.org/gulp-postcss
+297 verbose addNameRange registry:https://registry.npmjs.org/gulp-postcss not in flight; fetching
+298 silly resolveWithNewModule gulp-sass@4.1.0 checking installable status
+299 silly cache add args [ 'gulp-sass@^4.0.2', null ]
+300 verbose cache add spec gulp-sass@^4.0.2
+301 silly cache add parsed spec Result {
+301 silly cache add   raw: 'gulp-sass@^4.0.2',
+301 silly cache add   scope: null,
+301 silly cache add   name: 'gulp-sass',
+301 silly cache add   rawSpec: '^4.0.2',
+301 silly cache add   spec: '>=4.0.2 <5.0.0',
+301 silly cache add   type: 'range' }
+302 silly addNamed gulp-sass@>=4.0.2 <5.0.0
+303 verbose addNamed ">=4.0.2 <5.0.0" is a valid semver range for gulp-sass
+304 silly addNameRange { name: 'gulp-sass', range: '>=4.0.2 <5.0.0', hasData: false }
+305 silly mapToRegistry name gulp-sass
+306 silly mapToRegistry using default registry
+307 silly mapToRegistry registry https://registry.npmjs.org/
+308 silly mapToRegistry uri https://registry.npmjs.org/gulp-sass
+309 verbose addNameRange registry:https://registry.npmjs.org/gulp-sass not in flight; fetching
+310 silly resolveWithNewModule del@5.1.0 checking installable status
+311 silly cache add args [ 'del@^5.0.0', null ]
+312 verbose cache add spec del@^5.0.0
+313 silly cache add parsed spec Result {
+313 silly cache add   raw: 'del@^5.0.0',
+313 silly cache add   scope: null,
+313 silly cache add   name: 'del',
+313 silly cache add   rawSpec: '^5.0.0',
+313 silly cache add   spec: '>=5.0.0 <6.0.0',
+313 silly cache add   type: 'range' }
+314 silly addNamed del@>=5.0.0 <6.0.0
+315 verbose addNamed ">=5.0.0 <6.0.0" is a valid semver range for del
+316 silly addNameRange { name: 'del', range: '>=5.0.0 <6.0.0', hasData: false }
+317 silly mapToRegistry name del
+318 silly mapToRegistry using default registry
+319 silly mapToRegistry registry https://registry.npmjs.org/
+320 silly mapToRegistry uri https://registry.npmjs.org/del
+321 verbose addNameRange registry:https://registry.npmjs.org/del not in flight; fetching
+322 silly resolveWithNewModule @popperjs/core@2.9.2 checking installable status
+323 silly cache add args [ '@popperjs/core@^2.3.3', null ]
+324 verbose cache add spec @popperjs/core@^2.3.3
+325 silly cache add parsed spec Result {
+325 silly cache add   raw: '@popperjs/core@^2.3.3',
+325 silly cache add   scope: '@popperjs',
+325 silly cache add   name: '@popperjs/core',
+325 silly cache add   rawSpec: '^2.3.3',
+325 silly cache add   spec: '>=2.3.3 <3.0.0',
+325 silly cache add   type: 'range' }
+326 silly addNamed @popperjs/core@>=2.3.3 <3.0.0
+327 verbose addNamed ">=2.3.3 <3.0.0" is a valid semver range for @popperjs/core
+328 silly addNameRange { name: '@popperjs/core',
+328 silly addNameRange   range: '>=2.3.3 <3.0.0',
+328 silly addNameRange   hasData: false }
+329 silly mapToRegistry name @popperjs/core
+330 silly mapToRegistry scope (from package name) @popperjs
+331 verbose mapToRegistry no registry URL found in name for scope @popperjs
+332 silly mapToRegistry using default registry
+333 silly mapToRegistry registry https://registry.npmjs.org/
+334 silly mapToRegistry uri https://registry.npmjs.org/@popperjs%2fcore
+335 verbose addNameRange registry:https://registry.npmjs.org/@popperjs%2fcore not in flight; fetching
+336 silly resolveWithNewModule child_process@1.0.2 checking installable status
+337 silly cache add args [ 'child_process@^1.0.2', null ]
+338 verbose cache add spec child_process@^1.0.2
+339 silly cache add parsed spec Result {
+339 silly cache add   raw: 'child_process@^1.0.2',
+339 silly cache add   scope: null,
+339 silly cache add   name: 'child_process',
+339 silly cache add   rawSpec: '^1.0.2',
+339 silly cache add   spec: '>=1.0.2 <2.0.0',
+339 silly cache add   type: 'range' }
+340 silly addNamed child_process@>=1.0.2 <2.0.0
+341 verbose addNamed ">=1.0.2 <2.0.0" is a valid semver range for child_process
+342 silly addNameRange { name: 'child_process',
+342 silly addNameRange   range: '>=1.0.2 <2.0.0',
+342 silly addNameRange   hasData: false }
+343 silly mapToRegistry name child_process
+344 silly mapToRegistry using default registry
+345 silly mapToRegistry registry https://registry.npmjs.org/
+346 silly mapToRegistry uri https://registry.npmjs.org/child_process
+347 verbose addNameRange registry:https://registry.npmjs.org/child_process not in flight; fetching
+348 silly resolveWithNewModule gulp-concat@2.6.1 checking installable status
+349 silly cache add args [ 'gulp-concat@^2.6.1', null ]
+350 verbose cache add spec gulp-concat@^2.6.1
+351 silly cache add parsed spec Result {
+351 silly cache add   raw: 'gulp-concat@^2.6.1',
+351 silly cache add   scope: null,
+351 silly cache add   name: 'gulp-concat',
+351 silly cache add   rawSpec: '^2.6.1',
+351 silly cache add   spec: '>=2.6.1 <3.0.0',
+351 silly cache add   type: 'range' }
+352 silly addNamed gulp-concat@>=2.6.1 <3.0.0
+353 verbose addNamed ">=2.6.1 <3.0.0" is a valid semver range for gulp-concat
+354 silly addNameRange { name: 'gulp-concat', range: '>=2.6.1 <3.0.0', hasData: false }
+355 silly mapToRegistry name gulp-concat
+356 silly mapToRegistry using default registry
+357 silly mapToRegistry registry https://registry.npmjs.org/
+358 silly mapToRegistry uri https://registry.npmjs.org/gulp-concat
+359 verbose addNameRange registry:https://registry.npmjs.org/gulp-concat not in flight; fetching
+360 silly resolveWithNewModule gulp-uglify@3.0.2 checking installable status
+361 silly cache add args [ 'gulp-uglify@^3.0.2', null ]
+362 verbose cache add spec gulp-uglify@^3.0.2
+363 silly cache add parsed spec Result {
+363 silly cache add   raw: 'gulp-uglify@^3.0.2',
+363 silly cache add   scope: null,
+363 silly cache add   name: 'gulp-uglify',
+363 silly cache add   rawSpec: '^3.0.2',
+363 silly cache add   spec: '>=3.0.2 <4.0.0',
+363 silly cache add   type: 'range' }
+364 silly addNamed gulp-uglify@>=3.0.2 <4.0.0
+365 verbose addNamed ">=3.0.2 <4.0.0" is a valid semver range for gulp-uglify
+366 silly addNameRange { name: 'gulp-uglify', range: '>=3.0.2 <4.0.0', hasData: false }
+367 silly mapToRegistry name gulp-uglify
+368 silly mapToRegistry using default registry
+369 silly mapToRegistry registry https://registry.npmjs.org/
+370 silly mapToRegistry uri https://registry.npmjs.org/gulp-uglify
+371 verbose addNameRange registry:https://registry.npmjs.org/gulp-uglify not in flight; fetching
+372 silly resolveWithNewModule gulp@4.0.2 checking installable status
+373 silly cache add args [ 'gulp@^4.0.0', null ]
+374 verbose cache add spec gulp@^4.0.0
+375 silly cache add parsed spec Result {
+375 silly cache add   raw: 'gulp@^4.0.0',
+375 silly cache add   scope: null,
+375 silly cache add   name: 'gulp',
+375 silly cache add   rawSpec: '^4.0.0',
+375 silly cache add   spec: '>=4.0.0 <5.0.0',
+375 silly cache add   type: 'range' }
+376 silly addNamed gulp@>=4.0.0 <5.0.0
+377 verbose addNamed ">=4.0.0 <5.0.0" is a valid semver range for gulp
+378 silly addNameRange { name: 'gulp', range: '>=4.0.0 <5.0.0', hasData: false }
+379 silly mapToRegistry name gulp
+380 silly mapToRegistry using default registry
+381 silly mapToRegistry registry https://registry.npmjs.org/
+382 silly mapToRegistry uri https://registry.npmjs.org/gulp
+383 verbose addNameRange registry:https://registry.npmjs.org/gulp not in flight; fetching
+384 silly resolveWithNewModule core-util-is@1.0.2 checking installable status
+385 silly cache add args [ 'core-util-is@^1.0.2', null ]
+386 verbose cache add spec core-util-is@^1.0.2
+387 silly cache add parsed spec Result {
+387 silly cache add   raw: 'core-util-is@^1.0.2',
+387 silly cache add   scope: null,
+387 silly cache add   name: 'core-util-is',
+387 silly cache add   rawSpec: '^1.0.2',
+387 silly cache add   spec: '>=1.0.2 <2.0.0',
+387 silly cache add   type: 'range' }
+388 silly addNamed core-util-is@>=1.0.2 <2.0.0
+389 verbose addNamed ">=1.0.2 <2.0.0" is a valid semver range for core-util-is
+390 silly addNameRange { name: 'core-util-is', range: '>=1.0.2 <2.0.0', hasData: false }
+391 silly mapToRegistry name core-util-is
+392 silly mapToRegistry using default registry
+393 silly mapToRegistry registry https://registry.npmjs.org/
+394 silly mapToRegistry uri https://registry.npmjs.org/core-util-is
+395 verbose addNameRange registry:https://registry.npmjs.org/core-util-is not in flight; fetching
+396 verbose get https://registry.npmjs.org/autoprefixer not expired, no request
+397 silly addNameRange number 2 { name: 'autoprefixer', range: '>=9.6.1 <10.0.0', hasData: true }
+398 silly addNameRange versions [ 'autoprefixer',
+398 silly addNameRange   [ '0.1.20130409',
+398 silly addNameRange     '0.2.20130413',
+398 silly addNameRange     '0.3.20130423',
+398 silly addNameRange     '0.3.20130424',
+398 silly addNameRange     '0.3.20130427',
+398 silly addNameRange     '0.3.20130502',
+398 silly addNameRange     '0.4.20130507',
+398 silly addNameRange     '0.4.20130515',
+398 silly addNameRange     '0.4.20130521',
+398 silly addNameRange     '0.4.20130524',
+398 silly addNameRange     '0.4.20130528',
+398 silly addNameRange     '0.4.20130530',
+398 silly addNameRange     '0.4.20130603',
+398 silly addNameRange     '0.5.20130615',
+398 silly addNameRange     '0.5.20130616',
+398 silly addNameRange     '0.5.20130617',
+398 silly addNameRange     '0.5.20130625',
+398 silly addNameRange     '0.5.20130626',
+398 silly addNameRange     '0.5.20130629',
+398 silly addNameRange     '0.6.20130716',
+398 silly addNameRange     '0.6.20130721',
+398 silly addNameRange     '0.6.20130728',
+398 silly addNameRange     '0.6.20130729',
+398 silly addNameRange     '0.6.20130730',
+398 silly addNameRange     '0.6.20130731',
+398 silly addNameRange     '0.7.20130805',
+398 silly addNameRange     '0.7.20130806',
+398 silly addNameRange     '0.7.20130807',
+398 silly addNameRange     '0.7.20130808',
+398 silly addNameRange     '0.7.20130810',
+398 silly addNameRange     '0.7.20130824',
+398 silly addNameRange     '0.8.20130902',
+398 silly addNameRange     '0.8.20130903',
+398 silly addNameRange     '0.8.20130906',
+398 silly addNameRange     '0.8.20130911',
+398 silly addNameRange     '0.8.20130919',
+398 silly addNameRange     '0.8.20130923',
+398 silly addNameRange     '0.8.20131001',
+398 silly addNameRange     '0.8.20131006',
+398 silly addNameRange     '0.8.20131007',
+398 silly addNameRange     '0.8.20131009',
+398 silly addNameRange     '0.8.20131015',
+398 silly addNameRange     '0.8.20131017',
+398 silly addNameRange     '0.8.20131020',
+398 silly addNameRange     '0.8.20131029',
+398 silly addNameRange     '0.8.20131104',
+398 silly addNameRange     '0.8.20131209',
+398 silly addNameRange     '0.8.20131213',
+398 silly addNameRange     '1.0.20131222',
+398 silly addNameRange     '1.0.20140103',
+398 silly addNameRange     '1.0.20140109',
+398 silly addNameRange     '1.0.20140110',
+398 silly addNameRange     '1.0.20140117',
+398 silly addNameRange     '1.0.20140130',
+398 silly addNameRange     '1.0.20140203',
+398 silly addNameRange     '1.0.20140213',
+398 silly addNameRange     '1.1.20140218',
+398 silly addNameRange     '1.1.20140222',
+398 silly addNameRange     '1.1.20140226',
+398 silly addNameRange     '1.1.20140302',
+398 silly addNameRange     '1.1.20140319',
+398 silly addNameRange     '1.1.20140327',
+398 silly addNameRange     '1.1.20140403',
+398 silly addNameRange     '1.1.20140410',
+398 silly addNameRange     '1.1.20140429',
+398 silly addNameRange     '1.1.20140430',
+398 silly addNameRange     '1.1.20140510',
+398 silly addNameRange     '1.1.20140512',
+398 silly addNameRange     '1.1.20140521',
+398 silly addNameRange     '1.1.20140523',
+398 silly addNameRange     '1.1.20140605',
+398 silly addNameRange     '1.2.0',
+398 silly addNameRange     '1.3.0',
+398 silly addNameRange     '1.3.1',
+398 silly addNameRange     '2.0.0',
+398 silly addNameRange     '2.0.1',
+398 silly addNameRange     '2.0.2',
+398 silly addNameRange     '2.1.0',
+398 silly addNameRange     '2.1.1',
+398 silly addNameRange     '2.2.0',
+398 silly addNameRange     '3.0.0',
+398 silly addNameRange     '3.1.0',
+398 silly addNameRange     '4.0.0',
+398 silly addNameRange     '5.0.0',
+398 silly addNameRange     '5.1.0',
+398 silly addNameRange     '5.1.1',
+398 silly addNameRange     '5.2.0',
+398 silly addNameRange     '6.0.0',
+398 silly addNameRange     '6.0.1',
+398 silly addNameRange     '6.0.2',
+398 silly addNameRange     '6.0.3',
+398 silly addNameRange     '6.1.0',
+398 silly addNameRange     '6.1.1',
+398 silly addNameRange     '6.1.2',
+398 silly addNameRange     '6.2.0',
+398 silly addNameRange     '6.2.1',
+398 silly addNameRange     '6.2.2',
+398 silly addNameRange     '6.2.3',
+398 silly addNameRange     '6.3.0',
+398 silly addNameRange     '6.3.1',
+398 silly addNameRange     ... 112 more items ] ]
+399 silly addNamed autoprefixer@9.8.6
+400 verbose addNamed "9.8.6" is a plain semver version for autoprefixer
+401 silly resolveWithNewModule cssnano@4.1.11 checking installable status
+402 silly cache add args [ 'cssnano@^4.1.10', null ]
+403 verbose cache add spec cssnano@^4.1.10
+404 silly cache add parsed spec Result {
+404 silly cache add   raw: 'cssnano@^4.1.10',
+404 silly cache add   scope: null,
+404 silly cache add   name: 'cssnano',
+404 silly cache add   rawSpec: '^4.1.10',
+404 silly cache add   spec: '>=4.1.10 <5.0.0',
+404 silly cache add   type: 'range' }
+405 silly addNamed cssnano@>=4.1.10 <5.0.0
+406 verbose addNamed ">=4.1.10 <5.0.0" is a valid semver range for cssnano
+407 silly addNameRange { name: 'cssnano', range: '>=4.1.10 <5.0.0', hasData: false }
+408 silly mapToRegistry name cssnano
+409 silly mapToRegistry using default registry
+410 silly mapToRegistry registry https://registry.npmjs.org/
+411 silly mapToRegistry uri https://registry.npmjs.org/cssnano
+412 verbose addNameRange registry:https://registry.npmjs.org/cssnano not in flight; fetching
+413 verbose get https://registry.npmjs.org/browser-sync not expired, no request
+414 silly addNameRange number 2 { name: 'browser-sync',
+414 silly addNameRange   range: '>=2.26.12 <3.0.0',
+414 silly addNameRange   hasData: true }
+415 silly addNameRange versions [ 'browser-sync',
+415 silly addNameRange   [ '0.1.0',
+415 silly addNameRange     '0.1.1',
+415 silly addNameRange     '0.1.3',
+415 silly addNameRange     '0.1.5',
+415 silly addNameRange     '0.1.6',
+415 silly addNameRange     '0.1.7',
+415 silly addNameRange     '0.1.8',
+415 silly addNameRange     '0.1.9',
+415 silly addNameRange     '0.1.10',
+415 silly addNameRange     '0.2.0',
+415 silly addNameRange     '0.2.1',
+415 silly addNameRange     '0.3.0',
+415 silly addNameRange     '0.3.1',
+415 silly addNameRange     '0.3.2',
+415 silly addNameRange     '0.3.3',
+415 silly addNameRange     '0.3.4',
+415 silly addNameRange     '0.3.5',
+415 silly addNameRange     '0.3.6',
+415 silly addNameRange     '0.3.7',
+415 silly addNameRange     '0.3.8',
+415 silly addNameRange     '0.3.10',
+415 silly addNameRange     '0.4.0',
+415 silly addNameRange     '0.4.1',
+415 silly addNameRange     '0.4.2',
+415 silly addNameRange     '0.4.21',
+415 silly addNameRange     '0.4.3',
+415 silly addNameRange     '0.4.4',
+415 silly addNameRange     '0.4.5',
+415 silly addNameRange     '0.4.6',
+415 silly addNameRange     '0.4.7',
+415 silly addNameRange     '0.4.8',
+415 silly addNameRange     '0.4.9',
+415 silly addNameRange     '0.4.10',
+415 silly addNameRange     '0.4.11',
+415 silly addNameRange     '0.4.12',
+415 silly addNameRange     '0.5.0',
+415 silly addNameRange     '0.5.1',
+415 silly addNameRange     '0.5.2',
+415 silly addNameRange     '0.5.3',
+415 silly addNameRange     '0.5.4',
+415 silly addNameRange     '0.5.5',
+415 silly addNameRange     '0.5.6',
+415 silly addNameRange     '0.5.7',
+415 silly addNameRange     '0.5.8',
+415 silly addNameRange     '0.5.9',
+415 silly addNameRange     '0.6.0',
+415 silly addNameRange     '0.6.1',
+415 silly addNameRange     '0.6.2',
+415 silly addNameRange     '0.7.0',
+415 silly addNameRange     '0.7.1',
+415 silly addNameRange     '0.7.2',
+415 silly addNameRange     '0.7.3',
+415 silly addNameRange     '0.7.4',
+415 silly addNameRange     '0.7.5',
+415 silly addNameRange     '0.7.7',
+415 silly addNameRange     '0.8.0',
+415 silly addNameRange     '0.8.1',
+415 silly addNameRange     '0.8.2',
+415 silly addNameRange     '0.9.0',
+415 silly addNameRange     '0.9.1',
+415 silly addNameRange     '1.0.0',
+415 silly addNameRange     '1.1.0',
+415 silly addNameRange     '1.1.1',
+415 silly addNameRange     '1.1.2',
+415 silly addNameRange     '1.2.0',
+415 silly addNameRange     '1.2.1',
+415 silly addNameRange     '1.3.0',
+415 silly addNameRange     '1.3.2',
+415 silly addNameRange     '1.3.3',
+415 silly addNameRange     '1.3.4',
+415 silly addNameRange     '1.3.5',
+415 silly addNameRange     '1.3.6',
+415 silly addNameRange     '1.3.7',
+415 silly addNameRange     '1.5.0',
+415 silly addNameRange     '1.5.1',
+415 silly addNameRange     '1.5.2',
+415 silly addNameRange     '1.5.3',
+415 silly addNameRange     '1.5.4',
+415 silly addNameRange     '1.5.5',
+415 silly addNameRange     '1.5.6',
+415 silly addNameRange     '1.5.7',
+415 silly addNameRange     '1.5.8',
+415 silly addNameRange     '1.5.9',
+415 silly addNameRange     '1.6.0',
+415 silly addNameRange     '1.6.1',
+415 silly addNameRange     '1.6.2',
+415 silly addNameRange     '1.6.3',
+415 silly addNameRange     '1.6.4',
+415 silly addNameRange     '1.6.5',
+415 silly addNameRange     '1.7.0',
+415 silly addNameRange     '1.7.1',
+415 silly addNameRange     '1.7.2',
+415 silly addNameRange     '1.7.3',
+415 silly addNameRange     '1.8.0',
+415 silly addNameRange     '1.8.1',
+415 silly addNameRange     '1.8.2',
+415 silly addNameRange     '1.8.3',
+415 silly addNameRange     '1.9.0',
+415 silly addNameRange     '1.9.1',
+415 silly addNameRange     '2.0.0-rc1',
+415 silly addNameRange     ... 170 more items ] ]
+416 silly addNamed browser-sync@2.26.14
+417 verbose addNamed "2.26.14" is a plain semver version for browser-sync
+418 verbose get https://registry.npmjs.org/gulp-postcss not expired, no request
+419 silly addNameRange number 2 { name: 'gulp-postcss', range: '>=8.0.0 <9.0.0', hasData: true }
+420 silly addNameRange versions [ 'gulp-postcss',
+420 silly addNameRange   [ '0.0.1',
+420 silly addNameRange     '0.0.2',
+420 silly addNameRange     '1.0.0',
+420 silly addNameRange     '1.0.1',
+420 silly addNameRange     '1.0.2',
+420 silly addNameRange     '2.0.0',
+420 silly addNameRange     '2.0.1',
+420 silly addNameRange     '3.0.0',
+420 silly addNameRange     '4.0.0',
+420 silly addNameRange     '4.0.1',
+420 silly addNameRange     '4.0.2',
+420 silly addNameRange     '4.0.3',
+420 silly addNameRange     '5.0.0',
+420 silly addNameRange     '5.0.1',
+420 silly addNameRange     '5.1.0',
+420 silly addNameRange     '5.1.1',
+420 silly addNameRange     '5.1.2',
+420 silly addNameRange     '5.1.3',
+420 silly addNameRange     '5.1.4',
+420 silly addNameRange     '5.1.5',
+420 silly addNameRange     '5.1.6',
+420 silly addNameRange     '5.1.7',
+420 silly addNameRange     '5.1.8',
+420 silly addNameRange     '5.1.9',
+420 silly addNameRange     '5.1.10',
+420 silly addNameRange     '6.0.0',
+420 silly addNameRange     '6.0.1',
+420 silly addNameRange     '6.1.0',
+420 silly addNameRange     '6.1.1',
+420 silly addNameRange     '6.2.0',
+420 silly addNameRange     '6.3.0',
+420 silly addNameRange     '6.4.0',
+420 silly addNameRange     '7.0.0',
+420 silly addNameRange     '7.0.1',
+420 silly addNameRange     '8.0.0',
+420 silly addNameRange     '9.0.0' ] ]
+421 silly addNamed gulp-postcss@8.0.0
+422 verbose addNamed "8.0.0" is a plain semver version for gulp-postcss
+423 silly resolveWithNewModule gulp-newer@1.4.0 checking installable status
+424 silly cache add args [ 'gulp-newer@^1.4.0', null ]
+425 verbose cache add spec gulp-newer@^1.4.0
+426 silly cache add parsed spec Result {
+426 silly cache add   raw: 'gulp-newer@^1.4.0',
+426 silly cache add   scope: null,
+426 silly cache add   name: 'gulp-newer',
+426 silly cache add   rawSpec: '^1.4.0',
+426 silly cache add   spec: '>=1.4.0 <2.0.0',
+426 silly cache add   type: 'range' }
+427 silly addNamed gulp-newer@>=1.4.0 <2.0.0
+428 verbose addNamed ">=1.4.0 <2.0.0" is a valid semver range for gulp-newer
+429 silly addNameRange { name: 'gulp-newer', range: '>=1.4.0 <2.0.0', hasData: false }
+430 silly mapToRegistry name gulp-newer
+431 silly mapToRegistry using default registry
+432 silly mapToRegistry registry https://registry.npmjs.org/
+433 silly mapToRegistry uri https://registry.npmjs.org/gulp-newer
+434 verbose addNameRange registry:https://registry.npmjs.org/gulp-newer not in flight; fetching
+435 silly resolveWithNewModule gulp-plumber@1.2.1 checking installable status
+436 silly cache add args [ 'gulp-plumber@^1.2.1', null ]
+437 verbose cache add spec gulp-plumber@^1.2.1
+438 silly cache add parsed spec Result {
+438 silly cache add   raw: 'gulp-plumber@^1.2.1',
+438 silly cache add   scope: null,
+438 silly cache add   name: 'gulp-plumber',
+438 silly cache add   rawSpec: '^1.2.1',
+438 silly cache add   spec: '>=1.2.1 <2.0.0',
+438 silly cache add   type: 'range' }
+439 silly addNamed gulp-plumber@>=1.2.1 <2.0.0
+440 verbose addNamed ">=1.2.1 <2.0.0" is a valid semver range for gulp-plumber
+441 silly addNameRange { name: 'gulp-plumber', range: '>=1.2.1 <2.0.0', hasData: false }
+442 silly mapToRegistry name gulp-plumber
+443 silly mapToRegistry using default registry
+444 silly mapToRegistry registry https://registry.npmjs.org/
+445 silly mapToRegistry uri https://registry.npmjs.org/gulp-plumber
+446 verbose addNameRange registry:https://registry.npmjs.org/gulp-plumber not in flight; fetching
+447 silly resolveWithNewModule gulp-rename@1.4.0 checking installable status
+448 silly cache add args [ 'gulp-rename@^1.4.0', null ]
+449 verbose cache add spec gulp-rename@^1.4.0
+450 silly cache add parsed spec Result {
+450 silly cache add   raw: 'gulp-rename@^1.4.0',
+450 silly cache add   scope: null,
+450 silly cache add   name: 'gulp-rename',
+450 silly cache add   rawSpec: '^1.4.0',
+450 silly cache add   spec: '>=1.4.0 <2.0.0',
+450 silly cache add   type: 'range' }
+451 silly addNamed gulp-rename@>=1.4.0 <2.0.0
+452 verbose addNamed ">=1.4.0 <2.0.0" is a valid semver range for gulp-rename
+453 silly addNameRange { name: 'gulp-rename', range: '>=1.4.0 <2.0.0', hasData: false }
+454 silly mapToRegistry name gulp-rename
+455 silly mapToRegistry using default registry
+456 silly mapToRegistry registry https://registry.npmjs.org/
+457 silly mapToRegistry uri https://registry.npmjs.org/gulp-rename
+458 verbose addNameRange registry:https://registry.npmjs.org/gulp-rename not in flight; fetching
+459 verbose get https://registry.npmjs.org/gulp-sass not expired, no request
+460 silly addNameRange number 2 { name: 'gulp-sass', range: '>=4.0.2 <5.0.0', hasData: true }
+461 silly addNameRange versions [ 'gulp-sass',
+461 silly addNameRange   [ '0.1.0',
+461 silly addNameRange     '0.2.1',
+461 silly addNameRange     '0.2.2',
+461 silly addNameRange     '0.2.3',
+461 silly addNameRange     '0.3.0',
+461 silly addNameRange     '0.4.0',
+461 silly addNameRange     '0.4.1',
+461 silly addNameRange     '0.5.0',
+461 silly addNameRange     '0.5.1',
+461 silly addNameRange     '0.5.2',
+461 silly addNameRange     '0.6.0',
+461 silly addNameRange     '0.7.0',
+461 silly addNameRange     '0.7.1',
+461 silly addNameRange     '0.7.2',
+461 silly addNameRange     '0.7.3',
+461 silly addNameRange     '1.0.0',
+461 silly addNameRange     '1.1.0',
+461 silly addNameRange     '1.2.0',
+461 silly addNameRange     '1.2.1',
+461 silly addNameRange     '1.2.2',
+461 silly addNameRange     '1.2.3',
+461 silly addNameRange     '1.2.4',
+461 silly addNameRange     '1.3.0',
+461 silly addNameRange     '1.3.1',
+461 silly addNameRange     '1.3.2',
+461 silly addNameRange     '1.3.3',
+461 silly addNameRange     '2.0.0-alpha.1',
+461 silly addNameRange     '2.0.0',
+461 silly addNameRange     '2.0.2',
+461 silly addNameRange     '2.0.3',
+461 silly addNameRange     '2.0.4',
+461 silly addNameRange     '2.1.0-beta',
+461 silly addNameRange     '2.1.0',
+461 silly addNameRange     '2.1.1',
+461 silly addNameRange     '2.2.0',
+461 silly addNameRange     '2.3.0-beta.1',
+461 silly addNameRange     '2.3.0',
+461 silly addNameRange     '2.3.1',
+461 silly addNameRange     '2.3.2',
+461 silly addNameRange     '3.0.0',
+461 silly addNameRange     '3.1.0',
+461 silly addNameRange     '3.2.0',
+461 silly addNameRange     '3.2.1',
+461 silly addNameRange     '4.0.0',
+461 silly addNameRange     '4.0.1',
+461 silly addNameRange     '4.0.2',
+461 silly addNameRange     '4.1.0' ] ]
+462 silly addNamed gulp-sass@4.1.0
+463 verbose addNamed "4.1.0" is a plain semver version for gulp-sass
+464 verbose get https://registry.npmjs.org/del not expired, no request
+465 silly addNameRange number 2 { name: 'del', range: '>=5.0.0 <6.0.0', hasData: true }
+466 silly addNameRange versions [ 'del',
+466 silly addNameRange   [ '0.1.0',
+466 silly addNameRange     '0.1.1',
+466 silly addNameRange     '0.1.2',
+466 silly addNameRange     '0.1.3',
+466 silly addNameRange     '1.0.0',
+466 silly addNameRange     '1.1.0',
+466 silly addNameRange     '1.1.1',
+466 silly addNameRange     '1.2.0',
+466 silly addNameRange     '1.2.1',
+466 silly addNameRange     '2.0.0',
+466 silly addNameRange     '2.0.1',
+466 silly addNameRange     '2.0.2',
+466 silly addNameRange     '2.1.0',
+466 silly addNameRange     '2.2.0',
+466 silly addNameRange     '2.2.1',
+466 silly addNameRange     '2.2.2',
+466 silly addNameRange     '3.0.0',
+466 silly addNameRange     '4.0.0',
+466 silly addNameRange     '4.1.0',
+466 silly addNameRange     '4.1.1',
+466 silly addNameRange     '5.0.0',
+466 silly addNameRange     '5.1.0',
+466 silly addNameRange     '6.0.0' ] ]
+467 silly addNamed del@5.1.0
+468 verbose addNamed "5.1.0" is a plain semver version for del
+469 verbose get https://registry.npmjs.org/@popperjs%2fcore not expired, no request
+470 silly addNameRange number 2 { name: '@popperjs/core',
+470 silly addNameRange   range: '>=2.3.3 <3.0.0',
+470 silly addNameRange   hasData: true }
+471 silly addNameRange versions [ '@popperjs/core',
+471 silly addNameRange   [ '2.0.0-next.5',
+471 silly addNameRange     '2.0.0-next.6',
+471 silly addNameRange     '2.0.0-next.7',
+471 silly addNameRange     '2.0.0-next.8',
+471 silly addNameRange     '2.0.0-next.9',
+471 silly addNameRange     '2.0.0-next.10',
+471 silly addNameRange     '2.0.0-next.11',
+471 silly addNameRange     '2.0.0-next.12',
+471 silly addNameRange     '2.0.0-next.13',
+471 silly addNameRange     '2.0.0-next.14',
+471 silly addNameRange     '2.0.0-next.15',
+471 silly addNameRange     '2.0.0-next.16',
+471 silly addNameRange     '2.0.0-alpha.1',
+471 silly addNameRange     '2.0.0-next.17',
+471 silly addNameRange     '2.0.0-alpha.2',
+471 silly addNameRange     '2.0.0-alpha.3',
+471 silly addNameRange     '2.0.0-alpha.4',
+471 silly addNameRange     '2.0.0-rc.1',
+471 silly addNameRange     '2.0.0-rc.2',
+471 silly addNameRange     '2.0.0-rc.3',
+471 silly addNameRange     '2.0.0',
+471 silly addNameRange     '2.0.1',
+471 silly addNameRange     '2.0.2',
+471 silly addNameRange     '2.0.3',
+471 silly addNameRange     '2.0.4',
+471 silly addNameRange     '2.0.5',
+471 silly addNameRange     '2.0.6',
+471 silly addNameRange     '2.1.0',
+471 silly addNameRange     '2.1.1',
+471 silly addNameRange     '2.2.0',
+471 silly addNameRange     '2.2.0-bundlephobia.1',
+471 silly addNameRange     '2.2.1',
+471 silly addNameRange     '2.2.2',
+471 silly addNameRange     '2.2.3',
+471 silly addNameRange     '2.3.0',
+471 silly addNameRange     '2.3.1',
+471 silly addNameRange     '2.3.2',
+471 silly addNameRange     '2.3.3',
+471 silly addNameRange     '2.4.0',
+471 silly addNameRange     '2.4.1',
+471 silly addNameRange     '2.4.2',
+471 silly addNameRange     '2.4.3',
+471 silly addNameRange     '2.4.4',
+471 silly addNameRange     '2.5.0',
+471 silly addNameRange     '2.5.1',
+471 silly addNameRange     '2.5.2',
+471 silly addNameRange     '2.5.3',
+471 silly addNameRange     '2.5.4',
+471 silly addNameRange     '2.6.0',
+471 silly addNameRange     '2.7.0',
+471 silly addNameRange     '2.7.1',
+471 silly addNameRange     '2.7.2',
+471 silly addNameRange     '2.8.0',
+471 silly addNameRange     '2.8.1',
+471 silly addNameRange     '2.8.2',
+471 silly addNameRange     '2.8.3',
+471 silly addNameRange     '2.8.4',
+471 silly addNameRange     '2.8.5',
+471 silly addNameRange     '2.8.6',
+471 silly addNameRange     '2.9.0',
+471 silly addNameRange     '2.9.1',
+471 silly addNameRange     '2.9.2' ] ]
+472 silly addNamed @popperjs/core@2.9.2
+473 verbose addNamed "2.9.2" is a plain semver version for @popperjs/core
+474 verbose get https://registry.npmjs.org/child_process not expired, no request
+475 silly addNameRange number 2 { name: 'child_process', range: '>=1.0.2 <2.0.0', hasData: true }
+476 silly addNameRange versions [ 'child_process', [ '1.0.2' ] ]
+477 silly addNamed child_process@1.0.2
+478 verbose addNamed "1.0.2" is a plain semver version for child_process
+479 verbose get https://registry.npmjs.org/gulp-uglify not expired, no request
+480 silly addNameRange number 2 { name: 'gulp-uglify', range: '>=3.0.2 <4.0.0', hasData: true }
+481 silly addNameRange versions [ 'gulp-uglify',
+481 silly addNameRange   [ '0.0.1',
+481 silly addNameRange     '0.0.3',
+481 silly addNameRange     '0.0.4',
+481 silly addNameRange     '0.1.0',
+481 silly addNameRange     '0.2.0',
+481 silly addNameRange     '0.2.1',
+481 silly addNameRange     '0.3.0',
+481 silly addNameRange     '0.3.1',
+481 silly addNameRange     '0.3.2',
+481 silly addNameRange     '1.0.0-0',
+481 silly addNameRange     '1.0.0',
+481 silly addNameRange     '1.0.1',
+481 silly addNameRange     '1.0.2',
+481 silly addNameRange     '1.1.0',
+481 silly addNameRange     '1.2.0',
+481 silly addNameRange     '1.3.0',
+481 silly addNameRange     '1.4.0',
+481 silly addNameRange     '1.4.1',
+481 silly addNameRange     '1.4.2',
+481 silly addNameRange     '1.5.1',
+481 silly addNameRange     '1.5.2',
+481 silly addNameRange     '1.5.3',
+481 silly addNameRange     '1.5.4',
+481 silly addNameRange     '2.0.0',
+481 silly addNameRange     '2.0.1',
+481 silly addNameRange     '2.1.0',
+481 silly addNameRange     '2.1.1',
+481 silly addNameRange     '2.1.2',
+481 silly addNameRange     '3.0.0',
+481 silly addNameRange     '3.0.1',
+481 silly addNameRange     '3.0.2' ] ]
+482 silly addNamed gulp-uglify@3.0.2
+483 verbose addNamed "3.0.2" is a plain semver version for gulp-uglify
+484 verbose get https://registry.npmjs.org/gulp-concat not expired, no request
+485 silly addNameRange number 2 { name: 'gulp-concat', range: '>=2.6.1 <3.0.0', hasData: true }
+486 silly addNameRange versions [ 'gulp-concat',
+486 silly addNameRange   [ '0.0.1',
+486 silly addNameRange     '1.0.0',
+486 silly addNameRange     '1.1.0',
+486 silly addNameRange     '2.0.0',
+486 silly addNameRange     '2.1.0',
+486 silly addNameRange     '2.1.1',
+486 silly addNameRange     '2.1.2',
+486 silly addNameRange     '2.1.3',
+486 silly addNameRange     '2.1.4',
+486 silly addNameRange     '2.1.5',
+486 silly addNameRange     '2.1.6',
+486 silly addNameRange     '2.1.7',
+486 silly addNameRange     '2.2.0',
+486 silly addNameRange     '2.3.0',
+486 silly addNameRange     '2.3.3',
+486 silly addNameRange     '2.3.4',
+486 silly addNameRange     '2.3.5',
+486 silly addNameRange     '2.4.0',
+486 silly addNameRange     '2.4.1',
+486 silly addNameRange     '2.4.2',
+486 silly addNameRange     '2.4.3',
+486 silly addNameRange     '2.5.0',
+486 silly addNameRange     '2.5.1',
+486 silly addNameRange     '2.5.2',
+486 silly addNameRange     '2.6.0',
+486 silly addNameRange     '2.6.1' ] ]
+487 silly addNamed gulp-concat@2.6.1
+488 verbose addNamed "2.6.1" is a plain semver version for gulp-concat
+489 verbose get https://registry.npmjs.org/gulp not expired, no request
+490 silly addNameRange number 2 { name: 'gulp', range: '>=4.0.0 <5.0.0', hasData: true }
+491 silly addNameRange versions [ 'gulp',
+491 silly addNameRange   [ '0.0.1',
+491 silly addNameRange     '0.0.2',
+491 silly addNameRange     '0.0.3',
+491 silly addNameRange     '0.0.4',
+491 silly addNameRange     '0.0.5',
+491 silly addNameRange     '0.0.7',
+491 silly addNameRange     '0.0.8',
+491 silly addNameRange     '0.0.9',
+491 silly addNameRange     '0.1.0',
+491 silly addNameRange     '0.2.0',
+491 silly addNameRange     '1.0.0',
+491 silly addNameRange     '1.1.0',
+491 silly addNameRange     '1.2.0',
+491 silly addNameRange     '1.2.1',
+491 silly addNameRange     '2.0.0',
+491 silly addNameRange     '2.0.1',
+491 silly addNameRange     '2.1.0',
+491 silly addNameRange     '2.2.0',
+491 silly addNameRange     '2.3.0',
+491 silly addNameRange     '2.4.0',
+491 silly addNameRange     '2.4.1',
+491 silly addNameRange     '2.6.0',
+491 silly addNameRange     '2.6.1',
+491 silly addNameRange     '2.7.0',
+491 silly addNameRange     '3.0.0',
+491 silly addNameRange     '3.1.1',
+491 silly addNameRange     '3.1.2',
+491 silly addNameRange     '3.1.3',
+491 silly addNameRange     '3.1.4',
+491 silly addNameRange     '3.2.0',
+491 silly addNameRange     '3.2.1',
+491 silly addNameRange     '3.2.2',
+491 silly addNameRange     '3.2.3',
+491 silly addNameRange     '3.2.4',
+491 silly addNameRange     '3.2.5',
+491 silly addNameRange     '3.3.0',
+491 silly addNameRange     '3.3.1',
+491 silly addNameRange     '3.3.2',
+491 silly addNameRange     '3.3.4',
+491 silly addNameRange     '3.4.0',
+491 silly addNameRange     '3.5.0',
+491 silly addNameRange     '3.5.1',
+491 silly addNameRange     '3.5.2',
+491 silly addNameRange     '3.5.5',
+491 silly addNameRange     '3.5.6',
+491 silly addNameRange     '3.6.0',
+491 silly addNameRange     '3.6.1',
+491 silly addNameRange     '3.6.2',
+491 silly addNameRange     '3.7.0',
+491 silly addNameRange     '3.8.0',
+491 silly addNameRange     '3.8.1',
+491 silly addNameRange     '3.8.2',
+491 silly addNameRange     '3.8.3',
+491 silly addNameRange     '3.8.4',
+491 silly addNameRange     '3.8.5',
+491 silly addNameRange     '3.8.6',
+491 silly addNameRange     '3.8.7',
+491 silly addNameRange     '3.8.8',
+491 silly addNameRange     '3.8.9',
+491 silly addNameRange     '3.8.10',
+491 silly addNameRange     '3.8.11',
+491 silly addNameRange     '3.9.0',
+491 silly addNameRange     '3.9.1',
+491 silly addNameRange     '4.0.0',
+491 silly addNameRange     '4.0.1',
+491 silly addNameRange     '4.0.2' ] ]
+492 silly addNamed gulp@4.0.2
+493 verbose addNamed "4.0.2" is a plain semver version for gulp
+494 verbose get https://registry.npmjs.org/core-util-is not expired, no request
+495 silly addNameRange number 2 { name: 'core-util-is', range: '>=1.0.2 <2.0.0', hasData: true }
+496 silly addNameRange versions [ 'core-util-is', [ '1.0.0', '1.0.1', '1.0.2' ] ]
+497 silly addNamed core-util-is@1.0.2
+498 verbose addNamed "1.0.2" is a plain semver version for core-util-is
+499 verbose get https://registry.npmjs.org/cssnano not expired, no request
+500 silly addNameRange number 2 { name: 'cssnano', range: '>=4.1.10 <5.0.0', hasData: true }
+501 silly addNameRange versions [ 'cssnano',
+501 silly addNameRange   [ '1.0.0',
+501 silly addNameRange     '1.0.1',
+501 silly addNameRange     '1.0.2',
+501 silly addNameRange     '1.1.0',
+501 silly addNameRange     '1.2.0',
+501 silly addNameRange     '1.2.1',
+501 silly addNameRange     '1.3.0',
+501 silly addNameRange     '1.3.1',
+501 silly addNameRange     '1.3.2',
+501 silly addNameRange     '1.3.3',
+501 silly addNameRange     '1.4.0',
+501 silly addNameRange     '1.4.1',
+501 silly addNameRange     '1.4.2',
+501 silly addNameRange     '1.4.3',
+501 silly addNameRange     '2.0.0',
+501 silly addNameRange     '2.0.1',
+501 silly addNameRange     '2.0.2',
+501 silly addNameRange     '2.0.3',
+501 silly addNameRange     '2.1.0',
+501 silly addNameRange     '2.1.1',
+501 silly addNameRange     '2.2.0',
+501 silly addNameRange     '2.3.0',
+501 silly addNameRange     '2.4.0',
+501 silly addNameRange     '2.5.0',
+501 silly addNameRange     '2.6.0',
+501 silly addNameRange     '2.6.1',
+501 silly addNameRange     '3.0.0',
+501 silly addNameRange     '3.0.1',
+501 silly addNameRange     '3.0.2',
+501 silly addNameRange     '3.0.3',
+501 silly addNameRange     '3.1.0',
+501 silly addNameRange     '3.2.0',
+501 silly addNameRange     '3.3.0',
+501 silly addNameRange     '3.3.1',
+501 silly addNameRange     '3.3.2',
+501 silly addNameRange     '3.4.0',
+501 silly addNameRange     '3.5.0',
+501 silly addNameRange     '3.5.1',
+501 silly addNameRange     '3.5.2',
+501 silly addNameRange     '3.6.0',
+501 silly addNameRange     '3.6.1',
+501 silly addNameRange     '3.6.2',
+501 silly addNameRange     '3.7.0',
+501 silly addNameRange     '3.7.1',
+501 silly addNameRange     '3.7.2',
+501 silly addNameRange     '3.7.3',
+501 silly addNameRange     '3.7.4',
+501 silly addNameRange     '3.7.5',
+501 silly addNameRange     '3.7.6',
+501 silly addNameRange     '3.7.7',
+501 silly addNameRange     '3.8.0',
+501 silly addNameRange     '3.8.1',
+501 silly addNameRange     '3.8.2',
+501 silly addNameRange     '3.9.0',
+501 silly addNameRange     '3.9.1',
+501 silly addNameRange     '3.10.0',
+501 silly addNameRange     '4.0.0-rc.0',
+501 silly addNameRange     '4.0.0-rc.1',
+501 silly addNameRange     '4.0.0-rc.2',
+501 silly addNameRange     '4.0.0',
+501 silly addNameRange     '4.0.1',
+501 silly addNameRange     '4.0.2',
+501 silly addNameRange     '4.0.3',
+501 silly addNameRange     '4.0.4',
+501 silly addNameRange     '4.0.5',
+501 silly addNameRange     '4.1.0',
+501 silly addNameRange     '4.1.1',
+501 silly addNameRange     '4.1.2',
+501 silly addNameRange     '4.1.3',
+501 silly addNameRange     '4.1.4',
+501 silly addNameRange     '4.1.5',
+501 silly addNameRange     '4.1.6',
+501 silly addNameRange     '4.1.7',
+501 silly addNameRange     '4.1.8',
+501 silly addNameRange     '4.1.9',
+501 silly addNameRange     '4.1.10',
+501 silly addNameRange     '4.0.0-nightly.2020.7.24',
+501 silly addNameRange     '4.0.0-nightly.2020.7.25',
+501 silly addNameRange     '4.0.0-nightly.2020.7.31',
+501 silly addNameRange     '4.0.0-nightly.2020.8.1',
+501 silly addNameRange     '4.0.0-nightly.2020.8.4',
+501 silly addNameRange     '4.0.0-nightly.2020.8.10',
+501 silly addNameRange     '4.0.0-nightly.2020.8.17',
+501 silly addNameRange     '4.0.0-nightly.2020.8.24',
+501 silly addNameRange     '4.0.0-nightly.2020.8.25',
+501 silly addNameRange     '4.0.0-nightly.2020.8.29',
+501 silly addNameRange     '4.0.0-nightly.2020.9.1',
+501 silly addNameRange     '4.0.0-nightly.2020.9.3',
+501 silly addNameRange     '4.0.0-nightly.2020.9.9',
+501 silly addNameRange     '4.0.0-nightly.2020.10.20',
+501 silly addNameRange     '4.0.0-nightly.2020.1.9',
+501 silly addNameRange     '4.0.0-nightly.2020.1.11',
+501 silly addNameRange     '4.0.0-nightly.2020.2.6',
+501 silly addNameRange     '5.0.0-rc.0',
+501 silly addNameRange     '5.0.0-rc.1',
+501 silly addNameRange     '5.0.0-rc.2',
+501 silly addNameRange     '4.1.11' ] ]
+502 silly addNamed cssnano@4.1.11
+503 verbose addNamed "4.1.11" is a plain semver version for cssnano
+504 verbose get https://registry.npmjs.org/gulp-newer not expired, no request
+505 silly addNameRange number 2 { name: 'gulp-newer', range: '>=1.4.0 <2.0.0', hasData: true }
+506 silly addNameRange versions [ 'gulp-newer',
+506 silly addNameRange   [ '0.1.0',
+506 silly addNameRange     '0.2.0',
+506 silly addNameRange     '0.2.1',
+506 silly addNameRange     '0.3.0',
+506 silly addNameRange     '0.4.0',
+506 silly addNameRange     '0.5.0',
+506 silly addNameRange     '0.5.1',
+506 silly addNameRange     '0.5.2',
+506 silly addNameRange     '1.0.0',
+506 silly addNameRange     '1.1.0',
+506 silly addNameRange     '1.2.0',
+506 silly addNameRange     '1.3.0',
+506 silly addNameRange     '1.4.0' ] ]
+507 silly addNamed gulp-newer@1.4.0
+508 verbose addNamed "1.4.0" is a plain semver version for gulp-newer
+509 verbose get https://registry.npmjs.org/gulp-plumber not expired, no request
+510 silly addNameRange number 2 { name: 'gulp-plumber', range: '>=1.2.1 <2.0.0', hasData: true }
+511 silly addNameRange versions [ 'gulp-plumber',
+511 silly addNameRange   [ '0.0.1',
+511 silly addNameRange     '0.1.0',
+511 silly addNameRange     '0.2.0',
+511 silly addNameRange     '0.2.1',
+511 silly addNameRange     '0.2.3',
+511 silly addNameRange     '0.3.0',
+511 silly addNameRange     '0.4.0',
+511 silly addNameRange     '0.4.1',
+511 silly addNameRange     '0.5.0-rc1',
+511 silly addNameRange     '0.5.0',
+511 silly addNameRange     '0.5.1',
+511 silly addNameRange     '0.5.2',
+511 silly addNameRange     '0.5.3',
+511 silly addNameRange     '0.5.4',
+511 silly addNameRange     '0.5.5',
+511 silly addNameRange     '0.5.6',
+511 silly addNameRange     '0.6.0',
+511 silly addNameRange     '0.6.1',
+511 silly addNameRange     '0.6.2',
+511 silly addNameRange     '0.6.3',
+511 silly addNameRange     '0.6.4',
+511 silly addNameRange     '0.6.5',
+511 silly addNameRange     '0.6.6',
+511 silly addNameRange     '1.0.0',
+511 silly addNameRange     '1.0.1',
+511 silly addNameRange     '1.0.2',
+511 silly addNameRange     '1.1.0',
+511 silly addNameRange     '1.2.0',
+511 silly addNameRange     '1.2.1' ] ]
+512 silly addNamed gulp-plumber@1.2.1
+513 verbose addNamed "1.2.1" is a plain semver version for gulp-plumber
+514 silly cache afterAdd autoprefixer@9.8.6
+515 verbose afterAdd /home/cedcoss/.npm/autoprefixer/9.8.6/package/package.json not in flight; writing
+516 verbose get https://registry.npmjs.org/gulp-rename not expired, no request
+517 silly addNameRange number 2 { name: 'gulp-rename', range: '>=1.4.0 <2.0.0', hasData: true }
+518 silly addNameRange versions [ 'gulp-rename',
+518 silly addNameRange   [ '0.1.0',
+518 silly addNameRange     '0.2.1',
+518 silly addNameRange     '0.2.2',
+518 silly addNameRange     '1.0.0',
+518 silly addNameRange     '1.1.0',
+518 silly addNameRange     '1.2.0',
+518 silly addNameRange     '1.2.2',
+518 silly addNameRange     '1.2.3',
+518 silly addNameRange     '1.3.0',
+518 silly addNameRange     '1.4.0',
+518 silly addNameRange     '2.0.0' ] ]
+519 silly addNamed gulp-rename@1.4.0
+520 verbose addNamed "1.4.0" is a plain semver version for gulp-rename
+521 silly cache afterAdd gulp-postcss@8.0.0
+522 verbose afterAdd /home/cedcoss/.npm/gulp-postcss/8.0.0/package/package.json not in flight; writing
+523 silly cache afterAdd browser-sync@2.26.14
+524 verbose afterAdd /home/cedcoss/.npm/browser-sync/2.26.14/package/package.json not in flight; writing
+525 silly cache afterAdd gulp-sass@4.1.0
+526 verbose afterAdd /home/cedcoss/.npm/gulp-sass/4.1.0/package/package.json not in flight; writing
+527 silly cache afterAdd del@5.1.0
+528 verbose afterAdd /home/cedcoss/.npm/del/5.1.0/package/package.json not in flight; writing
+529 silly cache afterAdd @popperjs/core@2.9.2
+530 verbose afterAdd /home/cedcoss/.npm/@popperjs/core/2.9.2/package/package.json not in flight; writing
+531 silly cache afterAdd child_process@1.0.2
+532 verbose afterAdd /home/cedcoss/.npm/child_process/1.0.2/package/package.json not in flight; writing
+533 silly cache afterAdd gulp-uglify@3.0.2
+534 verbose afterAdd /home/cedcoss/.npm/gulp-uglify/3.0.2/package/package.json not in flight; writing
+535 silly cache afterAdd gulp-concat@2.6.1
+536 verbose afterAdd /home/cedcoss/.npm/gulp-concat/2.6.1/package/package.json not in flight; writing
+537 silly cache afterAdd core-util-is@1.0.2
+538 verbose afterAdd /home/cedcoss/.npm/core-util-is/1.0.2/package/package.json not in flight; writing
+539 silly cache afterAdd cssnano@4.1.11
+540 verbose afterAdd /home/cedcoss/.npm/cssnano/4.1.11/package/package.json not in flight; writing
+541 silly cache afterAdd gulp@4.0.2
+542 verbose afterAdd /home/cedcoss/.npm/gulp/4.0.2/package/package.json not in flight; writing
+543 verbose afterAdd /home/cedcoss/.npm/autoprefixer/9.8.6/package/package.json written
+544 verbose afterAdd /home/cedcoss/.npm/gulp-postcss/8.0.0/package/package.json written
+545 verbose afterAdd /home/cedcoss/.npm/browser-sync/2.26.14/package/package.json written
+546 silly cache afterAdd gulp-newer@1.4.0
+547 verbose afterAdd /home/cedcoss/.npm/gulp-newer/1.4.0/package/package.json not in flight; writing
+548 silly cache afterAdd gulp-plumber@1.2.1
+549 verbose afterAdd /home/cedcoss/.npm/gulp-plumber/1.2.1/package/package.json not in flight; writing
+550 silly cache afterAdd gulp-rename@1.4.0
+551 verbose afterAdd /home/cedcoss/.npm/gulp-rename/1.4.0/package/package.json not in flight; writing
+552 verbose afterAdd /home/cedcoss/.npm/gulp-sass/4.1.0/package/package.json written
+553 verbose afterAdd /home/cedcoss/.npm/del/5.1.0/package/package.json written
+554 verbose afterAdd /home/cedcoss/.npm/@popperjs/core/2.9.2/package/package.json written
+555 verbose afterAdd /home/cedcoss/.npm/child_process/1.0.2/package/package.json written
+556 verbose afterAdd /home/cedcoss/.npm/gulp-uglify/3.0.2/package/package.json written
+557 verbose afterAdd /home/cedcoss/.npm/gulp-concat/2.6.1/package/package.json written
+558 verbose afterAdd /home/cedcoss/.npm/core-util-is/1.0.2/package/package.json written
+559 verbose afterAdd /home/cedcoss/.npm/cssnano/4.1.11/package/package.json written
+560 verbose afterAdd /home/cedcoss/.npm/gulp/4.0.2/package/package.json written
+561 verbose afterAdd /home/cedcoss/.npm/gulp-plumber/1.2.1/package/package.json written
+562 verbose afterAdd /home/cedcoss/.npm/gulp-newer/1.4.0/package/package.json written
+563 verbose afterAdd /home/cedcoss/.npm/gulp-rename/1.4.0/package/package.json written
+564 silly fetchNamedPackageData browserslist
+565 silly mapToRegistry name browserslist
+566 silly mapToRegistry using default registry
+567 silly mapToRegistry registry https://registry.npmjs.org/
+568 silly mapToRegistry uri https://registry.npmjs.org/browserslist
+569 silly fetchNamedPackageData caniuse-lite
+570 silly mapToRegistry name caniuse-lite
+571 silly mapToRegistry using default registry
+572 silly mapToRegistry registry https://registry.npmjs.org/
+573 silly mapToRegistry uri https://registry.npmjs.org/caniuse-lite
+574 silly fetchNamedPackageData colorette
+575 silly mapToRegistry name colorette
+576 silly mapToRegistry using default registry
+577 silly mapToRegistry registry https://registry.npmjs.org/
+578 silly mapToRegistry uri https://registry.npmjs.org/colorette
+579 silly fetchNamedPackageData normalize-range
+580 silly mapToRegistry name normalize-range
+581 silly mapToRegistry using default registry
+582 silly mapToRegistry registry https://registry.npmjs.org/
+583 silly mapToRegistry uri https://registry.npmjs.org/normalize-range
+584 silly fetchNamedPackageData num2fraction
+585 silly mapToRegistry name num2fraction
+586 silly mapToRegistry using default registry
+587 silly mapToRegistry registry https://registry.npmjs.org/
+588 silly mapToRegistry uri https://registry.npmjs.org/num2fraction
+589 silly fetchNamedPackageData postcss
+590 silly mapToRegistry name postcss
+591 silly mapToRegistry using default registry
+592 silly mapToRegistry registry https://registry.npmjs.org/
+593 silly mapToRegistry uri https://registry.npmjs.org/postcss
+594 silly fetchNamedPackageData postcss-value-parser
+595 silly mapToRegistry name postcss-value-parser
+596 silly mapToRegistry using default registry
+597 silly mapToRegistry registry https://registry.npmjs.org/
+598 silly mapToRegistry uri https://registry.npmjs.org/postcss-value-parser
+599 verbose request uri https://registry.npmjs.org/browserslist
+600 verbose request no auth needed
+601 info attempt registry request try #1 at 7:22:13 PM
+602 verbose etag W/"8bc366d9b6e1889a94b9b02ec14f25bf"
+603 verbose lastModified Sun, 31 Jan 2021 20:11:07 GMT
+604 http request GET https://registry.npmjs.org/browserslist
+605 verbose request uri https://registry.npmjs.org/caniuse-lite
+606 verbose request no auth needed
+607 info attempt registry request try #1 at 7:22:13 PM
+608 verbose etag W/"fe373c9a81b99fa30edbaa8561955efe"
+609 verbose lastModified Sun, 04 Apr 2021 05:33:21 GMT
+610 http request GET https://registry.npmjs.org/caniuse-lite
+611 verbose request uri https://registry.npmjs.org/colorette
+612 verbose request no auth needed
+613 info attempt registry request try #1 at 7:22:13 PM
+614 verbose etag W/"d20221ddc12b16eab88f23524eade178"
+615 verbose lastModified Thu, 25 Feb 2021 13:26:18 GMT
+616 http request GET https://registry.npmjs.org/colorette
+617 verbose request uri https://registry.npmjs.org/normalize-range
+618 verbose request no auth needed
+619 info attempt registry request try #1 at 7:22:13 PM
+620 verbose etag W/"c3a15e353dc95f29f01c259f8cfdfa65"
+621 verbose lastModified Sun, 27 May 2018 10:33:46 GMT
+622 http request GET https://registry.npmjs.org/normalize-range
+623 verbose request uri https://registry.npmjs.org/num2fraction
+624 verbose request no auth needed
+625 info attempt registry request try #1 at 7:22:13 PM
+626 verbose etag W/"adf3de1622f8077a9b177d97a5c5a292"
+627 verbose lastModified Sun, 27 May 2018 10:51:20 GMT
+628 http request GET https://registry.npmjs.org/num2fraction
+629 verbose request uri https://registry.npmjs.org/postcss
+630 verbose request no auth needed
+631 info attempt registry request try #1 at 7:22:13 PM
+632 verbose etag W/"07e3d127aa4793b10c43ac46ca4b60bb"
+633 verbose lastModified Tue, 30 Mar 2021 20:43:51 GMT
+634 http request GET https://registry.npmjs.org/postcss
+635 verbose request uri https://registry.npmjs.org/postcss-value-parser
+636 verbose request no auth needed
+637 info attempt registry request try #1 at 7:22:13 PM
+638 verbose etag W/"ed949650f3ce96e09473b4f93ed363cd"
+639 verbose lastModified Tue, 28 Apr 2020 14:11:57 GMT
+640 http request GET https://registry.npmjs.org/postcss-value-parser
+641 http 304 https://registry.npmjs.org/browserslist
+642 verbose headers { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+642 verbose headers   connection: 'keep-alive',
+642 verbose headers   'set-cookie':
+642 verbose headers    [ '__cfduid=d5f5979d6189efbf41421847bda3b72811617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+642 verbose headers   'cf-ray': '63bb7ed3a9313977-MAA',
+642 verbose headers   age: '4549',
+642 verbose headers   'cache-control': 'public, max-age=300',
+642 verbose headers   etag: '"8bc366d9b6e1889a94b9b02ec14f25bf"',
+642 verbose headers   'last-modified': 'Sun, 31 Jan 2021 20:11:07 GMT',
+642 verbose headers   vary: 'Accept-Encoding',
+642 verbose headers   'cf-cache-status': 'HIT',
+642 verbose headers   'cf-request-id': '09490d98450000397761ae1000000001',
+642 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+642 verbose headers   server: 'cloudflare' }
+643 silly get cb [ 304,
+643 silly get   { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+643 silly get     connection: 'keep-alive',
+643 silly get     'set-cookie':
+643 silly get      [ '__cfduid=d5f5979d6189efbf41421847bda3b72811617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+643 silly get     'cf-ray': '63bb7ed3a9313977-MAA',
+643 silly get     age: '4549',
+643 silly get     'cache-control': 'public, max-age=300',
+643 silly get     etag: '"8bc366d9b6e1889a94b9b02ec14f25bf"',
+643 silly get     'last-modified': 'Sun, 31 Jan 2021 20:11:07 GMT',
+643 silly get     vary: 'Accept-Encoding',
+643 silly get     'cf-cache-status': 'HIT',
+643 silly get     'cf-request-id': '09490d98450000397761ae1000000001',
+643 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+643 silly get     server: 'cloudflare' } ]
+644 verbose etag https://registry.npmjs.org/browserslist from cache
+645 verbose get saving browserslist to /home/cedcoss/.npm/registry.npmjs.org/browserslist/.cache.json
+646 http 304 https://registry.npmjs.org/colorette
+647 verbose headers { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+647 verbose headers   connection: 'keep-alive',
+647 verbose headers   'set-cookie':
+647 verbose headers    [ '__cfduid=d34448ab1a1d0d24584974eea0f58df751617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+647 verbose headers   'cf-ray': '63bb7ed3aaab3990-MAA',
+647 verbose headers   age: '3511',
+647 verbose headers   'cache-control': 'public, max-age=300',
+647 verbose headers   etag: '"d20221ddc12b16eab88f23524eade178"',
+647 verbose headers   'last-modified': 'Thu, 25 Feb 2021 13:26:18 GMT',
+647 verbose headers   vary: 'Accept-Encoding',
+647 verbose headers   'cf-cache-status': 'HIT',
+647 verbose headers   'cf-request-id': '09490d984400003990401c5000000001',
+647 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+647 verbose headers   server: 'cloudflare' }
+648 silly get cb [ 304,
+648 silly get   { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+648 silly get     connection: 'keep-alive',
+648 silly get     'set-cookie':
+648 silly get      [ '__cfduid=d34448ab1a1d0d24584974eea0f58df751617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+648 silly get     'cf-ray': '63bb7ed3aaab3990-MAA',
+648 silly get     age: '3511',
+648 silly get     'cache-control': 'public, max-age=300',
+648 silly get     etag: '"d20221ddc12b16eab88f23524eade178"',
+648 silly get     'last-modified': 'Thu, 25 Feb 2021 13:26:18 GMT',
+648 silly get     vary: 'Accept-Encoding',
+648 silly get     'cf-cache-status': 'HIT',
+648 silly get     'cf-request-id': '09490d984400003990401c5000000001',
+648 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+648 silly get     server: 'cloudflare' } ]
+649 verbose etag https://registry.npmjs.org/colorette from cache
+650 verbose get saving colorette to /home/cedcoss/.npm/registry.npmjs.org/colorette/.cache.json
+651 http 304 https://registry.npmjs.org/caniuse-lite
+652 verbose headers { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+652 verbose headers   connection: 'keep-alive',
+652 verbose headers   'set-cookie':
+652 verbose headers    [ '__cfduid=d34448ab1a1d0d24584974eea0f58df751617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+652 verbose headers   'cf-ray': '63bb7ed3aaa93990-MAA',
+652 verbose headers   age: '4130',
+652 verbose headers   'cache-control': 'public, max-age=300',
+652 verbose headers   etag: '"fe373c9a81b99fa30edbaa8561955efe"',
+652 verbose headers   'last-modified': 'Sun, 04 Apr 2021 05:33:21 GMT',
+652 verbose headers   vary: 'Accept-Encoding',
+652 verbose headers   'cf-cache-status': 'HIT',
+652 verbose headers   'cf-request-id': '09490d9844000039902d388000000001',
+652 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+652 verbose headers   server: 'cloudflare' }
+653 silly get cb [ 304,
+653 silly get   { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+653 silly get     connection: 'keep-alive',
+653 silly get     'set-cookie':
+653 silly get      [ '__cfduid=d34448ab1a1d0d24584974eea0f58df751617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+653 silly get     'cf-ray': '63bb7ed3aaa93990-MAA',
+653 silly get     age: '4130',
+653 silly get     'cache-control': 'public, max-age=300',
+653 silly get     etag: '"fe373c9a81b99fa30edbaa8561955efe"',
+653 silly get     'last-modified': 'Sun, 04 Apr 2021 05:33:21 GMT',
+653 silly get     vary: 'Accept-Encoding',
+653 silly get     'cf-cache-status': 'HIT',
+653 silly get     'cf-request-id': '09490d9844000039902d388000000001',
+653 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+653 silly get     server: 'cloudflare' } ]
+654 verbose etag https://registry.npmjs.org/caniuse-lite from cache
+655 verbose get saving caniuse-lite to /home/cedcoss/.npm/registry.npmjs.org/caniuse-lite/.cache.json
+656 http 304 https://registry.npmjs.org/postcss-value-parser
+657 verbose headers { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+657 verbose headers   connection: 'keep-alive',
+657 verbose headers   'set-cookie':
+657 verbose headers    [ '__cfduid=dd602c4875aeebed4b458c6d86c33f8fb1617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+657 verbose headers   'cf-ray': '63bb7ed3ab53396b-MAA',
+657 verbose headers   age: '3834',
+657 verbose headers   'cache-control': 'public, max-age=300',
+657 verbose headers   etag: '"ed949650f3ce96e09473b4f93ed363cd"',
+657 verbose headers   'last-modified': 'Tue, 28 Apr 2020 14:11:57 GMT',
+657 verbose headers   vary: 'Accept-Encoding',
+657 verbose headers   'cf-cache-status': 'HIT',
+657 verbose headers   'cf-request-id': '09490d98450000396b7e2ed000000001',
+657 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+657 verbose headers   server: 'cloudflare' }
+658 silly get cb [ 304,
+658 silly get   { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+658 silly get     connection: 'keep-alive',
+658 silly get     'set-cookie':
+658 silly get      [ '__cfduid=dd602c4875aeebed4b458c6d86c33f8fb1617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+658 silly get     'cf-ray': '63bb7ed3ab53396b-MAA',
+658 silly get     age: '3834',
+658 silly get     'cache-control': 'public, max-age=300',
+658 silly get     etag: '"ed949650f3ce96e09473b4f93ed363cd"',
+658 silly get     'last-modified': 'Tue, 28 Apr 2020 14:11:57 GMT',
+658 silly get     vary: 'Accept-Encoding',
+658 silly get     'cf-cache-status': 'HIT',
+658 silly get     'cf-request-id': '09490d98450000396b7e2ed000000001',
+658 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+658 silly get     server: 'cloudflare' } ]
+659 verbose etag https://registry.npmjs.org/postcss-value-parser from cache
+660 verbose get saving postcss-value-parser to /home/cedcoss/.npm/registry.npmjs.org/postcss-value-parser/.cache.json
+661 http 304 https://registry.npmjs.org/normalize-range
+662 verbose headers { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+662 verbose headers   connection: 'keep-alive',
+662 verbose headers   'set-cookie':
+662 verbose headers    [ '__cfduid=d34448ab1a1d0d24584974eea0f58df751617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+662 verbose headers   'cf-ray': '63bb7ed3aaac3990-MAA',
+662 verbose headers   age: '3497',
+662 verbose headers   'cache-control': 'public, max-age=300',
+662 verbose headers   etag: '"c3a15e353dc95f29f01c259f8cfdfa65"',
+662 verbose headers   'last-modified': 'Sun, 27 May 2018 10:33:46 GMT',
+662 verbose headers   vary: 'Accept-Encoding',
+662 verbose headers   'cf-cache-status': 'HIT',
+662 verbose headers   'cf-request-id': '09490d984400003990fbb8f000000001',
+662 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+662 verbose headers   server: 'cloudflare' }
+663 silly get cb [ 304,
+663 silly get   { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+663 silly get     connection: 'keep-alive',
+663 silly get     'set-cookie':
+663 silly get      [ '__cfduid=d34448ab1a1d0d24584974eea0f58df751617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+663 silly get     'cf-ray': '63bb7ed3aaac3990-MAA',
+663 silly get     age: '3497',
+663 silly get     'cache-control': 'public, max-age=300',
+663 silly get     etag: '"c3a15e353dc95f29f01c259f8cfdfa65"',
+663 silly get     'last-modified': 'Sun, 27 May 2018 10:33:46 GMT',
+663 silly get     vary: 'Accept-Encoding',
+663 silly get     'cf-cache-status': 'HIT',
+663 silly get     'cf-request-id': '09490d984400003990fbb8f000000001',
+663 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+663 silly get     server: 'cloudflare' } ]
+664 verbose etag https://registry.npmjs.org/normalize-range from cache
+665 verbose get saving normalize-range to /home/cedcoss/.npm/registry.npmjs.org/normalize-range/.cache.json
+666 http 304 https://registry.npmjs.org/num2fraction
+667 verbose headers { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+667 verbose headers   connection: 'keep-alive',
+667 verbose headers   'set-cookie':
+667 verbose headers    [ '__cfduid=dd602c4875aeebed4b458c6d86c33f8fb1617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+667 verbose headers   'cf-ray': '63bb7ed3ab50396b-MAA',
+667 verbose headers   age: '3497',
+667 verbose headers   'cache-control': 'public, max-age=300',
+667 verbose headers   etag: '"adf3de1622f8077a9b177d97a5c5a292"',
+667 verbose headers   'last-modified': 'Sun, 27 May 2018 10:51:20 GMT',
+667 verbose headers   vary: 'Accept-Encoding',
+667 verbose headers   'cf-cache-status': 'HIT',
+667 verbose headers   'cf-request-id': '09490d98440000396b7cb0d000000001',
+667 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+667 verbose headers   server: 'cloudflare' }
+668 silly get cb [ 304,
+668 silly get   { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+668 silly get     connection: 'keep-alive',
+668 silly get     'set-cookie':
+668 silly get      [ '__cfduid=dd602c4875aeebed4b458c6d86c33f8fb1617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+668 silly get     'cf-ray': '63bb7ed3ab50396b-MAA',
+668 silly get     age: '3497',
+668 silly get     'cache-control': 'public, max-age=300',
+668 silly get     etag: '"adf3de1622f8077a9b177d97a5c5a292"',
+668 silly get     'last-modified': 'Sun, 27 May 2018 10:51:20 GMT',
+668 silly get     vary: 'Accept-Encoding',
+668 silly get     'cf-cache-status': 'HIT',
+668 silly get     'cf-request-id': '09490d98440000396b7cb0d000000001',
+668 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+668 silly get     server: 'cloudflare' } ]
+669 verbose etag https://registry.npmjs.org/num2fraction from cache
+670 verbose get saving num2fraction to /home/cedcoss/.npm/registry.npmjs.org/num2fraction/.cache.json
+671 http 304 https://registry.npmjs.org/postcss
+672 verbose headers { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+672 verbose headers   connection: 'keep-alive',
+672 verbose headers   'set-cookie':
+672 verbose headers    [ '__cfduid=de06c67faff2f77d3e8667a26c6149d301617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+672 verbose headers   'cf-ray': '63bb7ed3aae03989-MAA',
+672 verbose headers   age: '2271',
+672 verbose headers   'cache-control': 'public, max-age=300',
+672 verbose headers   etag: '"07e3d127aa4793b10c43ac46ca4b60bb"',
+672 verbose headers   'last-modified': 'Tue, 30 Mar 2021 20:43:51 GMT',
+672 verbose headers   vary: 'Accept-Encoding',
+672 verbose headers   'cf-cache-status': 'HIT',
+672 verbose headers   'cf-request-id': '09490d984700003989a8107000000001',
+672 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+672 verbose headers   server: 'cloudflare' }
+673 silly get cb [ 304,
+673 silly get   { date: 'Tue, 06 Apr 2021 13:52:13 GMT',
+673 silly get     connection: 'keep-alive',
+673 silly get     'set-cookie':
+673 silly get      [ '__cfduid=de06c67faff2f77d3e8667a26c6149d301617717133; expires=Thu, 06-May-21 13:52:13 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+673 silly get     'cf-ray': '63bb7ed3aae03989-MAA',
+673 silly get     age: '2271',
+673 silly get     'cache-control': 'public, max-age=300',
+673 silly get     etag: '"07e3d127aa4793b10c43ac46ca4b60bb"',
+673 silly get     'last-modified': 'Tue, 30 Mar 2021 20:43:51 GMT',
+673 silly get     vary: 'Accept-Encoding',
+673 silly get     'cf-cache-status': 'HIT',
+673 silly get     'cf-request-id': '09490d984700003989a8107000000001',
+673 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+673 silly get     server: 'cloudflare' } ]
+674 verbose etag https://registry.npmjs.org/postcss from cache
+675 verbose get saving postcss to /home/cedcoss/.npm/registry.npmjs.org/postcss/.cache.json
+676 silly resolveWithNewModule browserslist@4.16.3 checking installable status
+677 silly cache add args [ 'browserslist@^4.12.0', null ]
+678 verbose cache add spec browserslist@^4.12.0
+679 silly cache add parsed spec Result {
+679 silly cache add   raw: 'browserslist@^4.12.0',
+679 silly cache add   scope: null,
+679 silly cache add   name: 'browserslist',
+679 silly cache add   rawSpec: '^4.12.0',
+679 silly cache add   spec: '>=4.12.0 <5.0.0',
+679 silly cache add   type: 'range' }
+680 silly addNamed browserslist@>=4.12.0 <5.0.0
+681 verbose addNamed ">=4.12.0 <5.0.0" is a valid semver range for browserslist
+682 silly addNameRange { name: 'browserslist',
+682 silly addNameRange   range: '>=4.12.0 <5.0.0',
+682 silly addNameRange   hasData: false }
+683 silly mapToRegistry name browserslist
+684 silly mapToRegistry using default registry
+685 silly mapToRegistry registry https://registry.npmjs.org/
+686 silly mapToRegistry uri https://registry.npmjs.org/browserslist
+687 verbose addNameRange registry:https://registry.npmjs.org/browserslist not in flight; fetching
+688 verbose stack Error: Missing required argument #1
+688 verbose stack     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+688 verbose stack     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+688 verbose stack     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+688 verbose stack     at /usr/share/npm/lib/install/deps.js:457:7
+688 verbose stack     at /usr/share/npm/node_modules/iferr/index.js:13:50
+688 verbose stack     at /usr/share/npm/lib/fetch-package-metadata.js:37:12
+688 verbose stack     at addRequestedAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:82:5)
+688 verbose stack     at returnAndAddMetadata (/usr/share/npm/lib/fetch-package-metadata.js:117:7)
+688 verbose stack     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:134:20)
+688 verbose stack     at /usr/share/npm/node_modules/iferr/index.js:13:50
+689 verbose cwd /home/cedcoss/Local Sites/stockbasedpricingwpplugin/app/public/wp-content/plugins/stock_based_pricing_plugin
+690 error Linux 5.4.0-70-generic
+691 error argv "/usr/bin/node" "/usr/bin/npm" "install"
+692 error node v8.10.0
+693 error npm  v3.5.2
+694 error code EMISSINGARG
+695 error typeerror Error: Missing required argument #1
+695 error typeerror     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+695 error typeerror     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+695 error typeerror     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+695 error typeerror     at /usr/share/npm/lib/install/deps.js:457:7
+695 error typeerror     at /usr/share/npm/node_modules/iferr/index.js:13:50
+695 error typeerror     at /usr/share/npm/lib/fetch-package-metadata.js:37:12
+695 error typeerror     at addRequestedAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:82:5)
+695 error typeerror     at returnAndAddMetadata (/usr/share/npm/lib/fetch-package-metadata.js:117:7)
+695 error typeerror     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:134:20)
+695 error typeerror     at /usr/share/npm/node_modules/iferr/index.js:13:50
+696 error typeerror This is an error with npm itself. Please report this error at:
+696 error typeerror     <http://github.com/npm/npm/issues>
+697 verbose exit [ 1, true ]
