@@ -542,3 +542,4 @@ class Stock_based_pricing_plugin_Admin {
 		die(); // this is required to terminate immediately and return a proper response.
 	}
 }
+
