@@ -385,6 +385,7 @@ class Stock_based_pricing_plugin_Admin {
 	}
 
 
+
 	/** This function is used to update the va;lue of checkbox.
 	 *
 	 * @param int $post_id is used to get post id of current post.
