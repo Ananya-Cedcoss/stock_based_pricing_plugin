@@ -116,7 +116,7 @@ class Stock_based_pricing_plugin_Admin {
 			wp_enqueue_script( $this->plugin_name . 'admin-js' );
 		}
 
-		// keeping the wp_register_script and wp_enqueue_script outside the if statement because of the different screens.
+		// keeping the wp_register_script and wp_enqueue_script outside the if statement because of the different screens/home/cedcoss/Local Sites/stockbasedpricingwpplugin/app/public/wp-content/plugins/stock_based_pricing_plugin/assets/src/back-end/js/custom.js.
 		// adding custom js for product edit page.
 		wp_register_script( 'sbp_my_custom_script', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'admin/src/js/stock-based-pricing-editproduct.js', array(), '1.0', false );
 		wp_enqueue_script( 'sbp_my_custom_script' );
@@ -498,7 +498,7 @@ class Stock_based_pricing_plugin_Admin {
 		$sbpp_pricing    = json_decode( $sbpp_data[0], true ); // decoding the data and converting it to array.
 		$sbpp_count_data = count( $sbpp_pricing ); // assigning the length of the array.
 
-			echo '<div class=" product_custom_field show_if_variable"> '; // Displays the main div.
+			echo '<div class=" product_custom_field show_if_variation_manage_stock"> '; // Displays the main div.
 			echo "<div id='my_stock_div_forVariation_" . esc_attr( $sbpp_index_loop ) . "' >  <table id='Stock_table_variation_" . esc_attr( $sbpp_index_loop ) . "' style='margin-left: -42px;' ><tr> <th>Min Quanity </th>  <th>Max Quantity </th>  <th> Amount</th> </tr>";// Display the Table Header.
 
 		if ( $sbpp_count_data > 0 ) {

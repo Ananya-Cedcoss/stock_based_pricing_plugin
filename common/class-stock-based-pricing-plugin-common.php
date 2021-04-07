@@ -119,7 +119,7 @@ class Stock_based_pricing_plugin_Common {
 							$flag = true; // assign bool variable.
 							update_post_meta( $post->ID, 'Price_of_Selected_variation', $priceofstock );// used to update the post meta data.
 						}
-				}
+					}
 				}	
 			}
 			if ( $flag === true ) {
