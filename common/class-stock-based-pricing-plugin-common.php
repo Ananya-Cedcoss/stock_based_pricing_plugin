@@ -80,7 +80,6 @@ class Stock_based_pricing_plugin_Common {
 		wp_enqueue_script( $this->plugin_name . 'common' );
 	}
 
-
 	/** This function sbp_change_product_price_display is used to display price
 	 *
 	 * @param string $price    The price of this plugin.
