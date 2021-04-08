@@ -51,14 +51,9 @@ class Stock_based_pricing_plugin_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-		// All the Action that will be used to add, edit, show and delete  dynamic pricing to the product edit page.
-
-		add_action( 'woocommerce_product_options_inventory_product_data', array( $this, 'woocommerce_product_custom_table_and_checkbox' ) );
-		add_action( 'woocommerce_process_product_meta', array( $this, 'saving_dynamic_pricing' ) );
-		add_action( 'woocommerce_variation_options_pricing', array( $this, 'sbp_add_custom_field_to_variations' ), 10, 3 );
-		add_action( 'woocommerce_save_product_variation', array( $this, 'sbp_save_custom_field_variations' ), 10, 2 );
+		
 	}
-
+ 
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
@@ -115,8 +110,8 @@ class Stock_based_pricing_plugin_Admin {
 				)
 			);
 
-			wp_enqueue_script( $this->plugin_name . 'admin-js' );
-			
+			// Adding mwb-admin.js js to the page.
+		
 			wp_register_script( 'sbpp_my_custom_script', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'admin/js/mwb-admin.js', array(), '1.0.0', false );
 			wp_enqueue_script( 'sbpp_my_custom_script' );
 	

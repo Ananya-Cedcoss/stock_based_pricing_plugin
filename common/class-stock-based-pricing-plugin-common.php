@@ -50,12 +50,7 @@ class Stock_based_pricing_plugin_Common {
 
 		$this->plugin_name = $plugin_name;
 		$this->version     = $version;
-		// All the Action and filter that will be used to show  dynamic pricing to the single product page.
-
-		// filter used to display changed price.
-		add_filter( 'woocommerce_get_price_html', array( $this, 'sbp_change_product_price_display' ) );
-		// action to get price data through ajax.
-		add_action( 'wp_ajax_action_to_get_variation_price', array( $this, 'action_to_get_variation_price' ) );
+		
 
 	}
 

@@ -50,14 +50,7 @@ class Stock_based_pricing_plugin_Public {
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version     = $version;
-		// adding action to display price at cart page.
-
-		// it is used to add custom price which is price according to stock based pricing to the cart page.
-		add_action( 'woocommerce_before_calculate_totals', array( $this, 'add_custom_price' ) );
-		// it is used to display the custom price range from min to max amount according to different pricing.
-		add_filter( 'woocommerce_format_price_range', array( $this, 'sbp_change_price_range_for_variation' ), 10, 3 );
-
+		$this->version     = $version;	
 
 	}
 
@@ -82,6 +75,12 @@ class Stock_based_pricing_plugin_Public {
 		wp_register_script( $this->plugin_name, STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'public/src/js/stock-based-pricing-plugin-public.js', array( 'jquery' ), $this->version, false );
 		wp_localize_script( $this->plugin_name, 'sbpp_public_param', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 		wp_enqueue_script( $this->plugin_name );
+
+
+
+		wp_register_script( 'sbpp_my_custom_script', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'public/js/mwb-public.js', array( 'jquery' ), $this->version, false );
+		wp_localize_script( 'sbpp_my_custom_script', 'sbpp_public_custom_param', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+		wp_enqueue_script( 'sbpp_my_custom_script' );
 
 	}
 

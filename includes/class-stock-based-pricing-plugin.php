@@ -206,6 +206,15 @@ class Stock_based_pricing_plugin {
 		// Saving tab settings.
 		$this->loader->add_action( 'admin_init', $sbpp_plugin_admin, 'sbpp_admin_save_tab_settings' );
 
+
+		// Add admin actions for product edit page.
+
+		// All the Action that will be used to add, edit, show and delete  dynamic pricing to the product edit page.
+		$this->loader->add_action( 'woocommerce_product_options_inventory_product_data', $sbpp_plugin_admin , 'woocommerce_product_custom_table_and_checkbox' );
+		$this->loader->add_action( 'woocommerce_process_product_meta', $sbpp_plugin_admin, 'saving_dynamic_pricing' );
+		$this->loader->add_action( 'woocommerce_variation_options_pricing', $sbpp_plugin_admin, 'sbp_add_custom_field_to_variations' , 10, 3 );
+		$this->loader->add_action( 'woocommerce_save_product_variation', $sbpp_plugin_admin, 'sbp_save_custom_field_variations' , 10, 2 );
+
 	}
 
 	/**
@@ -222,6 +231,15 @@ class Stock_based_pricing_plugin {
 		$this->loader->add_action( 'wp_enqueue_scripts', $sbpp_plugin_common, 'sbpp_common_enqueue_styles' );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $sbpp_plugin_common, 'sbpp_common_enqueue_scripts' );
+
+		// All the Action and filter that will be used to show  dynamic pricing to the single product page.
+
+		// filter used to display changed price.
+		$this->loader->add_filter( 'woocommerce_get_price_html', $sbpp_plugin_common, 'sbp_change_product_price_display' );
+		// action to get price data through ajax.
+		$this->loader->add_action( 'wp_ajax_action_to_get_variation_price', $sbpp_plugin_common, 'action_to_get_variation_price' );
+
+
 	}
 
 	/**
@@ -237,6 +255,14 @@ class Stock_based_pricing_plugin {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $sbpp_plugin_public, 'sbpp_public_enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $sbpp_plugin_public, 'sbpp_public_enqueue_scripts' );
+
+		// adding action and filter to display price at cart page.
+
+		// it is used to add custom price which is price according to stock based pricing to the cart page.
+		$this->loader->add_action( 'woocommerce_before_calculate_totals', $sbpp_plugin_public, 'add_custom_price' );
+		// it is used to display the custom price range from min to max amount according to different pricing.
+		$this->loader->add_filter( 'woocommerce_format_price_range', $sbpp_plugin_public, 'sbp_change_price_range_for_variation', 10, 3 );
+
 
 	}
 
