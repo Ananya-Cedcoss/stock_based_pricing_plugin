@@ -79,6 +79,10 @@ class Stock_based_pricing_plugin_Admin {
 			wp_enqueue_style( $this->plugin_name, STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'admin/src/scss/stock-based-pricing-plugin-admin.scss', array(), $this->version, 'all' );
 			wp_enqueue_style( 'mwb-admin-min-css', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'admin/css/mwb-admin.min.css', array(), $this->version, 'all' );
 		}
+		if ( isset( $screen->id ) && 'product' == $screen->id  ) {
+
+			wp_enqueue_style( 'mwb-admin-min-css', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'admin/css/mwb-admin.min.css', array(), $this->version, 'all' );
+		}
 
 	}
 
@@ -112,7 +116,20 @@ class Stock_based_pricing_plugin_Admin {
 
 			// Adding mwb-admin.js js to the page.
 		
-			wp_register_script( 'sbpp_my_custom_script', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'admin/js/mwb-admin.js', array(), '1.0.0', false );
+			wp_register_script( 'sbpp_my_custom_script', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'admin/js/mwb-admin.js', array('jQuery'), '1.0.0', false );
+			 wp_localize_script(
+				'sbpp_my_custom_script' ,
+				'sbpp_productedit_param',
+				array(
+					'ajaxurl' => admin_url( 'admin-ajax.php' ),
+					'fill_stock' => __('Fill Stock Quantity !!', 'stock-based-pricing-plugin' ) ,
+					'min_quantity' => __('Enter the Min Quantity !!', 'stock-based-pricing-plugin') ,
+					'max_quantity' => __('Enter the Max Quantity !!', 'stock-based-pricing-plugin') ,
+					'amount' => __('Enter the Amount !!', 'stock-based-pricing-plugin') ,
+					'greater_than_minimum' => __( 'Enter Value Greater Than Minimum Quantity', 'stock-based-pricing-plugin' ),
+					'less_than_stock' => __( 'Enter Maximum Quantity less than Stock Value', 'stock-based-pricing-plugin' ),
+				)
+			);
 			wp_enqueue_script( 'sbpp_my_custom_script' );
 	
 		}
@@ -399,7 +416,7 @@ class Stock_based_pricing_plugin_Admin {
 	}
 
 	/**  The woocommerce_product_custom_fields frunction is used to create custom field */
-	public function woocommerce_product_custom_table_and_checkbox() {
+	public function sbpp_product_custom_table_and_checkbox() {
 		global $post; // is used to get post object for the current post.
 		
 		
@@ -408,13 +425,12 @@ class Stock_based_pricing_plugin_Admin {
 			array(
 				'id'          => '_checkbox_for_stock_price', // id of the checkbox.
 				'class'       => array( 'show_if_simple' ), // class of checkbox.
-				'label'       => __( 'Give Price Acc To Stock', 'woocommerce' ), // label for checkbox.
-				'description' => __( 'Select it to enable the Price Acc To Stock Field', 'woocommerce' ), // about the checkbox.
+				'label'       => __( 'Give Price Acc To Stock', 'stock-based-pricing-plugin' ), // label for checkbox.
+				'description' => __( 'Select it to enable the Price Acc To Stock Field', 'stock-based-pricing-plugin' ), // about the checkbox.
 			)
 		);
 		echo '</div>'; // closing the div.
-
-		$sbpp_data       = get_post_meta( $post->ID, '_price_acc_to_stock' );// storing post meta of _price_acc_to_stock to sbpp_data variable.
+		$sbpp_data = get_post_meta( $post->ID, '_price_acc_to_stock' );// storing post meta of _price_acc_to_stock to sbpp_data variable.
 
 		if ( ! empty( $sbpp_data ) ) {
 			$sbpp_pricing    = json_decode( $sbpp_data[0], true );// it is used to encode it into array and store it to pricing.
@@ -423,35 +439,50 @@ class Stock_based_pricing_plugin_Admin {
 		} else {
 			$sbpp_count_data = 0;
 		}
+		
 
 		echo '<div class=" product_custom_field show_if_simple "> '; // it is used to display the main div.
-		echo "<div id='my_stock_div' style='padding: 10px 160px;'>  <table id='Stock_table' ><tr> <th>Min Quanity </th>  <th>Max Quantity </th>  <th> Amount</th> </tr>"; // it is used to display the table header.
+		echo  "<div id='my_stock_div' >  <table id='Stock_table' ><tr> <th>" . esc_attr( __('Min Quanity', 'stock-based-pricing-plugin') ) ." </th>  <th>" . esc_attr( __('Max Quanity', 'stock-based-pricing-plugin') ) ." </th>  <th> " . esc_attr( __('Amount', 'stock-based-pricing-plugin') ) ."</th> </tr>"; // it is used to display the table header.
 
 		if ( $sbpp_count_data > 0 ) {
 			$sbpp_index = 1;
 			foreach ( $sbpp_pricing as $key => $value ) {
-
 				$sbpp_minimum_val = $value['Min'];
 				$sbpp_max_value   = $value['Max'];
 				$sbpp_amount      = $value['Amount'];
 
-				echo "<tr ><td> <input type='text' value='" . esc_attr( $sbpp_minimum_val ) . "' onkeypress='return AllowOnlyNumbers(event);'  name='Min[]' style='width:92%' id='Min_Quantity_" . esc_attr( $sbpp_index ) . "'/>  </td> ";// it displays the first td of table when data already exists.
+				echo  "<tr ><td> <input type='text' value='" . esc_attr( $sbpp_minimum_val ) . "' onkeypress='return AllowOnlyNumbers(event);'  name='Min[]'  id='Min_Quantity_" . esc_attr( $sbpp_index ) . "'/>  </td> ";// it displays the first td of table when data already exists.
 
-				echo " <td> <input type='text' value='" . esc_attr( $sbpp_max_value ) . "' onkeypress='return AllowOnlyNumbers(event);'  name='Max[]' onblur='validateMaxamount(this," . esc_attr( $sbpp_index ) . ",0)' id='Max_Quantity_" . esc_attr( $sbpp_index ) . "' style='width:92%'/>  </td>"; // it displays the second td of table when data already exists.
+				echo  " <td> <input type='text' value='" . esc_attr( $sbpp_max_value ) . "' onkeypress='return AllowOnlyNumbers(event);'  name='Max[]' onblur='validateMaxamount(this," . esc_attr( $sbpp_index ) . ",0)' id='Max_Quantity_" . esc_attr( $sbpp_index ) . "' />  </td>"; // it displays the second td of table when data already exists.
 
-				echo " <td> <input type='text' value='" . esc_attr( $sbpp_amount ) . "' onkeypress='return AllowOnlyNumbers(event);'  name='Amount[]' id='Amount_" . esc_attr( $sbpp_index ) . "' style='width:92%'/>  </td></tr>"; // it displays the third td of table when data already exists.
+				echo  " <td> <input type='text' value='" . esc_attr( $sbpp_amount ) . "' onkeypress='return AllowOnlyNumbers(event);'  name='Amount[]' id='Amount_" . esc_attr( $sbpp_index ) . "' />  </td>"; // it displays the third td of table when data already exists.
+				if ( $sbpp_index == 1 ) {
+					echo  " <td> <span  onclick='GenerateNewRow()'><u> " . esc_attr( __('Add Row', 'stock-based-pricing-plugin') ) ." </u></span> </td> ";
+				} else {
+					echo  "<td> <span class='delete_row' onclick='DeleteExistingRow(this)'><u> " . esc_attr( __('Delete Row', 'stock-based-pricing-plugin') ) ."  </u></span> </td> ";
+				}
+				echo  '</tr>';				
 
 				$sbpp_index = ++$sbpp_index; // it used to increase the index value by 1;.
 			}
 		} else {
-			echo "<tr><td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Min[]' style='width:92%' id='Min_Quantity_1'/>  </td>  "; // it is used to display first td when there is no existing data.
+			echo  "<tr><td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Min[]'  id='Min_Quantity_1'/>  </td>  "; // it is used to display first td when there is no existing data.
 
-			echo " <td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Max[]' onblur='validateMaxamount(this,1,0)' id='Max_Quantity_1' style='width:92%'/>  </td>"; // it is used to display second td when there is no existing data.
+			echo  " <td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Max[]' onblur='validateMaxamount(this,1,0)' id='Max_Quantity_1' />  </td>"; // it is used to display second td when there is no existing data.
 
-			echo "<td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Amount[]' id='Amount_1' style='width:92%'/>  </td></tr>"; // it is used to display third td when there is no existing data.
+			echo  "<td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Amount[]' id='Amount_1' />  </td>"; // it is used to display third td when there is no existing data.
 
+			if ( $sbpp_index == 1 ) {
+				echo  " <td> <span  onclick='GenerateNewRow()'><u> " . esc_attr( __(' Add Row', 'stock-based-pricing-plugin') ) ." </u></span> </td> ";
+			} else {
+				echo  " <td> <sapn class='delete_row' onclick='DeleteExistingRow(this)'><u> " . esc_attr( __('Delete Row', 'stock-based-pricing-plugin') ) ." </u></span> </td>  ";
+			}
+			echo ' </tr> ';
 		}
-		echo "</table><span style='padding: 10px;color:#2271b1' onclick='GenerateNewRow()'><u>Add New Tier </u></span></div></div>"; // it display the button to gererate new row.
+		echo  ' </table></div></div> '; // it display the button to gererate new row.
+
+		//echo $str ;
+
 	}
 
 
@@ -477,11 +508,8 @@ class Stock_based_pricing_plugin_Admin {
 				array_push( $sbpp_main_arry, $sbpp_data_sub_array ); // Push the sbpp_data_sub_array array to main array.
 		
 			}
-		}
-	
+		}	
 		if ( count( $sbpp_main_arry ) > 0 ) {
-
-
 		$product = wc_get_product( $post_id ); // It is used to assign the data of product.
 		$product->update_meta_data( '_price_acc_to_stock', ( json_encode( $sbpp_main_arry ) ) ); // Updating the post meta data .
 		$woocommerce_custom_product_checkbox = isset( $_POST['_checkbox_for_stock_price'] ) ? 'yes' : 'no'; // assigning the value of checkbox.
@@ -509,7 +537,7 @@ class Stock_based_pricing_plugin_Admin {
 		$sbpp_count_data = count( $sbpp_pricing ); // assigning the length of the array.
 
 			echo '<div class=" product_custom_field show_if_variation_manage_stock"> '; // Displays the main div.
-			echo "<div id='my_stock_div_forVariation_" . esc_attr( $sbpp_index_loop ) . "' > <span> Give Price Acc To Stock </span> <br> <table id='Stock_table_variation_" . esc_attr( $sbpp_index_loop ) . "'  ><tr> <th>Min Quanity </th>  <th>Max Quantity </th>  <th> Amount</th> </tr>";// Display the Table Header.
+			echo "<div class='my_stock_div_forVariation' id='my_stock_div_forVariation_" . esc_attr( $sbpp_index_loop ) . "' > <span>  " . esc_attr( __('Give Price Acc To Stock', 'stock-based-pricing-plugin') ) ." </span> <br> <table id='Stock_table_variation_" . esc_attr( $sbpp_index_loop ) . "'  ><tr> <th>" . esc_attr( __('Min Quanity', 'stock-based-pricing-plugin') ) ." </th>  <th>" . esc_attr( __('Max Quanity', 'stock-based-pricing-plugin') ) ." </th>  <th> " . esc_attr( __('Amount', 'stock-based-pricing-plugin') ) ."</th> <th> " . esc_attr( __('Action', 'stock-based-pricing-plugin') ) ." </th> </tr>";// Display the Table Header.
 
 		if ( $sbpp_count_data > 0 ) {
 			$sbpp_index = 1;
@@ -519,22 +547,42 @@ class Stock_based_pricing_plugin_Admin {
 				$sbpp_max_value   = $value['Max']; // Assigning the Max value.
 				$sbpp_amount      = $value['Amount']; // Assigning the Amount value.
 
-				echo "<tr ><td> <input  type='text' value='" . esc_attr( $sbpp_minimum_val ) . "'  name='Min_Var_" . esc_attr( $variation->ID ) . "[]' style='min-width: fit-content;' id='Min_Quantity_Var_" . $sbpp_index_loop . $sbpp_index . "'   onkeypress='return AllowOnlyNumbers(event);'/>  </td>  "; // it displays the First td of table when data already exists.
+				
+			
+				echo "<tr><td> <input  type='text' value='" . esc_attr( $sbpp_minimum_val ) . "'  name='Min_Var_" . esc_attr( $variation->ID ) . "[]'  id='Min_Quantity_Var_" . $sbpp_index_loop . $sbpp_index . "'   onkeypress='return AllowOnlyNumbers(event);'/>  </td>  "; // it displays the First td of table when data already exists.
 
-				echo " <td> <input type='text' value='" . esc_attr( $sbpp_max_value ) . "'  name='Max_Var_" . esc_attr( $variation->ID ) . "[]'  style='min-width: fit-content;'  onkeypress='return AllowOnlyNumbers(event);' onblur='validateMaxamount(this," . $sbpp_index_loop . $sbpp_index . ", -1, ".$loop.")' id='Max_Quantity_Var_" . $sbpp_index_loop . $sbpp_index . "' style='width:70%'/>  </td>"; // it displays the Second td of table when data already exists.
+				echo " <td> <input type='text' value='" . esc_attr( $sbpp_max_value ) . "'  name='Max_Var_" . esc_attr( $variation->ID ) . "[]'   onkeypress='return AllowOnlyNumbers(event);' onblur='validateMaxamount(this," . $sbpp_index_loop . $sbpp_index . ", -1, ".$loop.")' id='Max_Quantity_Var_" . $sbpp_index_loop . $sbpp_index . "'/>  </td>"; // it displays the Second td of table when data already exists.
 
-				echo "<td> <input type='text' value='" . esc_attr( $sbpp_amount ) . "'  onkeypress='return AllowOnlyNumbers(event);'  name='Amount_Var_" . esc_attr( $variation->ID ) . "[]'  style='min-width: fit-content;'   id='Amount_Var_" . $sbpp_index_loop . $sbpp_index . "' style='width:70%'/>  </td></tr>"; // it displays the Third td of table when data already exists.
+				echo "<td> <input type='text' value='" . esc_attr( $sbpp_amount ) . "'  onkeypress='return AllowOnlyNumbers(event);'  name='Amount_Var_" . esc_attr( $variation->ID ) . "[]'  id='Amount_Var_" . $sbpp_index_loop . $sbpp_index . "' />  </td>"; // it displays the Third td of table when data already exists.
+
+				if ( $sbpp_index == 1 ) {
+				
+					echo  " <td> <span  onclick='GenerateNewRow_Variation(" . esc_attr( $loop ) . ", " . esc_attr( $variation->ID ) . ")' ><u> " . esc_attr( __('Add Row', 'stock-based-pricing-plugin') ) ." </u> </span> </td> ";
+				} else {
+				
+					echo  " <td> <sapn class='delete_row' onclick='DeleteExistingRow(this)'><u>" . esc_attr( __('Delete Row', 'stock-based-pricing-plugin') ) ." </u></span> </td>  ";
+				}
+				echo '</tr> ';
 
 				$sbpp_index = ++$sbpp_index; // it is used to increase the index value by 1.
 			}
 		} else {
-			echo "<tr ><td> <input type='text' name='Min_Var_" . esc_attr( $variation->ID ) . "[]' style='min-width: fit-content;' onkeypress='return AllowOnlyNumbers(event);' id='Min_Quantity_Var_" . esc_attr( $sbpp_index_loop ) . "1'/>  </td> ";// it is used to display first td when there is no existing data.
+			echo "<tr><td> <input type='text' name='Min_Var_" . esc_attr( $variation->ID ) . "[]'  onkeypress='return AllowOnlyNumbers(event);' id='Min_Quantity_Var_" . esc_attr( $sbpp_index_loop ) . "1'/>  </td> ";// it is used to display first td when there is no existing data.
 
-			echo " <td> <input type='text' onkeypress='return AllowOnlyNumbers(event);' style='min-width: fit-content;' name='Max_Var_" . esc_attr( $variation->ID ) . "[]' onblur='validateMaxamount(this," . $sbpp_index_loop . "1,-1,".$loop.")' onkeypress='return AllowOnlyNumbers(event);' id='Max_Quantity_Var_" . esc_attr( $sbpp_index_loop ) . "1' style='width:70%'/>  </td>";// it is used to display second td when there is no existing data.
+			echo " <td> <input type='text' onkeypress='return AllowOnlyNumbers(event);' name='Max_Var_" . esc_attr( $variation->ID ) . "[]' onblur='validateMaxamount(this," . $sbpp_index_loop . "1,-1,".$loop.")' onkeypress='return AllowOnlyNumbers(event);' id='Max_Quantity_Var_" . esc_attr( $sbpp_index_loop ) . "1' />  </td>";// it is used to display second td when there is no existing data.
 
-			echo " <td> <input type='text'   name='Amount_Var_" . esc_attr( $variation->ID ) . "[]'   style='min-width: fit-content;'  id='Amount_Var_" . esc_attr( $sbpp_index_loop ) . "1' style='width:70%'/>  </td></tr>";
+			echo " <td> <input type='text'   name='Amount_Var_" . esc_attr( $variation->ID ) . "[]'     id='Amount_Var_" . esc_attr( $sbpp_index_loop ) . "1' />  </td>";
+
+			if ( $sbpp_index == 1 ) {
+				echo  " <td> <span  onclick='GenerateNewRow_Variation(" . esc_attr( $loop ) . ", " . esc_attr( $variation->ID ) . " ><u> " . esc_attr( __('Add Row', 'stock-based-pricing-plugin') ) ." </u></span> </td> ";
+			} else {
+				echo  " <td> <sapn class='delete_row' onclick='DeleteExistingRow(this)'><u> " . esc_attr( __('Delete Row', 'stock-based-pricing-plugin') ) ."</u></span> </td>  ";
+			}
+			echo ' </tr> ';
 		}
-		echo "</table><span style='padding: 10px;color:#2271b1' onclick='GenerateNewRow_Variation(" . esc_attr( $loop ) . ", " . esc_attr( $variation->ID ) . ")'><u>Add New Tier </u></span></div></div>";// it is used to display third td when there is no existing data.
+		echo '</table></div></div>';// it is used to display third td when there is no existing data.
+
+		
 	}
 
 

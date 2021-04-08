@@ -1,3 +1,4 @@
+
 (function( $ ) {
 	'use strict';
 
@@ -20,7 +21,7 @@
 					 'nonce': sbpp_common_param.nonce,
 	
 				 };
-				 $.post(sbpp_public_custom_param.ajaxurl, data, function(response) {
+				 $.post(sbpp_common_param.ajaxurl, data, function(response) {
 				 // alert('Got this from the server: ' + response);		
 	
 			if(response!="" && response!=undefined){
