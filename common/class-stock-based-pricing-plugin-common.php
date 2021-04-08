@@ -180,7 +180,7 @@ class Stock_based_pricing_plugin_Common {
 
 						}
 						
-						if($from==0 ) {
+						if ( $from == 0 ) {
 						$from = $selected_price;
 
 						}		
