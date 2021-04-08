@@ -152,7 +152,7 @@ class Stock_based_pricing_plugin_Public {
 					}
 				}
 			}
-		}
+		}		
 		if ( ! empty( $sbpp_min_to_display ) ) { // check id  sbpp_min_to_display is not empty.
 			if ( $sbpp_min_to_display > $from ) {
 				$final_min = $from;

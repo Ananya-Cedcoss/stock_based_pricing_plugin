@@ -150,7 +150,96 @@ class Stock_based_pricing_plugin_Common {
 						}
 					}
 				}
+			} elseif ( $sbpp_product_type == 'variable' ) {
+
+		$from                       = 0;
+		$to                         = 0;
+		$sbpp_min_to_display        = 0; // set sbpp_min_to_display to 0.
+		$sbpp_max_to_display        = 0; // set sbpp_min_to_display to 0;.
+		$product                    = wc_get_product( $post->ID ); // get the product data.
+		$sbpp_current_products      = $product->get_children(); // get all the variation of any product if it is variable type product.
+		$sbpp_current_product_count = count( $sbpp_current_products ); // get number of variation of any product.
+
+				if ( $sbpp_current_product_count > 0 ) {
+					foreach ( $sbpp_current_products as $key => $variation_id ) {
+
+						$sbpp_data         = get_post_meta( $variation_id, '_price_acc_to_stock_var' ); // assigning post meta data to the sbpp_data variable.
+						$sbpp_pricing_list = json_decode( $sbpp_data[0], true ); // Convert the post meta into array and assign it to variable.
+						$children_product  = wc_get_product( $variation_id ); // get the product data.
+						$stock             = $children_product->get_stock_quantity();				
+						$regular_price     = $children_product->regular_price;
+						$sales_price       = $children_product->sales_price;
+						$selected_price    = 0;
+						if ( ! empty( $sales_price ) ) {
+							$selected_price = $sales_price;
+
+						} else{
+						$selected_price = $regular_price;
+
+						}
+						if($from==0 ){
+						$from = $selected_price;
+
+						}		
+
+						if ( $selected_price > $to ) {
+
+						$to = $selected_price;
+						}
+						if ( $selected_price < $from) {
+
+						$from = $selected_price;
+						}
+			
+
+						if ( ! empty( $sbpp_pricing_list )) {
+
+							foreach ( $sbpp_pricing_list as $key => $value ) {
+								if ( $value['Max'] <= $stock ) {
+								$amount = $value['Amount']; // set the amount of each list.
+									if ( $sbpp_min_to_display == 0 ) {
+										$sbpp_min_to_display = $amount; // if sbpp_min_to_display is 0 then amount will be assigned.
+									} else {
+										if ( $amount < $sbpp_min_to_display ) {
+											if ( $amount != '' ) {
+											$sbpp_min_to_display = $amount; // assign value of amount if amount will be less than.
+											}
+										}
+									}
+									if ( $amount > $sbpp_max_to_display ) {
+										if ( $amount != '' ) {
+										$sbpp_max_to_display = $amount; // assign value of amount if amount will be greater than sbpp_max_to_display.
+										}
+									}			
+
+								}
+							}
+						}
+					}
+				}		
+				if ( ! empty( $sbpp_min_to_display ) ) { // check id  sbpp_min_to_display is not empty.
+					if ( $sbpp_min_to_display > $from ) {
+					$final_min = $from;
+
+					} else {
+					$final_min = $sbpp_min_to_display;
+					}
+					if ( $sbpp_max_to_display > $to ) {
+
+					$final_max = $sbpp_max_to_display;
+					} else {
+					$final_max = $to;
+					}
+					return sprintf( '%s: %s', wc_price( $final_min ), wc_price( $final_max ) ); // return the price according to stock based pricing.
+				} else {
+					return sprintf( '%s: %s', wc_price( $from ), wc_price( $to ) ); // return the regular price range for the variations.
+				}
+
+
+
+
 			}
+
 			if ( $flag === true ) {
 				echo get_woocommerce_currency_symbol() . $priceofstock; // return the price according to stock based pricing.
 			} else {
