@@ -173,11 +173,14 @@ class Stock_based_pricing_plugin_Common {
 						if ( ! empty( $sales_price ) ) {
 							$selected_price = $sales_price;
 
-						} else{
-						$selected_price = $regular_price;
+						} else {
+							if ( ! empty( $regular_price ) ) {
+								$selected_price = $regular_price;
+							}						
 
 						}
-						if($from==0 ){
+						
+						if($from==0 ) {
 						$from = $selected_price;
 
 						}		
@@ -187,8 +190,10 @@ class Stock_based_pricing_plugin_Common {
 						$to = $selected_price;
 						}
 						if ( $selected_price < $from) {
-
-						$from = $selected_price;
+							if ( $selected_price > 0 ) {
+								$from = $selected_price;
+							}
+						
 						}
 			
 
