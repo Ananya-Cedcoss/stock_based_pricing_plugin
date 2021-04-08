@@ -385,6 +385,7 @@ class Stock_based_pricing_plugin_Admin {
 	}
 
 
+
 	/** This function is used to update the va;lue of checkbox.
 	 *
 	 * @param int $post_id is used to get post id of current post.
@@ -397,6 +398,7 @@ class Stock_based_pricing_plugin_Admin {
 	/**  The woocommerce_product_custom_fields frunction is used to create custom field */
 	public function woocommerce_product_custom_table_and_checkbox() {
 		global $post; // is used to get post object for the current post.
+
 		echo '<div class="options_group show_if_simple">'; // creation of div to hold checkbox.
 		woocommerce_wp_checkbox(
 			array(

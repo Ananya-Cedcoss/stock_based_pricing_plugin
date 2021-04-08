@@ -397,6 +397,7 @@ class Stock_based_pricing_plugin_Admin {
 	/**  The woocommerce_product_custom_fields frunction is used to create custom field */
 	public function woocommerce_product_custom_table_and_checkbox() {
 		global $post; // is used to get post object for the current post.
+
 		echo '<div class="options_group show_if_simple">'; // creation of div to hold checkbox.
 		woocommerce_wp_checkbox(
 			array(
@@ -541,3 +542,4 @@ class Stock_based_pricing_plugin_Admin {
 		die(); // this is required to terminate immediately and return a proper response.
 	}
 }
+

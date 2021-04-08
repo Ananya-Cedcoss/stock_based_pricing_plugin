@@ -56,7 +56,7 @@ class Stock_based_pricing_plugin_Admin {
 		add_action( 'woocommerce_process_product_meta', array( $this, 'saving_dynamic_pricing' ) );
 		add_action( 'woocommerce_variation_options_pricing', array( $this, 'sbp_add_custom_field_to_variations' ), 10, 3 );
 		add_action( 'woocommerce_save_product_variation', array( $this, 'sbp_save_custom_field_variations' ), 10, 2 );
-
+	
 
 	}
 
@@ -385,6 +385,7 @@ class Stock_based_pricing_plugin_Admin {
 	}
 
 
+
 	/** This function is used to update the va;lue of checkbox.
 	 *
 	 * @param int $post_id is used to get post id of current post.
@@ -397,6 +398,7 @@ class Stock_based_pricing_plugin_Admin {
 	/**  The woocommerce_product_custom_fields frunction is used to create custom field */
 	public function woocommerce_product_custom_table_and_checkbox() {
 		global $post; // is used to get post object for the current post.
+
 		echo '<div class="options_group show_if_simple">'; // creation of div to hold checkbox.
 		woocommerce_wp_checkbox(
 			array(
