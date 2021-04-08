@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (function( $ ) {
 	'use strict';
 
@@ -29,8 +28,6 @@
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
 	 */
-
-	
 
 	 $(document).ready(function() {
 		// it is used to get the price with the help of ajax method
@@ -70,5 +67,3 @@
 	
 	})( jQuery );
 	
-=======
->>>>>>> AnanyaShukla_addtocart_displayprice_SBPP

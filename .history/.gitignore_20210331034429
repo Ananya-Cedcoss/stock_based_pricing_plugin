@@ -1,12 +1,6 @@
 node_modules
-.history
 node_modules/*
-<<<<<<< HEAD
-.vendor
-.history
-=======
-vendor
->>>>>>> AnanyaShukla_addtocart_displayprice_SBPP
+
 # ignore compiled files
 *.com
 *.class
@@ -24,4 +18,3 @@ vendor
 *.rar
 *.tar
 *.zip
-
