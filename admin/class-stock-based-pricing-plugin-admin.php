@@ -460,11 +460,14 @@ class Stock_based_pricing_plugin_Admin {
 	 * @param int $post_id is used to get the post id of current post.
 	 */
 	public function saving_dynamic_pricing( $post_id ) {
-		$sbpp_min    = ( $_POST['Min'] ); // it is used to assign all Min value from the TextBox of Minimum Quantity.
-		$sbpp_max    = ( $_POST['Max'] ); // it is used to assign all Max value from the TextBox of Maximum Quantity.
-		$sbpp_amount = ( $_POST['Amount'] ); // it is used to assign all Amount value from the TextBox of Amount.
-		$sbpp_main_arry   = array(); // It is used to store sub array of Min,Max and Amount .
-		$sbpp_data_sub_array   = array(); // it is used to store Min, Max, Amount value.
+
+		$sbpp_min            = isset( $_POST['Min'] ) ? $_POST['Min'] : ''; // it is used to assign all Min value from the TextBox of Minimum Quantity.
+		$sbpp_max            = isset( $_POST['Max'] ) ? $_POST['Max'] : ''; // it is used to assign all Max value from the TextBox of Maximum Quantity.
+		$sbpp_amount         = isset( $_POST['Amount'] ) ? $_POST['Amount'] : '' ; // it is used to assign all Amount value from the TextBox of Amount.
+		$sbpp_main_arry      = array(); // It is used to store sub array of Min,Max and Amount .
+		$sbpp_data_sub_array = array(); // it is used to store Min, Max, Amount value.
+
+
 
 		foreach ( $sbpp_min as $key => $value ) {
 			$sbpp_data_sub_array['Min']    = $value; // Assigning the Min value.
@@ -475,7 +478,6 @@ class Stock_based_pricing_plugin_Admin {
 		
 			}
 		}
-
 	
 		if ( count( $sbpp_main_arry ) > 0 ) {
 
@@ -543,11 +545,11 @@ class Stock_based_pricing_plugin_Admin {
 	 * @param                                    int $variation_id is the Id of current variation.
 	 * @param                                    int $i is the index of the current variation.
 	 */
-	public function sbp_save_custom_field_variations( $variation_id, $i ) {
-
-		$sbpp_min_alldatavariation    = ( $_POST['Min_Var_' . $variation_id] ); // assign all minimum value to the min variable.
-		$sbpp_max_alldatavariation    = ( $_POST['Max_Var_' . $variation_id] ); // assign all maximum value to the max variable.
-		$sbpp_amount_alldatavariation = ( $_POST['Amount_Var_' . $variation_id] ); // assign all amount value to the amount variable.
+	public function sbp_save_custom_field_variations( $variation_id, $i ) {	
+		
+		$sbpp_min_alldatavariation    = isset( $_POST['Min_Var_' . $variation_id] ) ? $_POST['Min_Var_' . $variation_id] : ''; // assign all minimum value to the min variable.
+		$sbpp_max_alldatavariation    = isset( $_POST['Max_Var_' . $variation_id] ) ? $_POST['Max_Var_' . $variation_id] : ''; // assign all maximum value to the max variable.
+		$sbpp_amount_alldatavariation = isset( $_POST['Amount_Var_' . $variation_id] ) ? $_POST['Amount_Var_' . $variation_id] : ''; // assign all amount value to the amount variable.
 		$sbpp_main_array_variation    = array(); // It is used to store sub array of Min,Max and Amount .
 		$sbpp_data_subarray_variation = array(); // it is used to store Min, Max, Amount value.
 		foreach ( $sbpp_min_alldatavariation as $key => $value ) {
