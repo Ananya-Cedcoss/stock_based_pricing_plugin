@@ -39,7 +39,10 @@ $(document).on('change', '#_checkbox_for_stock_price', function () {
 // Generate New Row for Simple Product After validation.
   function GenerateNewRow(){  
     var index_tr= jQuery('#Stock_table tr').length;  
+    var deleted_row=0;
     for (let index = 1; index < index_tr; index++) {
+
+    if(jQuery('#Min_Quantity_'+index).length>0){
        if(jQuery('#Min_Quantity_'+index).val()=="" || jQuery('#Min_Quantity_'+index).val()==undefined )
       {
         alert(sbpp_productedit_param.min_quantity);
@@ -57,7 +60,14 @@ $(document).on('change', '#_checkbox_for_stock_price', function () {
           jQuery('#Amount_'+index).focus();
           return false;
         }
-     }  
+      }
+      else{
+        deleted_row=index;
+      }
+     } 
+     if(parseInt(deleted_row)>0 ){
+      index_tr=deleted_row;
+     } 
      var innerhtml="";  
       innerhtml+="<tr ><td> <input type='text' onkeypress='return AllowOnlyNumbers(event);' name='Min[]'  id='Min_Quantity_"+index_tr+"'/>  </td>";
       innerhtml+=" <td> <input type='text'  name='Max[]' onkeypress='return AllowOnlyNumbers(event);' onblur='validateMaxamount(this,"+index_tr+",0)' id='Max_Quantity_"+index_tr+"' />  </td>";
@@ -69,12 +79,13 @@ $(document).on('change', '#_checkbox_for_stock_price', function () {
 
   // Generate New Row for Variable Product After validation.
 function GenerateNewRow_Variation(id,variation){
-
     var a="#Stock_table_variation_"+(id+1);
     var loop_index=id+1;
+    var deleted_row=0;
     var index_tr= jQuery(a +' tr').length;
     var type="variable";
     for (let index = 1; index < index_tr; index++) {
+      if(jQuery('#Min_Quantity_Var_'+loop_index+index).length>0){
        if(jQuery('#Min_Quantity_Var_'+loop_index+index).val()=="" || jQuery('#Min_Quantity_Var_'+loop_index+index).val()==undefined )
        {
         alert(sbpp_productedit_param.min_quantity);
@@ -90,8 +101,16 @@ function GenerateNewRow_Variation(id,variation){
         alert(sbpp_productedit_param.amount);
           jQuery('#Amount_Var_'+loop_index+index).focus();
           return false;  
-       }        
+       }    
+      } 
+      else{
+        deleted_row=index;
+      }   
      }  
+     if(parseInt(deleted_row)>0 ){
+      index_tr=deleted_row;
+
+     }
       var innerhtml="";     
       innerhtml+="<tr > ";  
       innerhtml+="<td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Min_Var_"+variation+"[]'  id='Min_Quantity_Var_"+loop_index+index_tr+"'/>  </td>";  
@@ -103,40 +122,48 @@ function GenerateNewRow_Variation(id,variation){
 
 
 // This Function is used to Validate the Numbers and does ont allow alphabets.
-  function AllowOnlyNumbers(e) {  
-    e = (e) ? e : window.event;
-    var clipboardData = e.clipboardData ? e.clipboardData : window.clipboardData;
-    var key = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
-    var str = (e.type && e.type == "paste") ? clipboardData.getData('Text') : String.fromCharCode(key);      
-    return (/^\d+jQuery/.test(str));
-  }  
+  // function AllowOnlyNumbers(e) {  
+  //   e = (e) ? e : window.event;
+  //   var clipboardData = e.clipboardData ? e.clipboardData : window.clipboardData;
+  //   var key = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+  //   var str = (e.type && e.type == "paste") ? clipboardData.getData('Text') : String.fromCharCode(key);      
+  //   return (/^\d+jQuery/.test(str));
+  // } 
+  function AllowOnlyNumbers(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+} 
   
  // Validate The Minimum Amount   
  function validateMaxamount(obj,Id,type,var_index){
   debugger;  
   var Max_Value=jQuery(obj).val();
   var Min_Value="";
-  if(type==-1){
+  if (type==-1){
      Min_Value=jQuery('#Min_Quantity_Var_'+Id).val();  
   }
   else{
     Min_Value=jQuery('#Min_Quantity_'+Id).val();
   }  
-  if(parseInt(Max_Value)<parseInt(Min_Value)){
+  if (parseInt(Max_Value)<parseInt(Min_Value)){
     alert(sbpp_productedit_param.greater_than_minimum);
     jQuery(obj).val('');
     return false;  
   }   
-  if(var_index>=0)
+  if (var_index>=0)
   {
   var Stock= jQuery('#variable_stock'+var_index).val();  
-  if(Stock=="0" || Stock==undefined){
+  if (Stock=="0" || Stock==undefined){
     alert(sbpp_productedit_param.fill_stock);
   jQuery(obj).val('');
   jQuery('#variable_stock'+var_index).focus();
   return false;
   }
-    if(parseInt(Stock)<parseInt(Max_Value)){
+    if (parseInt(Stock)<parseInt(Max_Value)){
      alert(sbpp_productedit_param.less_than_stock);
      jQuery(obj).val('');
     }

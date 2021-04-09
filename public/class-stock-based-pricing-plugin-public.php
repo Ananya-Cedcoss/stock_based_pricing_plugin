@@ -60,7 +60,6 @@ class Stock_based_pricing_plugin_Public {
 	 * @since    1.0.0
 	 */
 	public function sbpp_public_enqueue_styles() {
-
 		wp_enqueue_style( $this->plugin_name, STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'public/src/scss/stock-based-pricing-plugin-public.css', array(), $this->version, 'all' );
 
 	}
@@ -71,13 +70,11 @@ class Stock_based_pricing_plugin_Public {
 	 * @since    1.0.0
 	 */
 	public function sbpp_public_enqueue_scripts() {
-
 		wp_register_script( $this->plugin_name, STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'public/src/js/stock-based-pricing-plugin-public.js', array( 'jquery' ), $this->version, false );
 		wp_localize_script( $this->plugin_name, 'sbpp_public_param', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 		wp_enqueue_script( $this->plugin_name );
 
-
-
+		// Adding mwb-admin.js 
 		wp_register_script( 'sbpp_my_custom_script', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'public/js/mwb-public.js', array( 'jquery' ), $this->version, false );
 		wp_localize_script( 'sbpp_my_custom_script', 'sbpp_public_custom_param', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 		wp_enqueue_script( 'sbpp_my_custom_script' );
@@ -97,7 +94,6 @@ class Stock_based_pricing_plugin_Public {
 			} else {
 				$sbpp_get_price = get_post_meta( $value['variation_id'], 'Price_of_Selected_variation' ); // assign price to the variable if it is simple product type.
 			}
-
 			if ( ! empty( $sbpp_get_price[0] ) ) {
 				$sbpp_custom_price = $sbpp_get_price[0];
 				$value['data']->set_price( $sbpp_custom_price );
@@ -119,44 +115,36 @@ class Stock_based_pricing_plugin_Public {
 		$product                    = wc_get_product( $post->ID ); // get the product data.
 		$sbpp_current_products      = $product->get_children(); // get all the variation of any product if it is variable type product.
 		$sbpp_current_product_count = count( $sbpp_current_products ); // get number of variation of any product.
-
 		if ( $sbpp_current_product_count > 0 ) {
 			foreach ( $sbpp_current_products as $key => $variation_id ) {
-
 				$sbpp_data         = get_post_meta( $variation_id, '_price_acc_to_stock_var' ); // assigning post meta data to the sbpp_data variable.
 				$sbpp_pricing_list = json_decode( $sbpp_data[0], true ); // Convert the post meta into array and assign it to variable.
 				$children_product  = wc_get_product( $variation_id ); // get the product data.
 				$stock             = $children_product->get_stock_quantity();
-
 				if ( ! empty( $sbpp_pricing_list )) {
-
 					foreach ( $sbpp_pricing_list as $key => $value ) {
-						if ( $value['Max'] <= $stock ) {
-							$amount = $value['Amount']; // set the amount of each list.
-							if ( $sbpp_min_to_display == 0 ) {
-								$sbpp_min_to_display = $amount; // if sbpp_min_to_display is 0 then amount will be assigned.
-							} else {
-								if ( $amount < $sbpp_min_to_display ) {
-									if ( $amount != '' ) {
-										$sbpp_min_to_display = $amount; // assign value of amount if amount will be less than.
-									}
+						$amount = $value['Amount']; // set the amount of each list.
+						if ( $sbpp_min_to_display == 0 ) {
+							$sbpp_min_to_display = $amount; // if sbpp_min_to_display is 0 then amount will be assigned.
+						} else {
+							if ( $amount < $sbpp_min_to_display ) {
+								if ( $amount != '' ) {
+									$sbpp_min_to_display = $amount; // assign value of amount if amount will be less than.
 								}
 							}
-							if ( $amount > $sbpp_max_to_display ) {
-								if ( $amount != '' ) {
-									$sbpp_max_to_display = $amount; // assign value of amount if amount will be greater than sbpp_max_to_display.
-								}
-							}			
-
+						}
+						if ( $amount > $sbpp_max_to_display ) {
+							if ( $amount != '' ) {
+								$sbpp_max_to_display = $amount; // assign value of amount if amount will be greater than sbpp_max_to_display.
+							}
 						}
 					}
 				}
 			}
-		}		
+		}	
 		if ( ! empty( $sbpp_min_to_display ) ) { // check id  sbpp_min_to_display is not empty.
 			if ( $sbpp_min_to_display > $from ) {
 				$final_min = $from;
-
 			} else {
 					$final_min = $sbpp_min_to_display;
 			}
