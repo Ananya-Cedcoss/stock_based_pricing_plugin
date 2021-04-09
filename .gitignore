@@ -1,7 +1,7 @@
 node_modules
 .history
 node_modules/*
-
+vendor
 # ignore compiled files
 *.com
 *.class
