@@ -210,7 +210,7 @@ class Stock_based_pricing_plugin {
 		// Add admin actions for product edit page.
 
 		// All the Action that will be used to add, edit, show and delete  dynamic pricing to the product edit page.
-		$this->loader->add_action( 'woocommerce_product_options_inventory_product_data', $sbpp_plugin_admin , 'woocommerce_product_custom_table_and_checkbox' );
+		$this->loader->add_action( 'woocommerce_product_options_inventory_product_data', $sbpp_plugin_admin , 'sbpp_product_custom_table_and_checkbox' );
 		$this->loader->add_action( 'woocommerce_process_product_meta', $sbpp_plugin_admin, 'saving_dynamic_pricing' );
 		$this->loader->add_action( 'woocommerce_variation_options_pricing', $sbpp_plugin_admin, 'sbp_add_custom_field_to_variations' , 10, 3 );
 		$this->loader->add_action( 'woocommerce_save_product_variation', $sbpp_plugin_admin, 'sbp_save_custom_field_variations' , 10, 2 );
