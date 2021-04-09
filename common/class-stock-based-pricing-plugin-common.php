@@ -169,7 +169,7 @@ class Stock_based_pricing_plugin_Common {
 						}	
 						if ( ! empty( $sbpp_pricing_list )) {
 							foreach ( $sbpp_pricing_list as $key => $value ) {
-								if ( $value['Max'] <= $stock ) {
+							//	if ( $value['Max'] <= $stock ) {
 								$amount = $value['Amount']; // set the amount of each list.
 									if ( $sbpp_min_to_display == 0 ) {
 										$sbpp_min_to_display = $amount; // if sbpp_min_to_display is 0 then amount will be assigned.
@@ -185,7 +185,7 @@ class Stock_based_pricing_plugin_Common {
 										$sbpp_max_to_display = $amount; // assign value of amount if amount will be greater than sbpp_max_to_display.
 										}
 									}
-								}
+								// }
 							}
 						}
 					}
@@ -209,9 +209,10 @@ class Stock_based_pricing_plugin_Common {
 				}
 			}
 			if ( true === $flag ) {
+			
 				echo get_woocommerce_currency_symbol() . esc_html__( $priceofstock ) ; // return the price according to stock based pricing.
 			} else {
-				esc_html_e( $price );// return the regular price.
+				echo  $price; // return the regular price.
 			}
 		}
 	}

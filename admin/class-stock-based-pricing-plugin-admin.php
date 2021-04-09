@@ -118,8 +118,7 @@ class Stock_based_pricing_plugin_Admin {
 			);
 				// Adding mwb-admin.js js to the page.
 
-			wp_register_script( 'sbpp_my_custom_script', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'admin/js/mwb-admin.js', array( 'jquery' ), $this->version, false );
-			
+			wp_register_script( 'sbpp_my_custom_script', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'admin/js/mwb-admin.js', array( 'jquery' ), $this->version, false );			
 			 wp_localize_script(
 				'sbpp_my_custom_script' ,
 				'sbpp_productedit_param',
@@ -218,7 +217,6 @@ class Stock_based_pricing_plugin_Admin {
 	 * @param array $sbpp_settings_general Settings fields.
 	 */
 	public function sbpp_admin_general_settings_page( $sbpp_settings_general ) {
-
 		$sbpp_settings_general = array(
 			array(
 				'title' => __( 'Enable plugin', 'stock-based-pricing-plugin' ),
@@ -232,7 +230,6 @@ class Stock_based_pricing_plugin_Admin {
 					'no' => __( 'NO', 'stock-based-pricing-plugin' ),
 				),
 			),
-
 			array(
 				'type'  => 'button',
 				'id'    => 'sbpp_button_demo',
@@ -448,8 +445,7 @@ class Stock_based_pricing_plugin_Admin {
 		} else {
 			echo  "<tr><td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Min[]'  id='Min_Quantity_1'/>  </td>  "; // it is used to display first td when there is no existing data.
 			echo  " <td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Max[]' onblur='validateMaxamount(this,1,0)' id='Max_Quantity_1' />  </td>"; // it is used to display second td when there is no existing data.
-			echo  "<td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Amount[]' id='Amount_1' />  </td>"; // it is used to display third td when there is no existing data.
-			
+			echo  "<td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Amount[]' id='Amount_1' />  </td>"; // it is used to display third td when there is no existing data.			
 			if ( $sbpp_index == 1 ) {
 				echo  " <td> <span  onclick='GenerateNewRow()'><u> " . esc_html__(' Add Row', 'stock-based-pricing-plugin') ." </u></span> </td> ";
 			} else {
