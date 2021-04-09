@@ -170,21 +170,21 @@ class Stock_based_pricing_plugin_Common {
 						if ( ! empty( $sbpp_pricing_list )) {
 							foreach ( $sbpp_pricing_list as $key => $value ) {
 							//	if ( $value['Max'] <= $stock ) {
-								$amount = $value['Amount']; // set the amount of each list.
-									if ( $sbpp_min_to_display == 0 ) {
-										$sbpp_min_to_display = $amount; // if sbpp_min_to_display is 0 then amount will be assigned.
-									} else {
-										if ( $amount < $sbpp_min_to_display ) {
-											if ( $amount != '' ) {
-											$sbpp_min_to_display = $amount; // assign value of amount if amount will be less than.
-											}
-										}
-									}
-									if ( $amount > $sbpp_max_to_display ) {
+							$amount = $value['Amount']; // set the amount of each list.
+								if ( $sbpp_min_to_display == 0 ) {
+									$sbpp_min_to_display = $amount; // if sbpp_min_to_display is 0 then amount will be assigned.
+								} else {
+									if ( $amount < $sbpp_min_to_display ) {
 										if ( $amount != '' ) {
-										$sbpp_max_to_display = $amount; // assign value of amount if amount will be greater than sbpp_max_to_display.
+										$sbpp_min_to_display = $amount; // assign value of amount if amount will be less than.
 										}
 									}
+								}
+								if ( $amount > $sbpp_max_to_display ) {
+									if ( $amount != '' ) {
+									$sbpp_max_to_display = $amount; // assign value of amount if amount will be greater than sbpp_max_to_display.
+									}
+								}
 								// }
 							}
 						}
