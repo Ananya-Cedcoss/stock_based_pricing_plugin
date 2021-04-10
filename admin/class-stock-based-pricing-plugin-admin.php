@@ -405,16 +405,16 @@ class Stock_based_pricing_plugin_Admin {
 	public function sbpp_product_custom_table_and_checkbox() {
 		global $post; // is used to get post object for the current post.	
 		wp_nonce_field(	basename(__FILE__), 'sbpp-checkbox-table-nonce' );			
-		echo '<div class="options_group show_if_simple">'; // creation of div to hold checkbox.
-		woocommerce_wp_checkbox(
-			array(
-				'id'          => '_checkbox_for_stock_price', // id of the checkbox.
-				'class'       => array( 'show_if_simple' ), // class of checkbox.
-				'label'       => __( 'Give Price Acc To Stock', 'stock-based-pricing-plugin' ), // label for checkbox.
-				'description' => __( 'Select it to enable the Price Acc To Stock Field', 'stock-based-pricing-plugin' ), // about the checkbox.
-			)
-		);
-		echo '</div>'; // closing the div.
+		// echo '<div class="options_group show_if_simple">'; // creation of div to hold checkbox.
+		// woocommerce_wp_checkbox(
+		// 	array(
+		// 		'id'          => '_checkbox_for_stock_price', // id of the checkbox.
+		// 		'class'       => array( 'show_if_simple' ), // class of checkbox.
+		// 		'label'       => __( 'Give Price Acc To Stock', 'stock-based-pricing-plugin' ), // label for checkbox.
+		// 		'description' => __( 'Select it to enable the Price Acc To Stock Field', 'stock-based-pricing-plugin' ), // about the checkbox.
+		// 	)
+		// );
+		// echo '</div>'; // closing the div.
 		$sbpp_data = get_post_meta( $post->ID, '_price_acc_to_stock' );// storing post meta of _price_acc_to_stock to sbpp_data variable.
 		if ( ! empty( $sbpp_data ) ) {
 			$sbpp_pricing    = json_decode( $sbpp_data[0], true );// it is used to encode it into array and store it to pricing.
@@ -481,8 +481,8 @@ class Stock_based_pricing_plugin_Admin {
 		if ( count( $sbpp_main_arry ) > 0 ) {
 		$product = wc_get_product( $post_id ); // It is used to assign the data of product.
 		$product->update_meta_data( '_price_acc_to_stock', ( wp_json_encode( $sbpp_main_arry ) ) ); // Updating the post meta data .
-		$woocommerce_custom_product_checkbox = isset( $_POST['_checkbox_for_stock_price'] ) ? 'yes' : 'no'; // assigning the value of checkbox.
-		update_post_meta( $post_id, '_checkbox_for_stock_price', $woocommerce_custom_product_checkbox ); // updating the value to post meta data.
+		//$woocommerce_custom_product_checkbox = isset( $_POST['_checkbox_for_stock_price'] ) ? 'yes' : 'no'; // assigning the value of checkbox.
+		//update_post_meta( $post_id, '_checkbox_for_stock_price', $woocommerce_custom_product_checkbox ); // updating the value to post meta data.
 		$product->save(); // Saving the Product data.
 		}
 	}
