@@ -1,0 +1,65 @@
+<?php
+    global $post; // is used to get post object for the current post.	
+    wp_nonce_field(	'simple-product', 'sbpp-checkbox-table-nonce' );
+    $sbpp_data = get_post_meta( $post->ID, '_price_acc_to_stock' );// storing post meta of _price_acc_to_stock to sbpp_data variable.
+    if ( ! empty( $sbpp_data ) ) {
+         $sbpp_pricing    = json_decode( $sbpp_data[0], true );// it is used to encode it into array and store it to pricing.
+        $sbpp_count_data = count( $sbpp_pricing );// it is used to get number of data in array.
+    } else {
+     $sbpp_count_data = 0;
+    }
+
+?>
+
+
+<div class="product_custom_field show_if_simple"> 
+   <div id="my_stock_div">  
+       <table id="Stock_table">
+           <tr> 
+               <th><?php echo esc_html__('Min Quanity', 'stock-based-pricing-plugin') ?> </th>  
+               <th><?php echo esc_html__('Max Quanity', 'stock-based-pricing-plugin') ?> </th>  
+               <th><?php echo esc_html__('Amount', 'stock-based-pricing-plugin') ?></th>  
+               <th><?php echo esc_html__('Action', 'stock-based-pricing-plugin') ?></th> 
+            </tr>
+
+          <?php  $sbpp_index = 1;
+          if ( $sbpp_count_data > 0 ) {	
+                foreach ( $sbpp_pricing as $key => $value ) {
+                    $sbpp_minimum_val = $value['Min'];
+                    $sbpp_max_value   = $value['Max'];
+                    $sbpp_amount      = $value['Amount']; ?>
+                   <tr>
+                       
+                    <td> <input type="text"  onkeypress="return AllowOnlyNumbers(event);" value="<?php echo esc_attr( $sbpp_minimum_val )  ?>"   id="<?php echo 'Min_Quantity_'. esc_attr( $sbpp_index ) ?>"  name="Min[]"  />  </td> 
+
+                   <td> <input type="text"  onkeypress="return AllowOnlyNumbers(event);" value="<?php echo esc_attr( $sbpp_max_value )  ?>"  id="<?php echo 'Max_Quantity_'. esc_attr( $sbpp_index ) ?>"   name="Max[]"   />  </td>
+
+                    <td> <input type="text"  onkeypress="return AllowOnlyNumbers(event);" value="<?php echo esc_attr( $sbpp_amount )  ?>"  id="<?php echo 'Amount_'. esc_attr( $sbpp_index ) ?>"   name="Amount[]"  />  </td>
+                    <?php  
+                    if ( $sbpp_index == 1 ) { ?>
+                        <td> <span  onclick='GenerateNewRow()'><u> <?php echo esc_html__('Add Row', 'stock-based-pricing-plugin') ?> </u></span> </td> 
+                  <?php  } else { ?>
+                       <td> <span class='delete_row' onclick='DeleteExistingRow(this)'><u><?php echo esc_html__('Delete Row', 'stock-based-pricing-plugin') ?>  </u></span> </td>
+                  <?php  } ?>
+                  </tr>
+                    <?php    $sbpp_index = ++$sbpp_index; // it used to increase the index value by 1;.
+              } }  
+              else { ?>
+                <tr>
+                    <td> <input type="text" onkeypress="return AllowOnlyNumbers(event);"  name="Min[]"  id="Min_Quantity_1"/>  </td>  
+
+                <td> <input type="text" onkeypress="return AllowOnlyNumbers(event);"  name="Max[]" onblur="validateMaxamount(this,1,0)" id="Max_Quantity_1" />  </td>
+
+               <td> <input type="text" onkeypress="return AllowOnlyNumbers(event);"  name="Amount[]" id="Amount_1" />  </td>
+
+              <?php  if ( $sbpp_index == 1 ) { ?>
+                     <td> <span  onclick="GenerateNewRow()"><u>  <?php echo esc_html__(' Add Row', 'stock-based-pricing-plugin') ?> </u></span> </td> 
+              <?php  } else { ?>
+                   <td> <sapn class="delete_row" onclick="DeleteExistingRow(this)"><u>  <?php echo esc_html__('Delete Row', 'stock-based-pricing-plugin') ?> </u></span> </td> 
+               <?php } ?>
+               </tr> 
+           <?php } ?>
+
+   </table>
+   </div>
+   </div>

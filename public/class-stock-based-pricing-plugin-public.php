@@ -89,11 +89,13 @@ class Stock_based_pricing_plugin_Public {
 	public function add_custom_price( $cart_object ) {
 		foreach ( $cart_object->cart_contents as $key => $value ) {
 			$sbpp_custom_price = 0; // assigning custom price to 0.
+		
 			if ( $value['variation_id'] == 0 ) { // checking variation value.
 				$sbpp_get_price = get_post_meta( $value['product_id'], 'Price_of_Selected_variation' ); // assigning price from post meta data to the variable if it is type of variable product.
 			} else {
 				$sbpp_get_price = get_post_meta( $value['variation_id'], 'Price_of_Selected_variation' ); // assign price to the variable if it is simple product type.
 			}
+		
 			if ( ! empty( $sbpp_get_price[0] ) ) {
 				$sbpp_custom_price = $sbpp_get_price[0];
 				$value['data']->set_price( $sbpp_custom_price );
@@ -162,3 +164,4 @@ class Stock_based_pricing_plugin_Public {
 	}
 
 }
+
