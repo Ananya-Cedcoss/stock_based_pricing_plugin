@@ -202,6 +202,7 @@ class Stock_based_pricing_plugin_Common {
 		if ( ! empty( $_POST['Variation_Id'] ) ) {
 			$variation_id = sanitize_text_field( wp_unslash( $_POST['Variation_Id'] ) ); // assigning variation id.
 		}
+
 			$sbpp_variation_obj  = new WC_Product_variation( $variation_id ); // assigning variation object to the variable.
 			$sbpp_stock_quantity = $sbpp_variation_obj->get_stock_quantity(); // assigning the stock quantity.
 			$sbpp_postmetadata   = get_post_meta( $variation_id, '_price_acc_to_stock_var' ); // assigning post meta data to the variable.
@@ -211,18 +212,22 @@ class Stock_based_pricing_plugin_Common {
 			$minimum_val = $value['Min']; // get min value.
 			$max_value   = $value['Max']; // get max value.
 			$amount      = $value['Amount']; // get amount value.
-			if ( $sbpp_stock_quantity >= $minimum_val && $sbpp_stock_quantity <= $max_value ) {
-				$priceofstock = $amount; // assign amount to the current price of stock.
-				$flag         = true; // makes the flag true.
-			}
-		}
+			if (! empty( $sbpp_stock_quantity ) ) {
+				if ( $sbpp_stock_quantity >= $minimum_val && $sbpp_stock_quantity <= $max_value ) {
+					$priceofstock = $amount; // assign amount to the current price of stock.
+					$flag         = true; // makes the flag true.				
+				}
+			}			
+		}	
 		if ( true === $flag ) {
 			$result = $priceofstock; // assign priceofstock to result.
 		} else {
-			$result = $sbpp_variation_obj->get_regular_price(); // assign regular price from variation object.
+			$result = $sbpp_variation_obj->regular_price; // assign regular price from variation object.
 		}
-		update_post_meta( $variation_id, 'Price_of_Selected_variation', $result ); // update price to the post meta data.
-		echo esc_html( $result ); // echo the result to the ajax calling.
+		if ( ! empty( $result ) ) {
+			update_post_meta( $variation_id, 'Price_of_Selected_variation', $result ); // update price to the post meta data.		
+		}
+		echo  $result ; // echo the result to the ajax calling.
 		wp_die(); // this is required to terminate immediately and return a proper response.
 	}
 }

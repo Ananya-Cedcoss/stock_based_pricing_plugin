@@ -404,7 +404,7 @@ class Stock_based_pricing_plugin_Admin {
 	/**  The woocommerce_product_custom_fields frunction is used to create custom field */
 	public function sbpp_product_custom_table_and_checkbox() {
 		global $post; // is used to get post object for the current post.	
-		wp_nonce_field(	basename(__FILE__), 'sbpp-checkbox-table-nonce' );
+		wp_nonce_field(	'simple-product', 'sbpp-checkbox-table-nonce' );
 		$sbpp_data = get_post_meta( $post->ID, '_price_acc_to_stock' );// storing post meta of _price_acc_to_stock to sbpp_data variable.
 		if ( ! empty( $sbpp_data ) ) {
 			$sbpp_pricing    = json_decode( $sbpp_data[0], true );// it is used to encode it into array and store it to pricing.
@@ -451,7 +451,7 @@ class Stock_based_pricing_plugin_Admin {
 	 */
 	public function saving_dynamic_pricing( $post_id ) {
 		
-		if ( ! isset($_POST['sbpp-checkbox-table-nonce']) || ! wp_verify_nonce( $_POST['sbpp-checkbox-table-nonce'], basename(__FILE__) ) ) {
+		if ( ! isset($_POST['sbpp-checkbox-table-nonce']) || ! wp_verify_nonce( $_POST['sbpp-checkbox-table-nonce'], 'simple-product' ) ) {
 			return $post_id;	
 		}
 		$sbpp_min            = isset( $_POST['Min'] ) ? map_deep( $_POST['Min'], 'sanitize_text_field' ) : ''; // it is used to assign all Min value from the TextBox of Minimum Quantity.
@@ -481,7 +481,7 @@ class Stock_based_pricing_plugin_Admin {
 	 * @param WP_Post $variation Post data.
 	 */
 	public function sbp_add_custom_field_to_variations( $loop, $variation_data, $variation ) {
-		wp_nonce_field(	basename( __FILE__ ), 'sbpp-checkbox-table-variation-nonce' );	
+		wp_nonce_field(	'variable-product' , 'sbpp-checkbox-table-variation-nonce' );	
 		$sbpp_index_loop = $loop + 1; // assigning index according to loop variable.
 		$sbpp_data       = get_post_meta( $variation->ID, '_price_acc_to_stock_var' ); // Assigning the post meta data to the variable.
 		$sbpp_pricing    = json_decode( $sbpp_data[0], true ); // decoding the data and converting it to array.
@@ -525,7 +525,7 @@ class Stock_based_pricing_plugin_Admin {
 	 * @param                                    int $i is the index of the current variation.
 	 */
 	public function sbp_save_custom_field_variations( $variation_id, $i ) {	
-		if ( ! isset($_POST['sbpp-checkbox-table-variation-nonce']) || !wp_verify_nonce( $_POST['sbpp-checkbox-table-variation-nonce'], basename(__FILE__) ) ) {
+		if ( ! isset($_POST['sbpp-checkbox-table-variation-nonce']) || !wp_verify_nonce( $_POST['sbpp-checkbox-table-variation-nonce'], 'variable-product' ) ) {
 			return ;	
 		}	
 		$sbpp_min_alldatavariation    = isset( $_POST['Min_Var_' . $variation_id] ) ? map_deep( $_POST['Min_Var_' . $variation_id], 'sanitize_text_field' ) : ''; // assign all minimum value to the min variable.
