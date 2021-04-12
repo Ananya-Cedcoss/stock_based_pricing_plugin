@@ -406,7 +406,7 @@ class Stock_based_pricing_plugin_Admin {
 	/**  The woocommerce_product_custom_fields frunction is used to create custom field */
 	public function sbpp_product_custom_table() {		
 		wp_nonce_field(	'simple-product', 'sbpp-checkbox-table-nonce' );		
-		require_once STOCK_BASED_PRICING_PLUGIN_DIR_PATH . 'admin/templates/single-product-table.html';
+		require_once STOCK_BASED_PRICING_PLUGIN_DIR_PATH . 'admin/partials/single-product-table.html';
 			
 
 	}
@@ -448,7 +448,7 @@ class Stock_based_pricing_plugin_Admin {
 	 */
 	public function sbp_add_custom_field_to_variations( $loop, $variation_data, $variation ) {
 		wp_nonce_field(	'variable-product' , 'sbpp-checkbox-table-variation-nonce' );
-		require STOCK_BASED_PRICING_PLUGIN_DIR_PATH . 'admin/templates/variable-product-table.html';	
+		require STOCK_BASED_PRICING_PLUGIN_DIR_PATH . 'admin/partials/variable-product-table.html';	
 	}
 
 	/** Function is used to save post meta data of variation of product df.
