@@ -224,9 +224,9 @@ class Stock_based_pricing_plugin_Common {
 		} else {
 			$result = $sbpp_variation_obj->regular_price; // assign regular price from variation object.
 		}
-		if ( ! empty( $result ) ) {
+	
 			update_post_meta( $variation_id, 'Price_of_Selected_variation', $result ); // update price to the post meta data.		
-		}
+	
 		echo  $result ; // echo the result to the ajax calling.
 		wp_die(); // this is required to terminate immediately and return a proper response.
 	}

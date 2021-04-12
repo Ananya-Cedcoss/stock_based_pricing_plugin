@@ -89,11 +89,13 @@ class Stock_based_pricing_plugin_Public {
 	public function add_custom_price( $cart_object ) {
 		foreach ( $cart_object->cart_contents as $key => $value ) {
 			$sbpp_custom_price = 0; // assigning custom price to 0.
+		
 			if ( $value['variation_id'] == 0 ) { // checking variation value.
 				$sbpp_get_price = get_post_meta( $value['product_id'], 'Price_of_Selected_variation' ); // assigning price from post meta data to the variable if it is type of variable product.
 			} else {
 				$sbpp_get_price = get_post_meta( $value['variation_id'], 'Price_of_Selected_variation' ); // assign price to the variable if it is simple product type.
 			}
+		
 			if ( ! empty( $sbpp_get_price[0] ) ) {
 				$sbpp_custom_price = $sbpp_get_price[0];
 				$value['data']->set_price( $sbpp_custom_price );
@@ -159,6 +161,32 @@ class Stock_based_pricing_plugin_Public {
 			return sprintf( '%s: %s', wc_price( $from ), wc_price( $to ) ); // return the regular price range for the variations.
 		}
 
-	}
+	}	
 
+}
+
+
+
+
+
+
+
+add_filter( 'woocommerce_cart_item_price', 'sbpp_change_minicart_item_price', 10, 3 );
+function sbpp_change_minicart_item_price( $price, $cart_item, $cart_item_key ) {
+	if ( ! is_cart() ) {
+		$price = $cart_item['data']->variation_id;
+		if ( ! empty($cart_item['data']->variation_id) ) {
+			
+				$sbpp_get_price = get_post_meta( $cart_item['data']->variation_id, 'Price_of_Selected_variation' ); // assigning price from post meta data to the variable if it is type of variable product.
+		} else {
+				$sbpp_get_price = get_post_meta( $cart_item['data']->id, 'Price_of_Selected_variation' ); // assign price to the variable if it is simple product type.
+		}	
+		if ( ! empty( $sbpp_get_price[0] ) ) {
+				$price = $sbpp_get_price[0];
+			return $price;
+		}
+				
+		return $price;
+	}	
+	return $price;
 }

@@ -167,3 +167,5 @@ function stock_based_pricing_plugin_custom_settings_at_plugin_tab( $links_array,
 	return $links_array;
 }
 add_filter( 'plugin_row_meta', 'stock_based_pricing_plugin_custom_settings_at_plugin_tab', 10, 2 );
+
+

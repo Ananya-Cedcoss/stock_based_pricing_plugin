@@ -45,17 +45,18 @@ $(document).on('change', '#_manage_stock', function () {
       innerhtml+="<tr ><td> <input type='text' onkeypress='return AllowOnlyNumbers(event);' name='Min[]'  id='Min_Quantity_"+index_tr+"'/>  </td>";
       innerhtml+=" <td> <input type='text'  name='Max[]' onkeypress='return AllowOnlyNumbers(event);' onblur='validateMaxamount(this,"+index_tr+",0)' id='Max_Quantity_"+index_tr+"' />  </td>";
       innerhtml+=" <td> <input type='text'  name='Amount[]' onkeypress='return AllowOnlyNumbers(event);' id='Amount_"+index_tr+"'/>  </td>"; 
-      innerhtml+=" <td> <span class='delete_row' onclick='DeleteExistingRow(this)'><u> Delete Row </u></span> </td> </tr> ";
+      innerhtml+=" <td> <span  onclick='GenerateNewRow()'> <b>+</b></span> &nbsp; <span class='delete_row' onclick='DeleteExistingRow(this)'><b>-</b></span> </td> </tr> ";
       jQuery('#Stock_table').append(innerhtml);
 }
 
   // Generate New Row for Variable Product After validation.
 function GenerateNewRow_Variation(id,variation){
-    var a="#Stock_table_variation_"+(id+1);
-    var loop_index=id+1;
+    var a="#Stock_table_variation_"+(parseInt(id)+1);
+    var loop_index=parseInt(id)+1;
     var deleted_row=0;
     var index_tr= jQuery(a +' tr').length;
     var type="variable";
+    var add_row_dat=jQuery(jQuery(a+' tr td')[3]).html();
     for (let index = 1; index < index_tr; index++) {
       if(jQuery('#Min_Quantity_Var_'+loop_index+index).length>0){
        if(jQuery('#Min_Quantity_Var_'+loop_index+index).val()=="" || jQuery('#Min_Quantity_Var_'+loop_index+index).val()==undefined )
@@ -87,9 +88,11 @@ function GenerateNewRow_Variation(id,variation){
       innerhtml+="<td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'  name='Min_Var_"+variation+"[]'  id='Min_Quantity_Var_"+loop_index+index_tr+"'/>  </td>";  
       innerhtml+=" <td> <input type='text' name='Max_Var_"+variation+"[]' onkeypress='return AllowOnlyNumbers(event);' onblur='validateMaxamount(this,"+loop_index+index_tr+",-1)' id='Max_Quantity_Var_"+loop_index+index_tr+"' />  </td>";  
       innerhtml+=" <td> <input type='text' onkeypress='return AllowOnlyNumbers(event);'   name='Amount_Var_"+variation+"[]' id='Amount_Var_"+loop_index+index_tr+"'/>  </td>";  
-      innerhtml+=" <td> <span class='delete_row' onclick='DeleteExistingRow(this)'><u> Delete Row </u></span> </td> </tr> ";   
+      innerhtml+=" <td>  "+add_row_dat+" &nbsp;    <span class='delete_row left' onclick='DeleteExistingRow(this)'><u> <b>-</b> </u></span><span class='hide_span'> </span> &nbsp;&nbsp;&nbsp;&nbsp;</td> </tr> ";   
       jQuery(a).append(innerhtml); 
   }
+
+  
 
 // This Function is used to Validate the Numbers and does ont allow alphabets.
 function AllowOnlyNumbers(evt) {
@@ -117,20 +120,7 @@ function AllowOnlyNumbers(evt) {
     jQuery(obj).val('');
     return false;  
   }   
-  if (var_index>=0)
-  {
-  var Stock= jQuery('#variable_stock'+var_index).val();  
-  if (Stock=="0" || Stock==undefined){
-    alert(sbpp_productedit_param.fill_stock);
-  jQuery(obj).val('');
-  jQuery('#variable_stock'+var_index).focus();
-  return false;
-  }
-    if (parseInt(Stock)<parseInt(Max_Value)){
-     alert(sbpp_productedit_param.less_than_stock);
-     jQuery(obj).val('');
-    }
-  }  
+ 
 }
 // Delete The Row !!!   
 function DeleteExistingRow(obj)

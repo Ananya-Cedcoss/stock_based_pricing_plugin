@@ -39,15 +39,19 @@
 }
 
 #my_stock_div span {
-  padding: 4px;
-  width: 200%;
+  padding: 3px;
   background-color: white;
   color: black;
   border: 2px solid #008CBA;
 }
 
+.my_stock_div_forVariation .hide_span {
+  border-color: white;
+  border: solid white;
+}
+
 .my_stock_div_forVariation span {
-  padding: 4px;
+  padding: 3px;
   background-color: white;
   color: black;
   border: solid #008CBA;
@@ -103,7 +107,6 @@
 
 .my_stock_div_forVariation span {
   text-align: center;
-  margin: 4px 2px;
   opacity: 0.6;
   transition: 0.3s;
   display: inline-block;
@@ -113,7 +116,6 @@
 
 #my_stock_div span {
   text-align: center;
-  margin: 4px 2px;
   opacity: 0.6;
   transition: 0.3s;
   display: inline-block;
