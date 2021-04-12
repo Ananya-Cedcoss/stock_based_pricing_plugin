@@ -256,14 +256,15 @@ class Stock_based_pricing_plugin {
 		$this->loader->add_action( 'wp_enqueue_scripts', $sbpp_plugin_public, 'sbpp_public_enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $sbpp_plugin_public, 'sbpp_public_enqueue_scripts' );
 
-		// adding action and filter to display price at cart page.
-
+		// adding action and filter to display price at mini-cart page.
+	
 		// it is used to add custom price which is price according to stock based pricing to the cart page.
 		$this->loader->add_action( 'woocommerce_before_calculate_totals', $sbpp_plugin_public, 'add_custom_price' );
 		// it is used to display the custom price range from min to max amount according to different pricing.
 		$this->loader->add_filter( 'woocommerce_format_price_range', $sbpp_plugin_public, 'sbp_change_price_range_for_variation', 10, 3 );
-
-
+		
+		//$this->loader->add_filter( 'woocommerce_cart_item_price', 'sbpp_change_minicart_item_price', 10, 3 );
+		
 	}
 
 	/**

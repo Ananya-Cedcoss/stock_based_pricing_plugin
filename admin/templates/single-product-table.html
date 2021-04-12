@@ -37,9 +37,9 @@
                     <td> <input type="text"  onkeypress="return AllowOnlyNumbers(event);" value="<?php echo esc_attr( $sbpp_amount )  ?>"  id="<?php echo 'Amount_'. esc_attr( $sbpp_index ) ?>"   name="Amount[]"  />  </td>
                     <?php  
                     if ( $sbpp_index == 1 ) { ?>
-                        <td> <span  onclick='GenerateNewRow()'><u> <?php echo esc_html__('Add Row', 'stock-based-pricing-plugin') ?> </u></span> </td> 
+                         <td> <span  onclick='GenerateNewRow()'>  <b>+</b> </span> </td>                         
                   <?php  } else { ?>
-                       <td> <span class='delete_row' onclick='DeleteExistingRow(this)'><u><?php echo esc_html__('Delete Row', 'stock-based-pricing-plugin') ?>  </u></span> </td>
+                       <td> <span  onclick='GenerateNewRow()'> <b>+</b></span> &nbsp;<span class='delete_row' onclick='DeleteExistingRow(this)'> <b>-</b></span> </td>
                   <?php  } ?>
                   </tr>
                     <?php    $sbpp_index = ++$sbpp_index; // it used to increase the index value by 1;.
@@ -48,15 +48,11 @@
                 <tr>
                     <td> <input type="text" onkeypress="return AllowOnlyNumbers(event);"  name="Min[]"  id="Min_Quantity_1"/>  </td>  
 
-                <td> <input type="text" onkeypress="return AllowOnlyNumbers(event);"  name="Max[]" onblur="validateMaxamount(this,1,0)" id="Max_Quantity_1" />  </td>
+                    <td> <input type="text" onkeypress="return AllowOnlyNumbers(event);"  name="Max[]" onblur="validateMaxamount(this,1,0)" id="Max_Quantity_1" />  </td>
 
-               <td> <input type="text" onkeypress="return AllowOnlyNumbers(event);"  name="Amount[]" id="Amount_1" />  </td>
-
-              <?php  if ( $sbpp_index == 1 ) { ?>
-                     <td> <span  onclick="GenerateNewRow()"><u>  <?php echo esc_html__(' Add Row', 'stock-based-pricing-plugin') ?> </u></span> </td> 
-              <?php  } else { ?>
-                   <td> <sapn class="delete_row" onclick="DeleteExistingRow(this)"><u>  <?php echo esc_html__('Delete Row', 'stock-based-pricing-plugin') ?> </u></span> </td> 
-               <?php } ?>
+                    <td> <input type="text" onkeypress="return AllowOnlyNumbers(event);"  name="Amount[]" id="Amount_1" />  </td>             
+                    <td> <span  onclick="GenerateNewRow()"><b>+</b></span> </td>             
+                
                </tr> 
            <?php } ?>
 
