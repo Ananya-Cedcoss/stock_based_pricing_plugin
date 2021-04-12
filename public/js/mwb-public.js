@@ -2,7 +2,8 @@
 
 (function( $ ) {
 	'use strict';
-
+if(sbpp_public_custom_param.sbpp_gen_tab_enable == 'on')
+{
 	 $(document).ready(function() {
 		// it is used to get the price with the help of ajax method
 		 $('input.variation_id').change( function(){
@@ -26,4 +27,5 @@
 			}
 		 });	
 	});	
+}
 	})( jQuery );

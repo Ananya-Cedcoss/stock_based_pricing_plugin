@@ -76,7 +76,7 @@ class Stock_based_pricing_plugin_Public {
 
 		// Adding mwb-admin.js 
 		wp_register_script( 'sbpp_my_custom_script', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'public/js/mwb-public.js', array( 'jquery' ), $this->version, false );
-		wp_localize_script( 'sbpp_my_custom_script', 'sbpp_public_custom_param', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+		wp_localize_script( 'sbpp_my_custom_script', 'sbpp_public_custom_param', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ),'sbpp_gen_tab_enable' => get_option( 'sbpp_radio_switch_demo' ), ) );
 		wp_enqueue_script( 'sbpp_my_custom_script' );
 
 	}
@@ -169,24 +169,26 @@ class Stock_based_pricing_plugin_Public {
 
 
 
-
+ $val = get_option( 'sbpp_radio_switch_demo' );
+ if ( $val == 'on' ) {
 
 add_filter( 'woocommerce_cart_item_price', 'sbpp_change_minicart_item_price', 10, 3 );
-function sbpp_change_minicart_item_price( $price, $cart_item, $cart_item_key ) {
-	if ( ! is_cart() ) {
-		$price = $cart_item['data']->variation_id;
-		if ( ! empty($cart_item['data']->variation_id) ) {
+	function sbpp_change_minicart_item_price( $price, $cart_item, $cart_item_key ) {
+		if ( ! is_cart() ) {
+			$price = $cart_item['data']->variation_id;
+			if ( ! empty($cart_item['data']->variation_id) ) {
 			
 				$sbpp_get_price = get_post_meta( $cart_item['data']->variation_id, 'Price_of_Selected_variation' ); // assigning price from post meta data to the variable if it is type of variable product.
-		} else {
+			} else {
 				$sbpp_get_price = get_post_meta( $cart_item['data']->id, 'Price_of_Selected_variation' ); // assign price to the variable if it is simple product type.
-		}	
-		if ( ! empty( $sbpp_get_price[0] ) ) {
+			}	
+			if ( ! empty( $sbpp_get_price[0] ) ) {
 				$price = $sbpp_get_price[0];
 			return $price;
-		}
+			}
 				
 		return $price;
-	}	
+		}	
 	return $price;
+	}
 }
