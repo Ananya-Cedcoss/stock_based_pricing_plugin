@@ -406,7 +406,9 @@ class Stock_based_pricing_plugin_Admin {
 	/**  The woocommerce_product_custom_fields frunction is used to create custom field */
 	public function sbpp_product_custom_table() {		
 		wp_nonce_field(	'simple-product', 'sbpp-checkbox-table-nonce' );		
-		require_once STOCK_BASED_PRICING_PLUGIN_DIR_PATH . 'admin/templates/single-product-table.html';	
+		require_once STOCK_BASED_PRICING_PLUGIN_DIR_PATH . 'admin/partials/single-product-table.html';
+			
+
 	}
 
 	/** This Function is used to save all dynamic Pricing in Simple Type Product
@@ -446,8 +448,9 @@ class Stock_based_pricing_plugin_Admin {
 	 */
 	public function sbp_add_custom_field_to_variations( $loop, $variation_data, $variation ) {
 		wp_nonce_field(	'variable-product' , 'sbpp-checkbox-table-variation-nonce' );
-		require STOCK_BASED_PRICING_PLUGIN_DIR_PATH . 'admin/templates/variable-product-table.html';	
+		require STOCK_BASED_PRICING_PLUGIN_DIR_PATH . 'admin/partials/variable-product-table.html';	
 	}
+
 	/** Function is used to save post meta data of variation of product df.
 	 *
 	 * @param                                    int $variation_id is the Id of current variation.
@@ -468,6 +471,7 @@ class Stock_based_pricing_plugin_Admin {
 			$sbpp_data_subarray_variation['Amount'] = $sbpp_amount_alldatavariation[ $key ]; // store single amount value.
 			array_push( $sbpp_main_array_variation, $sbpp_data_subarray_variation ); // push the data array to main array.
 		}	
-		update_post_meta( $variation_id, '_price_acc_to_stock_var', ( wp_json_encode( $sbpp_main_array_variation ) ) ); // update post meta to save the values.		
+		update_post_meta( $variation_id, '_price_acc_to_stock_var', ( wp_json_encode( $sbpp_main_array_variation ) ) ); // update post meta to save the values.
+		
 	}
 }
