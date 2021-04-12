@@ -71,7 +71,9 @@ class Stock_based_pricing_plugin_Common {
 	public function sbpp_common_enqueue_scripts() {
 		wp_register_script( $this->plugin_name . 'common', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'common/src/js/stock-based-pricing-plugin-common.js', array( 'jquery' ), $this->version, false );
 		wp_localize_script( $this->plugin_name . 'common', 'sbpp_common_param', array( 'ajaxurl' => admin_url( 'admin-ajax.php'),
-		'nonce' => wp_create_nonce( 'ajax-nonce' ), ) );
+		'nonce' => wp_create_nonce( 'ajax-nonce' ),
+		'sbpp_gen_tab_enable' => get_option( 'sbpp_radio_switch_demo' ),
+		) );
 		wp_enqueue_script( $this->plugin_name . 'common' );
 	}
 

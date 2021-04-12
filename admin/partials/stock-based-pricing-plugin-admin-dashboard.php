@@ -60,9 +60,8 @@ $sbpp_default_tabs = $sbpp_mwb_sbpp_obj->mwb_sbpp_plug_default_tabs();
 						// if submenu is directly clicked on woocommerce.
 				if ( empty( $sbpp_active_tab ) ) {
 					$sbpp_active_tab = 'mwb_sbpp_plug_general';
-				}
-
-						// look for the path based on the tab id in the admin templates.
+			}
+				// look for the path based on the tab id in the admin templates.
 				$sbpp_tab_content_path = 'admin/partials/' . $sbpp_active_tab . '.php';
 
 				$sbpp_mwb_sbpp_obj->mwb_sbpp_plug_load_template( $sbpp_tab_content_path );
