@@ -112,7 +112,7 @@ class Stock_based_pricing_plugin_Common {
 					return $price;// return the regular price.
 				}
 			} else {
-				if ( true === $flag ) {				
+				if ( true === $flag  && ! empty( $priceofstock )  ) {				
 					echo get_woocommerce_currency_symbol() . esc_html__( $priceofstock ) ; // return the price according to stock based pricing.
 				} else {
 					echo  $price; // return the regular price.
@@ -230,6 +230,6 @@ class Stock_based_pricing_plugin_Common {
 			update_post_meta( $variation_id, 'Price_of_Selected_variation', $result ); // update price to the post meta data.		
 	
 		echo  $result ; // echo the result to the ajax calling.
-		wp_die(); // this is required to terminate immediately and return a proper response.
+		 // this is required to terminate immediately and return a proper response.
 	}
 }
