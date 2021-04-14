@@ -81,6 +81,17 @@ class Stock_based_pricing_plugin_Common {
 	 */
 	public function sbp_change_product_price_display( $price ) {
 		global $post; // is used to get post object for the current post.
+
+		if ( class_exists( 'WOOCS' ) ) {
+			global $WOOCS; // global variable.
+			$sbpp_regular_price_u_s_d = get_post_meta( $post->ID, '_woocs_regular_price_' . $WOOCS->current_currency . '' ); // assign post meta to the variable.
+			if ( $WOOCS->current_currency != $WOOCS->default_currency ) {
+
+			if ( ! empty( $sbpp_regular_price_u_s_d[0] ) ) {
+				return	$price; // return the regular price.
+				}
+			}
+		}
 		$flag              = false; // assign the boolean value.
 		$sbpp_product_type = get_the_terms( $post->ID, 'product_type' )[0]->slug; // assign the type of product.	
 		if ('simple'=== $sbpp_product_type ) {
