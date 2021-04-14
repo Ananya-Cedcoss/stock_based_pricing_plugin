@@ -50,8 +50,6 @@ class Stock_based_pricing_plugin_Common {
 
 		$this->plugin_name = $plugin_name;
 		$this->version     = $version;
-		
-
 	}
 
 	/**
@@ -104,6 +102,9 @@ class Stock_based_pricing_plugin_Common {
 						update_post_meta( $post->ID, 'Price_of_Selected_variation', $priceofstock );// used to update the post meta data.
 					}
 				}
+			}
+			if ( class_exists( 'WOOCS' ) ) {
+				$priceofstock = apply_filters( 'woocs_convert_price', $priceofstock  ,false );		
 			}	
 			if ( is_product() ) {
 				if ( true === $flag ) {
@@ -185,6 +186,10 @@ class Stock_based_pricing_plugin_Common {
 				} else {
 				$final_max = $to;
 				}
+				if ( class_exists( 'WOOCS' ) ) {
+					$final_min = apply_filters( 'woocs_convert_price', $final_min, false );
+					$final_max = apply_filters( 'woocs_convert_price', $final_max, false );
+				}
 				return sprintf( '%s: %s', wc_price( $final_min ), wc_price( $final_max ) ); // return the price according to stock based pricing.
 			} else {
 				return sprintf( '%s: %s', wc_price( $from ), wc_price( $to ) ); // return the regular price range for the variations.
@@ -229,7 +234,8 @@ class Stock_based_pricing_plugin_Common {
 	
 			update_post_meta( $variation_id, 'Price_of_Selected_variation', $result ); // update price to the post meta data.		
 	
-		echo  $result ; // echo the result to the ajax calling.
-		 // this is required to terminate immediately and return a proper response.
+		echo  $result; // echo the result to the ajax calling.
+		die();
+		// this is required to terminate immediately and return a proper response.
 	}
 }

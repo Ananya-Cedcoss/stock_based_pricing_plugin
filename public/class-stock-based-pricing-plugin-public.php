@@ -72,7 +72,6 @@ class Stock_based_pricing_plugin_Public {
 		wp_register_script( $this->plugin_name, STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'public/src/js/stock-based-pricing-plugin-public.js', array( 'jquery' ), $this->version, false );
 		wp_localize_script( $this->plugin_name, 'sbpp_public_param', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 		wp_enqueue_script( $this->plugin_name );
-
 		// Adding mwb-admin.js 
 		wp_register_script( 'sbpp_my_custom_script', STOCK_BASED_PRICING_PLUGIN_DIR_URL . 'public/js/mwb-public.js', array( 'jquery' ), $this->version, false );
 		wp_localize_script( 'sbpp_my_custom_script', 'sbpp_public_custom_param', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ),'sbpp_gen_tab_enable' => get_option( 'sbpp_radio_switch_demo' ), ) );
@@ -90,12 +89,27 @@ class Stock_based_pricing_plugin_Public {
 		
 			if ( $value['variation_id'] == 0 ) { // checking variation value.
 				$sbpp_get_price = get_post_meta( $value['product_id'], 'Price_of_Selected_variation' ); // assigning price from post meta data to the variable if it is type of variable product.
+				$post_id        = $value['product_id'];
 			} else {
 				$sbpp_get_price = get_post_meta( $value['variation_id'], 'Price_of_Selected_variation' ); // assign price to the variable if it is simple product type.
 			}		
 			if ( ! empty( $sbpp_get_price[0] ) ) {
-				$sbpp_custom_price = $sbpp_get_price[0];
-				$value['data']->set_price( $sbpp_custom_price );
+				global $WOOCS; // global variable.
+				if ( class_exists( 'WOOCS' ) ) {
+					$sbpp_regular_price_u_s_d = get_post_meta( $post_id, '_woocs_regular_price_' . $WOOCS->current_currency . '' ); // assign post meta to the variable.				
+					if (! empty( $sbpp_regular_price_u_s_d[0] ) ) {
+						if ( $WOOCS->current_currency != $WOOCS->default_currency ) {
+						echo $price;
+						}
+					} else {
+						$sbpp_custom_price = $sbpp_get_price[0];
+					//	$abc = apply_filters( 'woocs_convert_price', $sbpp_get_price[0], false );
+						$value['data']->set_price( $sbpp_custom_price );
+					}
+				} else {
+					$sbpp_custom_price = $sbpp_get_price[0];					
+					$value['data']->set_price( $sbpp_custom_price );
+				}
 			}
 		}
 	}
@@ -157,17 +171,14 @@ class Stock_based_pricing_plugin_Public {
 		} else {
 			return sprintf( '%s: %s', wc_price( $from ), wc_price( $to ) ); // return the regular price range for the variations.
 		}
-
 	}
-	
-	
-
-
 
 	
 	public function sbpp_change_minicart_item_price( $price, $cart_item, $cart_item_key ) {
-		if ( ! is_cart() ) {
-			
+		if( class_exists( 'WOOCS' ) ) {
+			return $price;
+		}
+		if ( ! is_cart() ) {			
 			$price = $cart_item['data']->variation_id;
 			if ( ! empty($cart_item['data']->variation_id) ) {
 				
@@ -179,16 +190,7 @@ class Stock_based_pricing_plugin_Public {
 				$price = $sbpp_get_price[0];
 			return $price;
 			}
-					
-		return $price;
 		}	
 	return $price;
 	}
-
-
 }
-
-
-
-
-
