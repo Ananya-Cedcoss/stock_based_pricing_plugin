@@ -1,0 +1,11 @@
+Use your credit/debit card to make payments via Stripe
+
+TEST MODE ENABLED
+In test mode, you can use these card numbers,
+Normal payments : 4242424242424242
+SCA authentication : 4000002500003155
+SCA Non-authentication : 4000000000003055
+Upsell payment failed : 4000002760003184
+with any CVC and a valid expiration date or check the documentation Testing Stripe for more card numbers.
+
+Please use a Dummy email address in Billing email.

@@ -1,0 +1,911 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.wps-wocuf_pro-no-offer {
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.wps_wocuf_pro_offer_container {
+    padding: 50px 150px;
+    background: white;
+}
+
+.wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_special_offer_banner {
+    margin-bottom: 60px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_main_wrapper .wps_wocuf_pro_product_image img {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_main_wrapper::after {
+    clear: both;
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_main_wrapper {
+    overflow: hidden;
+}
+
+.wps_wocuf_pro_offered_product_description {
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+}
+
+.wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_main_wrapper .wps_wocuf_pro_product_title {
+    text-align: center;
+    width: 50%;
+    margin: 20px auto;
+    font-size: 20px;
+}
+
+.wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_product_price>h4,
+.wps_wocuf_pro_variable_price_html.display {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    padding: 10px 40px;
+}
+
+.wps_wocuf_pro_variations .wps_wocuf_offer_variation_select {
+    height: 36px;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #bababa;
+    font-size: 15px;
+    background: #fff;
+}
+
+.wps_wocuf_pro_variations {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.wps_wocuf_pro_variations .wps_wocuf_offer_variation_select option {
+    padding: 10px;
+}
+
+.wps_wocuf_pro_variations .variations .label label {
+    margin-right: 20px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.wps_wocuf_pro_special_offers_for_you .woocommerce-Price-amount.amount {
+    font-weight: bold;
+}
+
+.wps_wocuf_pro_variable_price_html del .woocommerce-Price-amount.amount {
+    font-weight: 500;
+}
+
+.wps_wocuf_pro_variations tr td {
+    border: none;
+}
+
+.wps_wocuf_pro_product_price h4 {
+    background-color: #f2f5f7;
+    color: #000;
+    border: solid 2px #cecece;
+    border-style: dashed;
+    font-size: 27px;
+    text-align: center;
+}
+
+.wps_wocuf_pro_product_price h4 del {
+    color: #000;
+    padding-left: 10px;
+}
+
+.wps_wocuf_pro_product_price h4 ins {
+    background-color: #fff;
+    color: #000;
+}
+
+.wps_wocuf_pro_offered_product_actions {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.wps_wocuf_pro_offered_product_actions button.wps_wocuf_pro_buy {
+    padding: 15px 25px !important;
+    color: #fff !important;
+    font-size: 25px !important;
+    border: 0px;
+    font-weight: bold;
+    margin-right: 10px;
+    cursor: pointer !important;
+    border-radius: 10px;
+}
+
+.wps_wocuf_pro_offered_product_actions a.wps_wocuf_pro_skip {
+    padding: 5px 20px;
+    font-size: 25px;
+    cursor: pointer;
+    display: inline-block;
+    position: initial;
+    text-align: right;
+    border: solid 1px;
+    border-radius: 20px;
+    top: -5px;
+}
+
+.wps_wocuf_pro_variations table {
+    margin: 0 auto;
+}
+
+.wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_product_price {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wps_wocuf_pro_display {
+    display: block;
+    padding: 15px;
+}
+
+.wps_wocuf_pro_hide {
+    display: none;
+}
+
+.wps_wocuf_pro_demotext {
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#wps_wocuf_pro_offer_loader {
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+#wps_wocuf_pro_offer_loader img {
+    display: block;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 40%;
+}
+
+.woocommerce-info.wps-wocuf-stripe-test-mode {
+    margin-top: -14px;
+    margin-bottom: 15px;
+}
+
+#wps-wocuf-stripe-test-mode-notice {
+    font-weight: bold;
+}
+
+.payment_method_wps_upsell_authorize-dot-net img {
+    width: 90px;
+}
+
+
+/*Fixing default offer page css*/
+
+.wps_wocuf_pro_product_image {
+    text-align: center;
+}
+
+.wps_wocuf_pro_offered_product_actions {
+    margin-top: 30px;
+}
+
+.wps_wocuf_pro_skip.wps_wocuf_pro_no {
+    margin-top: 20px;
+}
+
+
+/**
+* V3.0.0 CSS STARTS HERE.
+* 
+*/
+
+
+/*since v3.0.0 - OFFER Price - Start*/
+
+.wps_upsell_offer_product_price {
+    display: inline-block;
+}
+
+.wps_upsell_offer_product_price del {
+    font-size: 85%;
+}
+
+.wps_upsell_offer_product_price ins {
+    text-decoration: none;
+}
+
+
+/*since v3.0.0 - OFFER Price - End*/
+
+
+/*since v3.0.0 - OFFER Variations - Start*/
+
+.wps_upsell_offer_product_variations table {
+    width: 100%;
+}
+
+.wps_upsell_offer_product_variations table td,
+table th {
+    padding: 1em 1.41575em;
+    vertical-align: middle;
+}
+
+.wps_upsell_offer_product_variations table tbody td,
+.wps_upsell_offer_product_variations table tbody th {
+    background-color: transparent !important;
+    text-align: center;
+}
+
+.wps_upsell_offer_product_variations table tbody td:first-child {
+    width: 35%;
+}
+
+.wps_upsell_offer_product_variations table tbody td:last-child {
+    width: 65%;
+}
+
+
+/*since v3.0.0 - OFFER Variations - End*/
+
+
+/*since v3.0.0 - OFFER Image - Start*/
+
+.wps_upsell_offer_product_image {
+    display: inline-block;
+}
+
+
+/*since v3.0.0 - OFFER Image - End*/
+
+
+/*since v3.0.0 - OFFER star review - Start*/
+
+@font-face {
+    font-family: 'star';
+    src: url('star.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.wps-upsell-star-rating {
+    display: inline-block;
+}
+
+.wps-upsell-star-rating {
+    overflow: hidden;
+    position: relative;
+    height: 1.618em;
+    line-height: 1.618;
+    font-size: 1em;
+    width: 5.3em;
+    font-family: star;
+    font-weight: 400;
+}
+
+.wps-upsell-star-rating::before {
+    content: '\53\53\53\53\53';
+    opacity: .25;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.wps-upsell-star-rating span {
+    overflow: hidden;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: 1.5em;
+}
+
+.wps-upsell-star-rating span::before {
+    content: '\53\53\53\53\53';
+    top: 0;
+    position: absolute;
+    left: 0;
+    color: #f1c40f;
+}
+
+
+/*since v3.0.0 - OFFER star review - End*/
+
+
+/*since v3.0.0 - Default offer ( gutenberg ) - Start */
+
+.wps_upsell_default_offer_buy_now a {
+    width: calc(100% - 40%);
+    padding: 15px 10px;
+}
+
+.wps_upsell_default_offer_buy_now,
+.wps_upsell_default_offer_no_thanks {
+    margin: inherit !important;
+    text-align: center;
+}
+
+.wps_upsell_default_offer_no_thanks a {
+    width: calc(100% - 55%);
+}
+
+.wps_upsell_default_offer_image {
+    text-align: center;
+}
+
+.wps_upsell_default_offer_image .wps_upsell_offer_product_image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.wps_upsell_default_offer_buy_now a:hover {
+    background-color: #80d600 !important;
+}
+
+.wps_upsell_default_offer_no_thanks a:hover {
+    background-color: #bf0000 !important;
+}
+
+.wps_upsell_default_offer_variations .wps_upsell_offer_product_variations {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.wps_upsell_default_offer_variations .wps_upsell_offer_product_variations table tbody td:first-child {
+    width: 40%;
+}
+
+.wps_upsell_default_offer_description {
+    text-align: center;
+    margin: 30px 10%;
+}
+
+
+/*since v3.0.0 - Default offer ( gutenberg ) - End */
+
+
+/*since v3.0.0 - Stripe cc icons - Start */
+
+.woocommerce-checkout #payment ul.payment_methods li img.stripe-icon,
+#add_payment_method #payment ul.payment_methods li img.stripe-icon {
+    float: right;
+    max-width: 40px;
+    padding-left: 3px;
+    margin: 0;
+}
+
+#wc-wps-wocuf-pro-stripe-gateway-cc-form .form-row {
+    width: 100%;
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#wps-wocuf-pro-stripe-gateway-card-cvc {
+    width: 100% !important;
+}
+
+
+/*since v3.0.0 - Stripe cc icons - Ends */
+
+
+/**
+* V3.0.0 CSS Ends HERE ------------>>>>>>>>>>>>>>>>>>>
+* 
+*/
+
+
+/**==========================================
+* V3.5.0 CSS Starts Here  
+*=========================================*/
+
+.wps_upsell_quantity {
+    text-align: center;
+}
+
+.wps_upsell_quantity_input {
+    width: 4.235801032em;
+    padding: 0.6180469716em;
+    background-color: #f2f2f2;
+    color: #43454b;
+    border: 0;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    font-weight: normal;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.125);
+    font-size: 14px;
+    margin: 0;
+    font-family: "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    line-height: 1.618;
+    text-rendering: optimizeLegibility;
+    font-weight: 600;
+}
+
+
+/* since v3.5.0 - Upsell Actions loader - Start */
+
+.wps_upsell_loader {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(21, 21, 21, 0.7);
+    z-index: 9999;
+    display: none;
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.wps_upsell_loader::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    width: 80px;
+    height: 80px;
+    border-style: solid;
+    border-color: white;
+    border-top-color: transparent;
+    border-width: 6px;
+    border-radius: 50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+    margin: 0 auto;
+}
+
+.wps_upsell_loader .wps_upsell_loader_text {
+    font-size: 22px;
+    position: absolute;
+    top: 58%;
+    right: 0;
+    left: 0;
+    text-align: center;
+    z-index: 999999;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+    color: #ffffff;
+}
+
+
+/* since v3.5.0 - Upsell Actions loader - End */
+
+
+/**==========================================
+* V3.5.0 CSS Ends Here  
+*===========================================*/
+
+
+/*v3.6.0 Design updates*/
+
+.additional_offer {
+    text-align: center;
+    display: inline-block;
+}
+
+#wps_wocuf_pro_add_continue {
+    max-width: 250px;
+    width: 100%;
+    border: 2px solid;
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+}
+
+.wps_wocuf_continue {
+    flex: 0 0 100%;
+}
+
+
+/**=====================================
+*            Media Query starts
+====================================== */
+
+@media only screen and (max-width: 1200px) {
+    .wps_wocuf_pro_offer_container {
+        padding: 50px 50px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .wps_upsell_loader::after {
+        width: 50px;
+        height: 50px;
+        border-width: 5px;
+    }
+    .wps_upsell_loader .wps_upsell_loader_text {
+        font-size: 19px;
+        top: 54%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_main_wrapper .wps_wocuf_pro_product_image {
+        float: none;
+        max-width: 100%;
+    }
+    .wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_main_wrapper .wps_wocuf_pro_offered_product {
+        float: none;
+        padding: 15px;
+        width: 100%;
+    }
+    .wps_wocuf_pro_variations .wps_wocuf_pro_variations_select {
+        height: 44px;
+        width: 100%;
+    }
+    .wps_wocuf_pro_offer_container {
+        padding: 10px;
+    }
+    /****** Responsive CSS ******/
+    .wps_wocuf_pro_special_offers_for_you * {
+        box-sizing: border-box;
+    }
+    .wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_main_wrapper .wps_wocuf_pro_offered_product {
+        padding: 15px 0;
+    }
+    .wps_wocuf_pro_variations .wps_wocuf_offer_variation_select {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .wps_wocuf_pro_product_price h4 {
+        font-size: 20px !important;
+    }
+    .wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_special_offer_banner {
+        margin-bottom: 20px !important;
+    }
+    .wps_wocuf_pro_special_offers_for_you .wps_wocuf_pro_special_offer_banner h1 {
+        font-size: 20px;
+    }
+}
+
+
+/*Designing issue fixes v3.6.1 START*/
+
+.wpsfrm ul,
+.wpsfrm li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wpsfrm input[type='text'],
+.wpsfrm input[type='number'],
+.wpsfrm input[type='email'],
+.wpsfrm input[type='date'],
+.wpsfrm input[type='time'] {
+    background: none;
+    border-radius: 5px;
+    border: 1.5px solid;
+    box-shadow: none;
+    font-size: 16px;
+    margin: 0;
+    max-width: 600px;
+    min-height: 40px;
+    padding: 10px 15px;
+    color: #000;
+    width: 100%;
+}
+
+.wpsfrm label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 0 15px;
+    text-transform: capitalize;
+}
+
+.wps-wocuf__front-form-item {
+    padding: 15px 15px 0;
+}
+
+.wps-wocuf__front-form-item.wps-wocuf__front-form-checkbox-label {
+    align-items: center;
+    display: flex;
+}
+
+.wps-wocuf__front-form-item.wps-wocuf__front-form-checkbox-label label {
+    padding: 15px 15px 15px 0;
+}
+
+.wpsfrm input[type='text']:focus,
+.wpsfrm input[type='number']:focus,
+.wpsfrm input[type='email']:focus,
+.wpsfrm input[type='date']:focus,
+.wpsfrm input[type='time']:focus {
+    background: none;
+    outline: none;
+}
+
+.wpsfrm input[type='checkbox'] {
+    border: 1.5px solid;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+}
+
+.wpsfrm input[type='checkbox']:focus {
+    outline: none;
+}
+
+
+/*Designing issue fixes v3.6.1 END*/
+
+
+/* Slider */
+
+.wps-banner *,
+.wps-banner *:hover,
+.wps-banner *:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+/* Update( v3.6.7 ) starts -code commented*/
+/* p,
+h3,
+img,
+a,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+} */
+
+/* Update v3.6.7 starts*/
+.wocuf_pro_bundle_wrap {
+    padding: 10px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.wocuf_pro_bundle_show {
+    font-size: 16px;
+    display: block;
+    background-color: #43454b;
+    font-weight: 600;
+    margin: 5px auto;
+    border-radius: 5px;
+    color: white!important;
+    padding: 10px 25px;
+}
+/* Update v3.6.7 ends*/
+
+.wps-banner__carousel {
+    max-width: 1240px;
+    padding: 0 15px;
+    width: calc(100% - 30px);
+    margin: auto;
+}
+
+.wps-banner__carousel--item-inner {
+    padding: 10px;
+    text-align: center;
+}
+
+.wps-banner__carousel-img {
+    max-height: 200px;
+    overflow: hidden;
+    min-height: 200px;
+    max-width: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.wps-banner__carousel-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex: 1;
+}
+
+.wps-banner__carousel-heading {
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.25;
+}
+
+.wps-banner__carousel-desc {
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+}
+
+.wps-banner__carousel-btn {
+    background-color: #333;
+    padding: 8px 16px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 10px;
+    color: #fff;
+    border: 1.5px solid #333;
+    transition: all 0.3s ease;
+}
+
+.wps-banner__carousel-btn:hover {
+    background-color: transparent;
+    color: #333;
+}
+
+
+/* Arrows CSS */
+
+.wps-banner .slick-arrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 0;
+    background-color: transparent;
+    transform: translateY(-50%);
+    border: none;
+    z-index: 9;
+}
+
+.wps-banner .slick-arrow:before {
+    position: absolute;
+    content: '\27A4';
+    font-size: 28px;
+    color: #333;
+    top: 0;
+    left: -30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    line-height: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wps-banner .slick-arrow:focus::before {
+    color: #fff;
+    background-color: #333;
+}
+
+.wps-banner .slick-prev {
+    right: unset;
+    left: 0;
+}
+
+.wps-banner .slick-prev:before {
+    transform: rotate(180deg);
+    right: unset;
+    left: 0;
+}
+
+
+/* Dots CSS */
+
+.wps-banner .slick-dots {
+    display: flex;
+    justify-content: center;
+}
+
+.wps-banner .slick-dots button {
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+    margin: 3px;
+    border-radius: 50%;
+    display: inline-block;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0;
+}
+
+.wps-banner .slick-dots .slick-active button {
+    background-color: #333;
+}
+
+.wps_wocuf_input_row {
+    margin-bottom: 10px;
+}
+
+.wps_wocuf_additional_variation_select,
+.wps_upsell_offer_variation_select {
+    /* Reset */
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 20em;
+    height: 3em;
+    padding: 0 4em 0 1em;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center / 1.4em, linear-gradient(to left, rgba(255, 255, 255, 0.3) 3em, rgba(255, 255, 255, 0.2) 3em);
+    color: white;
+    filter: invert(100%);
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+.wps_wocuf_additional_variation_select option,
+.wps_upsell_offer_variation_select option {
+    background-color: #131213;
+}
+
+.wps_wocuf_additional_variation_select option :focus,
+.wps_upsell_offer_variation_select option:focus {
+    outline: none;
+}
+
+.wps_wocuf_additional_variation_select option ::-ms-expand,
+.wps_upsell_offer_variation_select option::-ms-expand {
+    display: none;
+}
+
+p.wps_wocuf_pro_bump_attributes_name {
+    margin: 0 auto;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-align: initial;
+}
+
+.wps_upsell_additional_offer_product_price {
+    font-size: 18px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.theme-betheme .wps_upsell_offer_product_price {
+    margin: 15px 0;
+}
+
+.theme-Divi .wps_upsell_offer_product_price {
+    margin: 15px 0;
+}
