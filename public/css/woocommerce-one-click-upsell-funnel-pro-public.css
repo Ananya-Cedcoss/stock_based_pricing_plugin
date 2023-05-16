@@ -689,8 +689,7 @@ table th {
     text-decoration: none;
 }
 
-/* Update( v3.6.7 ) starts -code commented*/
-/* p,
+p,
 h3,
 img,
 a,
@@ -700,26 +699,7 @@ li {
     padding: 0;
     list-style: none;
     text-decoration: none;
-} */
-
-/* Update v3.6.7 starts*/
-.wocuf_pro_bundle_wrap {
-    padding: 10px;
-    display: inline-block;
-    margin: 10px 0;
 }
-
-.wocuf_pro_bundle_show {
-    font-size: 16px;
-    display: block;
-    background-color: #43454b;
-    font-weight: 600;
-    margin: 5px auto;
-    border-radius: 5px;
-    color: white!important;
-    padding: 10px 25px;
-}
-/* Update v3.6.7 ends*/
 
 .wps-banner__carousel {
     max-width: 1240px;
@@ -900,12 +880,4 @@ p.wps_wocuf_pro_bump_attributes_name {
     font-size: 18px;
     margin: 0 auto;
     color: #ffffff;
-}
-
-.theme-betheme .wps_upsell_offer_product_price {
-    margin: 15px 0;
-}
-
-.theme-Divi .wps_upsell_offer_product_price {
-    margin: 15px 0;
 }

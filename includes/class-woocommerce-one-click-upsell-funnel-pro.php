@@ -70,7 +70,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro {
 		if ( defined( 'WPS_WOCUF_PRO_VERSION' ) ) {
 			$this->version = WPS_WOCUF_PRO_VERSION;
 		} else {
-			$this->version = '3.6.10';
+			$this->version = '1.0.8';
 		}
 
 		$this->plugin_name = 'one-click-upsell-funnel-for-woocommerce-pro';
@@ -381,10 +381,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro {
 				// Hook to ajax when edit button is clicked on popup for custom fields.
 				$this->loader->add_action( 'wp_ajax_edit_custom_form_fields', $plugin_admin, 'edit_custom_form_fields' );
 				$this->loader->add_action( 'wp_ajax_nopriv_edit_custom_form_fields', $plugin_admin, 'edit_custom_form_fields' );
-				
-				$this->loader->add_action( 'woocommerce_admin_order_totals_after_total', $plugin_admin, 'display_order_fee_upsell' );
-				$this->loader->add_action( 'woocommerce_admin_order_totals_after_total', $plugin_admin, 'display_order_payout_upsell' );
-				
+
 			}
 
 			$this->loader->add_action( 'woocommerce_create_refund', $plugin_admin, 'upsell_modify_refund', 10, 3 );
@@ -466,7 +463,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro {
 			if ( 'on' === $wps_wocuf_pro_enable_plugin ) {
 
 				// Initiate Upsell Orders before processing payment.
-				$this->loader->add_action( 'woocommerce_checkout_order_processed', $plugin_public, 'wps_wocuf_initate_upsell_orders',90 );
+				$this->loader->add_action( 'woocommerce_checkout_order_processed', $plugin_public, 'wps_wocuf_initate_upsell_orders' );
 
 				// When user clicks on No thanks for Upsell offer.
 				! is_admin() && $this->loader->add_action( 'wp_loaded', $plugin_public, 'wps_wocuf_pro_process_the_funnel' );
@@ -609,7 +606,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro {
 			return true;
 		} else {
 
-			return false;
+			return true;
 		}
 	}
 
@@ -626,6 +623,6 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro {
 
 		$day_count = ( $thirty_days - $current_time ) / ( 24 * 60 * 60 );
 
-		return 10;
+		return $day_count;
 	}
 }

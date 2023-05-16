@@ -1,105 +1,105 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: One Click Upsell Funnel For WooCommerce Pro 3.6.10\n"
-"POT-Creation-Date: 2022-12-19 17:06+0530\n"
-"PO-Revision-Date: 2022-12-19 17:10+0530\n"
+"Project-Id-Version: One Click Upsell Funnel For WooCommerce Pro 3.6.6\n"
+"POT-Creation-Date: 2022-03-31 20:21+0530\n"
+"PO-Revision-Date: 2022-03-31 20:21+0530\n"
 "Last-Translator: \n"
 "Language-Team: WP Swings\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n;_x;_ex;_nx;esc_attr__;esc_attr_e;esc_attr_x;"
-"esc_html;esc_html__;esc_html_e;esc_html_x;_n_noop;_nx_noop;esc_textarea;"
+"esc_html;esc_html__;esc_html_e;esc_html_x;_n_noop;_nx_noop;"
 "translate_nooped_plural\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:128
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:512
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:789
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:840
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:126
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:470
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:750
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:801
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:871
 #: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:910
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:949
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1020
 #: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1059
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1098
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1145
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1106
 #: admin/partials/templates/wps-wocuf-pro-funnels-list.php:33
 #: admin/partials/templates/wps-wocuf-pro-settings.php:25
 #: admin/partials/woocommerce-one-click-upsell-funnel-pro-admin-display.php:28
 #: admin/reporting-and-tracking/upsell-reporting-and-tracking-config-panel.php:22
 #: class-wps-wocuf-pro-update.php:67
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:395
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:647
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:394
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:646
 #: includes/class-woocommerce-one-click-upsell-funnel-pro-global-functions.php:41
 #: includes/class-woocommerce-one-click-upsell-funnel-pro-global-functions.php:67
 #: includes/class-woocommerce-one-click-upsell-funnel-pro-global-functions.php:134
 #: includes/class-woocommerce-one-click-upsell-funnel-pro-global-functions.php:163
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:641
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:717
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1201
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1361
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1735
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2794
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3310
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3384
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3520
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3821
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4172
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4213
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4308
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4421
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4470
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4928
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:5237
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:5638
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6471
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6635
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6827
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:635
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:711
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1195
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1355
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1721
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2657
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3134
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3203
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3339
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3640
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3991
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4029
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4119
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4232
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4273
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4731
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:5040
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:5441
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6266
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6429
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6621
 #: reporting/class-wps-upsell-report-sales-by-category.php:63
 #: reporting/class-wps-upsell-report-sales-by-category.php:143
 #: reporting/class-wps-upsell-report-sales-by-category.php:247
 #: reporting/class-wps-upsell-report-sales-by-category.php:307
-#: reporting/class-wps-upsell-report-sales-by-product.php:189
-#: reporting/class-wps-upsell-report-sales-by-product.php:481
-#: woocommerce-one-click-upsell-funnel-pro.php:314
-#: woocommerce-one-click-upsell-funnel-pro.php:357
+#: reporting/class-wps-upsell-report-sales-by-product.php:186
+#: reporting/class-wps-upsell-report-sales-by-product.php:478
+#: woocommerce-one-click-upsell-funnel-pro.php:324
+#: woocommerce-one-click-upsell-funnel-pro.php:367
 msgid "Nonce Not verified"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:151
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:149
 #, php-format
 msgid "Please enter in decimal (%s) format without thousand separators."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:153
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:151
 #, php-format
 msgid ""
 "Please enter in monetary decimal (%s) format without thousand separators and "
 "currency symbols."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:154
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:152
 msgid "Please enter in country code with two capital letters."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:155
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:153
 msgid "Please enter in a value less than the regular price."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:159
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:157
 msgid "Import"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:160
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:158
 msgid "Export"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:173
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:187
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:171
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:185
 #: migrator/class-wps-ocu-migration.php:91
 #: migrator/class-wps-ocu-migration.php:92
 #: migrator/class-wps-ocu-migration.php:95
@@ -107,102 +107,90 @@ msgstr ""
 msgid "Attention Required"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:174
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:172
 msgid ""
 "We are preparing your migration to WP Swings. Please do not leave the page "
 "until prompted. This may take a while according to your previous upsell "
 "orders count."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:188
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:186
 msgid ""
 "The plugin requires free plugin to be activated. Please install and activate "
 "the free plugin."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:279
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:280
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1360
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:277
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:278
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1321
 msgid "1 Click Upsell"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:291
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:289
 msgid "Funnels & Settings"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:296
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:294
 msgid "Reports, Analytics & Tracking"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:325
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:419
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:314
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:393
 #, php-format
 msgid "%s day"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:332
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:425
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:746
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:321
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:399
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:707
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1111
 msgid "Activate"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:334
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:427
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:323
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:401
 msgid " the license key before "
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:338
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:353
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:431
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:450
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:327
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:341
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:405
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:422
 msgid ""
 " or you may risk losing data and the plugin will also become dysfunctional."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:349
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:337
 msgid "We have done a major changes in plugin! Please "
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:351
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:448
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:339
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:420
 msgid "Migrate"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:363
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:461
-msgid ""
-"Migration was successful! If you want to reset the migration, please click "
-"here. "
-msgstr ""
-
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:365
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:463
-msgid "Reset Migration"
-msgstr ""
-
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:380
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:479
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:354
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:437
 #: admin/partials/woocommerce-one-click-upsell-funnel-pro-admin-display.php:68
 #: admin/reporting-and-tracking/upsell-reporting-and-tracking-config-panel.php:45
-#: woocommerce-one-click-upsell-funnel-pro.php:325
-#: woocommerce-one-click-upsell-funnel-pro.php:368
+#: woocommerce-one-click-upsell-funnel-pro.php:335
+#: woocommerce-one-click-upsell-funnel-pro.php:378
 msgid "WooCommerce One Click Upsell Funnel Pro"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:384
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:482
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:358
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:440
 #: admin/partials/woocommerce-one-click-upsell-funnel-pro-admin-display.php:72
 #: admin/reporting-and-tracking/upsell-reporting-and-tracking-config-panel.php:49
 msgid "v"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:446
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:418
 msgid "We have done a major changes in plugin please "
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:584
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:587
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:545
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:548
 #: admin/partials/templates/wps-wocuf-pro-creation.php:867
 #: admin/partials/templates/wps-wocuf-pro-creation.php:870
 #: admin/partials/templates/wps-wocuf-pro-creation.php:900
@@ -210,9 +198,9 @@ msgstr ""
 msgid "Order ThankYou Page"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:594
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:596
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:606
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:555
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:557
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:567
 #: admin/partials/templates/wps-wocuf-pro-creation.php:851
 #: admin/partials/templates/wps-wocuf-pro-creation.php:853
 #: admin/partials/templates/wps-wocuf-pro-creation.php:881
@@ -223,248 +211,230 @@ msgstr ""
 msgid "Offer #"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:609
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:570
 #: admin/partials/templates/wps-wocuf-pro-creation.php:941
 msgid "Offer Product"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:610
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:571
 #: admin/partials/templates/wps-wocuf-pro-creation.php:400
 #: admin/partials/templates/wps-wocuf-pro-creation.php:745
 #: admin/partials/templates/wps-wocuf-pro-creation.php:945
 #: admin/partials/templates/wps-wocuf-pro-settings.php:307
-#: reporting/class-wps-upsell-report-sales-by-product.php:259
+#: reporting/class-wps-upsell-report-sales-by-product.php:256
 msgid "Search for a product&hellip;"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:613
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:574
 #: admin/partials/templates/wps-wocuf-pro-creation.php:984
 msgid "Offer Price / Discount"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:616
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:577
 #: admin/partials/templates/wps-wocuf-pro-creation.php:989
 #: admin/partials/templates/wps-wocuf-pro-settings.php:354
 msgid "Specify new offer price or discount %"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:620
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:581
 #: admin/partials/templates/wps-wocuf-pro-creation.php:997
 msgid "Offer Image"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:622
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:583
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1009
 msgid "This will not work for Variable Offer product."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:625
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:586
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1016
 msgid "After 'Buy Now' go to"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:626
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:587
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1021
 msgid "Select where the customer will be redirected after accepting this offer"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:629
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:590
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1028
 msgid "After 'No thanks' go to"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:630
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:591
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1033
 msgid "Select where the customer will be redirected after rejecting this offer"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:633
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:594
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1144
 msgid "Offer Custom Page Link"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:640
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:601
 msgid "Remove"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:673
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:634
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1040
 msgid "Offer Template"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:694
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:655
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1058
 msgid "STANDARD TEMPLATE"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:695
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:656
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1059
 msgid "CREATIVE TEMPLATE"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:696
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:657
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1060
 msgid "VIDEO TEMPLATE"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:723
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:684
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1087
 msgid "Insert and Activate"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:727
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:688
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1091
 msgid "View &rarr;"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:729
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:690
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1093
 msgid "Customize &rarr;"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:740
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:701
 msgid "custom"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:742
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:703
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1107
 msgid "LINK TO CUSTOM PAGE"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:750
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:711
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1115
 msgid "Activated"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:751
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:712
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1116
 msgid "Please enter and save your custom page link below."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:765
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:726
 #: admin/partials/templates/wps-wocuf-pro-creation.php:1134
 msgid ""
 "Feature not supported for this Offer, please add a new Offer with Elementor "
 "active."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1016
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:977
 msgid "Upsell Orders"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1038
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:999
 msgid "Upsell Order"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1040
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1001
 msgid "Single Order"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1066
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1076
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1027
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1037
 msgid "All Orders"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1067
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1077
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1028
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1038
 msgid "No Upsell Orders"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1068
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1078
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1029
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1039
 msgid "Only Upsell Orders"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1176
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1137
 msgid "An unexpected error occurred. Please try again."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1193
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1225
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1154
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1186
 msgid "Successfully Verified. Please Wait."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1243
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1204
 msgid "Something Went Wrong. Please contact with support forum."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1364
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1325
 msgid "Upsell Sales by date"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1371
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1332
 msgid "Upsell Sales by product"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1378
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1339
 msgid "Upsell Sales by category"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1416
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1377
 msgid "Some Error Occured while creating report."
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1480
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1441
 msgid "Upsell Supported"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1504
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1465
 #: admin/partials/templates/wps-wocuf-pro-settings.php:203
 #: admin/partials/templates/wps-wocuf-pro-settings.php:233
 msgid "Yes"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1507
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1468
 #: admin/partials/templates/wps-wocuf-pro-settings.php:204
 #: admin/partials/templates/wps-wocuf-pro-settings.php:234
 #: admin/reporting-and-tracking/templates/pixel-settings.php:242
 msgid "No"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1535
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1569
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1496
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1530
 msgid "Parent Order Completed"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1542
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1503
 #, php-format
 msgid "Parent Order Completed <span class=\"count\">(%s)</span>"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1549
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1571
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1510
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1532
 msgid "Upsell Order Failed"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1556
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1517
 #, php-format
 msgid "Upsell Order Failed <span class=\"count\">(%s)</span>"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1615
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1576
 msgid "Upload image"
 msgstr ""
 
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1845
+#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1806
 msgid "Attempt Manual Capture"
-msgstr ""
-
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1903
-msgid "This represents the fee Stripe collects for the transaction."
-msgstr ""
-
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1904
-msgid "Upsell Stripe Fee:"
-msgstr ""
-
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1933
-msgid ""
-"This represents the net total that will be credited to your Stripe bank "
-"account. This may be in the currency that is set in your Stripe account."
-msgstr ""
-
-#: admin/class-woocommerce-one-click-upsell-funnel-pro-admin.php:1934
-msgid "Upsell Stripe Payout:"
 msgstr ""
 
 #: admin/partials/templates/woocommerce-one-click-upsell-funnel-pro-license.php:17
@@ -535,7 +505,7 @@ msgstr ""
 
 #: admin/partials/templates/wps-wocuf-pro-creation.php:302
 msgid "Post Checkout Offers will be displayed :"
-msgstr "Post Checkout Offers will be displayed :--TRANSLATED"
+msgstr ""
 
 #: admin/partials/templates/wps-wocuf-pro-creation.php:302
 msgid "Sandbox Mode &rarr; For Admin only"
@@ -714,7 +684,7 @@ msgstr ""
 #: admin/partials/templates/wps-wocuf-pro-creation.php:688
 #: reporting/class-wps-upsell-report-sales-by-category.php:317
 #: reporting/class-wps-upsell-report-sales-by-date.php:385
-#: reporting/class-wps-upsell-report-sales-by-product.php:489
+#: reporting/class-wps-upsell-report-sales-by-product.php:486
 msgid "Date"
 msgstr ""
 
@@ -841,15 +811,15 @@ msgstr ""
 msgid "+Create New Funnel"
 msgstr ""
 
-#: admin/partials/templates/wps-wocuf-pro-funnels-list.php:372
+#: admin/partials/templates/wps-wocuf-pro-funnels-list.php:370
 msgid "Not getting saved funnels and settings from previous version?"
 msgstr ""
 
-#: admin/partials/templates/wps-wocuf-pro-funnels-list.php:373
+#: admin/partials/templates/wps-wocuf-pro-funnels-list.php:371
 msgid "Try Migration"
 msgstr ""
 
-#: admin/partials/templates/wps-wocuf-pro-funnels-list.php:392
+#: admin/partials/templates/wps-wocuf-pro-funnels-list.php:388
 msgid "Sync Funnels from ORG plugin"
 msgstr ""
 
@@ -1394,8 +1364,8 @@ msgstr ""
 #: admin/reporting-and-tracking/templates/pixel-settings.php:213
 #: admin/reporting-and-tracking/templates/pixel-settings.php:245
 #: admin/reporting-and-tracking/templates/pixel-settings.php:257
-#: woocommerce-one-click-upsell-funnel-pro.php:325
-#: woocommerce-one-click-upsell-funnel-pro.php:368
+#: woocommerce-one-click-upsell-funnel-pro.php:335
+#: woocommerce-one-click-upsell-funnel-pro.php:378
 msgid "."
 msgstr ""
 
@@ -1515,7 +1485,7 @@ msgid "By weDevs"
 msgstr ""
 
 #: admin/reporting-and-tracking/templates/pixel-settings.php:204
-#: woocommerce-one-click-upsell-funnel-pro.php:368
+#: woocommerce-one-click-upsell-funnel-pro.php:378
 msgid "WooCommerce"
 msgstr ""
 
@@ -1536,8 +1506,8 @@ msgid "By Night Shift Apps"
 msgstr ""
 
 #: admin/reporting-and-tracking/templates/pixel-settings.php:232
-#: woocommerce-one-click-upsell-funnel-pro.php:227
-#: woocommerce-one-click-upsell-funnel-pro.php:245
+#: woocommerce-one-click-upsell-funnel-pro.php:237
+#: woocommerce-one-click-upsell-funnel-pro.php:255
 msgid "Settings"
 msgstr ""
 
@@ -1668,46 +1638,46 @@ msgstr ""
 msgid "Skip For Now"
 msgstr ""
 
-#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:68
+#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:67
 msgid "Something Went Wrong. Please see log file for more info."
 msgstr ""
 
-#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:76
-#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:110
+#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:75
+#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:96
 #, php-format
 msgid "Stripe Transaction Failed (%s)"
 msgstr ""
 
-#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:84
+#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:83
 #, php-format
 msgid "Stripe Upsell Transaction Successful (%s)"
 msgstr ""
 
-#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:134
+#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:120
 #, php-format
 msgid "%1$s - Order %2$s - upsell payment."
 msgstr ""
 
-#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:144
+#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:130
 msgid "customer_name"
 msgstr ""
 
-#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:145
+#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:131
 msgid "customer_email"
 msgstr ""
 
-#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:291
+#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:277
 #, php-format
 msgid "Pre-Authorization for %s voided."
 msgstr ""
 
-#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:296
+#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:282
 msgid ""
 "The authorization was voided and the order cancelled. Click okay to "
 "continue, then refresh the page."
 msgstr ""
 
-#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:310
+#: gateways/compatibilities/class-wps-stripe-payment-gateway.php:296
 #, php-format
 msgid "Refunded %1$s - Refund ID: %2$s - Reason: %3$s"
 msgstr ""
@@ -1771,264 +1741,264 @@ msgstr ""
 msgid "Please use a Dummy email address in Billing email."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:249
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:248
 msgid ""
 "Stripe needs API Keys to work, please find your secret and publishable keys "
 "in the "
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:249
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:248
 msgid "Stripe accounts section "
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:264
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:263
 msgid "Enable/Disable"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:265
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:264
 msgid "Enable Stripe for WooCommerce One Click Upsell Funnel Pro"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:266
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:265
 msgid "Enable Stripe ( One Click Upsell )"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:272
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:271
 #: page-builders/elementor/elementor-widget/assets/widgets/class-upsell-title.php:122
 #: page-builders/elementor/elementor-widget/assets/widgets/class-upsell-title.php:129
 #: page-builders/elementor/elementor-widget/assets/widgets/class-upsell-title.php:235
 msgid "Title"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:273
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:272
 msgid "The title which your customer will see during checkout."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:274
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:273
 msgid "Credit/Debit Card Payment ( Stripe )"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:279
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:278
 msgid "Description"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:280
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:279
 msgid "Optional. The description, which the customer will see during checkout."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:281
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:280
 msgid "Use your credit/debit card to make payments via Stripe"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:288
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:287
 msgid "Gateway Description"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:289
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:288
 msgid ""
 "This may be up to 22 characters. The statement description must contain at "
 "least one letter, may not include ><\"' characters, and will appear on your "
 "customer's statement in capital letters."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:290
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:289
 msgid "Upsell Stripe"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:294
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:293
 msgid "Card Icons"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:295
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:294
 msgid "Show card icons"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:300
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:299
 msgid "Capture"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:301
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:300
 msgid "Capture charge immediately"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:303
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:302
 msgid ""
 "Whether or not to immediately capture the charge. When unchecked, the charge "
 "issues an authorization and will need to be captured later. Uncaptured "
 "charges expire in 7 days."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:309
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:308
 msgid "Test mode"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:310
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:309
 msgid ""
 "Use the test mode in Stripe's dashboard to verify that everything works "
 "before going live."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:311
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:310
 msgid "Turn on testing"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:317
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:316
 msgid "Stripe API Test Publishable key"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:322
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:321
 msgid "Stripe API Test Secret key"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:327
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:326
 msgid "Stripe API Live Publishable key"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:332
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:331
 msgid "Stripe API Live Secret key"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:336
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:335
 msgid "Logging"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:337
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:336
 msgid "Log debug messages"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:339
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:338
 msgid "Save debug messages to the WooCommerce System Status log."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:400
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:399
 msgid "All Card details are required."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:452
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:454
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:451
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:453
 msgid "No Payment Intent found."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:478
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:477
 msgid "Upsell Order can't be processed until the parent order is paid."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:482
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:481
 msgid "No Parent Intent found."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:500
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:499
 msgid "No Such Payment Intent found : "
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:504
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:503
 msgid "No Such Payment Intent found."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:511
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:510
 msgid "Renewal payment for order id : "
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:511
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:510
 msgid "Upsell payment for order id : "
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:552
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:551
 msgid "Payment completed."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:554
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:553
 msgid "Stripe charge complete (Payment Intent ID:"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:602
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:601
 #, php-format
 msgid "Payment processing failed : %s"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:603
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:602
 msgid "Payment processing failed."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:625
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:624
 msgid "Payment Intent Creation Failed."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:784
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:862
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:783
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:856
 msgid "Sorry, Stripe cannot authenticate Intent for order total zero."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:788
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:867
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:787
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:861
 msgid "Payment for order id : "
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:818
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:817
 msgid "Stripe charge complete :: Payment Intent ID:"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:834
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:833
 #, php-format
 msgid ""
 "Stripe Payment Authorized ( Payment Intent ID: %s). Please capture the "
 "payment within 7 days."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1009
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1042
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1008
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1041
 msgid "Order Refunded for Amount "
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1015
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1052
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1059
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1014
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1051
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1058
 msgid "Order Refund Failed"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1016
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1015
 msgid "Refund ::"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1086
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1085
 msgid "The Order is already captured"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1116
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1115
 msgid "No Intent Id found."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1310
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:897
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1309
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:891
 #, php-format
 msgid "Stripe charge complete ( Payment Intent ID: %s )"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1324
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:913
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1323
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:907
 #, php-format
 msgid "Stripe Payment Authorized ( Payment Intent ID: %s )"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1340
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1339
 #, php-format
 msgid "Stripe SCA authentication failed. Reason: %s"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1341
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1340
 msgid "Stripe SCA authentication failed."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1407
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1406
 #, php-format
 msgid "%1$s paid for order : %2$s"
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1440
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1439
 msgid "Renewal Payment completed."
 msgstr ""
 
-#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1444
+#: gateways/stripe/class-wps-wocuf-pro-stripe-gateway-admin.php:1443
 msgid "Renewal Payment Cancelled due to unauthorized payment method."
 msgstr ""
 
@@ -2038,8 +2008,8 @@ msgid "Sorry, Could not create Subscription"
 msgstr ""
 
 #: includes/class-woocommerce-one-click-upsell-funnel-pro-subs-comp.php:150
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4965
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4996
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4768
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4799
 #: wps-plugin-compatiblities/class-subscriptions-for-woocommerce-compatiblity.php:169
 msgid "Return to Shop "
 msgstr ""
@@ -2525,7 +2495,7 @@ msgid "Enter upsell variation shortcode"
 msgstr ""
 
 #: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:102
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2751
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2614
 msgid "One Click Upsell"
 msgstr ""
 
@@ -2533,150 +2503,150 @@ msgstr ""
 msgid "This is Preview Mode, please checkout to see Live Offers."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:623
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:617
 msgid ""
 "Error processing checkout. Please try again with another payment method."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:671
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:665
 msgid ""
 "Sorry, we are unable to process your payment at this time. Please retry "
 "later."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:837
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:831
 msgid "Payment Free Order."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1381
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1375
 msgid "Buy Now"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1383
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4436
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1377
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4247
 msgid "No,thanks"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1385
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4228
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4485
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1379
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4044
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4288
 msgid "Special Offer Price"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1397
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1391
 msgid "Special Offer For You Only"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1466
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4540
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1460
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4343
 msgid "<p>Please select an option.</p>"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1679
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1694
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1668
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1683
 msgid "You ran out of the special offers session."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1681
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1696
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1670
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1685
 msgid "Go to the \"Order details\" page."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1711
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1700
 msgid "Sorry, you have no offers"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1715
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:1704
 msgid "Return to Shop"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2145
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2057
 msgid "Once every 20 minutes"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2554
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:7150
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2417
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6911
 msgid "Choose an option"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2756
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2619
 msgid ""
 "Offer Product is not selected, please save a Offer Product in Funnel Offer "
 "settings."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2759
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:2622
 msgid ""
 "Custom Offer page - detected! Please save a global Offer product in Global "
 "settings for testing purpose."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3464
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3283
 msgid "Please select other option."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3814
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3633
 msgid "Time is not specified correctly."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3903
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3722
 msgid "minutes"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3910
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3729
 msgid "seconds"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4164
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:3983
 msgid "Show Order Details"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4298
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4109
 msgid "Add to my order"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4965
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4768
 msgid "Sorry, Offer expired."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4996
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:4799
 msgid "Sorry, Your Offer Payment is failed."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:5968
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:5771
 msgid "Upsell Offer"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6021
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:5824
 msgid "Missing order ID for payment confirmation"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6097
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:5900
 msgid "Response for Customer: "
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6163
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:5966
 msgid ""
 "Your Upsell Offer Payment is failed. Please Contact site Owner for details."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6232
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6035
 msgid "Upsell offer accpeted with Smart Offer Upgrade Feature."
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6800
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6594
 msgid "Offer Added"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6802
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6596
 msgid "Add offer"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6813
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6607
 msgid "#preview"
 msgstr ""
 
-#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6813
+#: public/class-woocommerce-one-click-upsell-funnel-pro-public.php:6607
 msgid "Continue without main offer"
 msgstr ""
 
@@ -2687,25 +2657,25 @@ msgstr ""
 
 #: reporting/class-wps-upsell-report-sales-by-category.php:131
 #: reporting/class-wps-upsell-report-sales-by-date.php:348
-#: reporting/class-wps-upsell-report-sales-by-product.php:175
+#: reporting/class-wps-upsell-report-sales-by-product.php:172
 msgid "Year"
 msgstr ""
 
 #: reporting/class-wps-upsell-report-sales-by-category.php:132
 #: reporting/class-wps-upsell-report-sales-by-date.php:349
-#: reporting/class-wps-upsell-report-sales-by-product.php:176
+#: reporting/class-wps-upsell-report-sales-by-product.php:173
 msgid "Last month"
 msgstr ""
 
 #: reporting/class-wps-upsell-report-sales-by-category.php:133
 #: reporting/class-wps-upsell-report-sales-by-date.php:350
-#: reporting/class-wps-upsell-report-sales-by-product.php:177
+#: reporting/class-wps-upsell-report-sales-by-product.php:174
 msgid "This month"
 msgstr ""
 
 #: reporting/class-wps-upsell-report-sales-by-category.php:134
 #: reporting/class-wps-upsell-report-sales-by-date.php:351
-#: reporting/class-wps-upsell-report-sales-by-product.php:178
+#: reporting/class-wps-upsell-report-sales-by-product.php:175
 msgid "Last 7 days"
 msgstr ""
 
@@ -2726,13 +2696,13 @@ msgid "All"
 msgstr ""
 
 #: reporting/class-wps-upsell-report-sales-by-category.php:270
-#: reporting/class-wps-upsell-report-sales-by-product.php:260
+#: reporting/class-wps-upsell-report-sales-by-product.php:257
 msgid "Show"
 msgstr ""
 
 #: reporting/class-wps-upsell-report-sales-by-category.php:320
 #: reporting/class-wps-upsell-report-sales-by-date.php:389
-#: reporting/class-wps-upsell-report-sales-by-product.php:491
+#: reporting/class-wps-upsell-report-sales-by-product.php:488
 msgid "Export CSV"
 msgstr ""
 
@@ -2779,7 +2749,7 @@ msgid "Total upsell refunded items from fully refunded orders."
 msgstr ""
 
 #: reporting/class-wps-upsell-report-sales-by-date.php:464
-#: reporting/class-wps-upsell-report-sales-by-product.php:625
+#: reporting/class-wps-upsell-report-sales-by-product.php:622
 msgid "Number of items sold"
 msgstr ""
 
@@ -2796,62 +2766,62 @@ msgid "Net sales amount"
 msgstr ""
 
 #: reporting/class-wps-upsell-report-sales-by-date.php:533
-#: reporting/class-wps-upsell-report-sales-by-product.php:675
+#: reporting/class-wps-upsell-report-sales-by-product.php:672
 #, php-format
 msgid "%d %b"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:154
+#: reporting/class-wps-upsell-report-sales-by-product.php:151
 #, php-format
 msgid "%s sales for the selected items"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:161
+#: reporting/class-wps-upsell-report-sales-by-product.php:158
 #, php-format
 msgid "%s purchases for the selected items"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:214
+#: reporting/class-wps-upsell-report-sales-by-product.php:211
 msgid "Showing reports for:"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:246
+#: reporting/class-wps-upsell-report-sales-by-product.php:243
 msgid "Reset"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:254
+#: reporting/class-wps-upsell-report-sales-by-product.php:251
 msgid "Product search"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:272
+#: reporting/class-wps-upsell-report-sales-by-product.php:269
 msgid "Top sellers"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:315
-#: reporting/class-wps-upsell-report-sales-by-product.php:378
-#: reporting/class-wps-upsell-report-sales-by-product.php:435
+#: reporting/class-wps-upsell-report-sales-by-product.php:312
+#: reporting/class-wps-upsell-report-sales-by-product.php:375
+#: reporting/class-wps-upsell-report-sales-by-product.php:432
 msgid "active"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:325
-#: reporting/class-wps-upsell-report-sales-by-product.php:388
-#: reporting/class-wps-upsell-report-sales-by-product.php:445
+#: reporting/class-wps-upsell-report-sales-by-product.php:322
+#: reporting/class-wps-upsell-report-sales-by-product.php:385
+#: reporting/class-wps-upsell-report-sales-by-product.php:442
 msgid "No products found in range"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:331
+#: reporting/class-wps-upsell-report-sales-by-product.php:328
 msgid "Top freebies"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:392
+#: reporting/class-wps-upsell-report-sales-by-product.php:389
 msgid "Top earners"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:504
+#: reporting/class-wps-upsell-report-sales-by-product.php:501
 msgid "Choose a product to view stats"
 msgstr ""
 
-#: reporting/class-wps-upsell-report-sales-by-product.php:633
+#: reporting/class-wps-upsell-report-sales-by-product.php:630
 msgid "Sales amount"
 msgstr ""
 
@@ -2862,36 +2832,46 @@ msgid ""
 "plugin."
 msgstr ""
 
-#: woocommerce-one-click-upsell-funnel-pro.php:163
+#: woocommerce-one-click-upsell-funnel-pro.php:142
+msgid ""
+"Heads up. The latest update includes some substantial changes across "
+"different areas of the plugin. Please "
+msgstr ""
+
+#: woocommerce-one-click-upsell-funnel-pro.php:143
+msgid "Click Here"
+msgstr ""
+
+#: woocommerce-one-click-upsell-funnel-pro.php:144
+msgid "to goto migration panel."
+msgstr ""
+
+#: woocommerce-one-click-upsell-funnel-pro.php:191
 msgid "Demo"
 msgstr ""
 
-#: woocommerce-one-click-upsell-funnel-pro.php:164
+#: woocommerce-one-click-upsell-funnel-pro.php:192
 msgid "Documentation"
 msgstr ""
 
-#: woocommerce-one-click-upsell-funnel-pro.php:165
+#: woocommerce-one-click-upsell-funnel-pro.php:193
 msgid "Support"
 msgstr ""
 
-#: woocommerce-one-click-upsell-funnel-pro.php:166
-msgid "Services"
-msgstr ""
-
-#: woocommerce-one-click-upsell-funnel-pro.php:237
+#: woocommerce-one-click-upsell-funnel-pro.php:247
 msgid "Get Free Plugin"
 msgstr ""
 
-#: woocommerce-one-click-upsell-funnel-pro.php:325
+#: woocommerce-one-click-upsell-funnel-pro.php:335
 msgid "One Click Upsell Funnel for Woocommerce"
 msgstr ""
 
-#: woocommerce-one-click-upsell-funnel-pro.php:325
+#: woocommerce-one-click-upsell-funnel-pro.php:335
 msgid ""
 " is not activated, Please activate One Click Upsell Funnel for Woocommerce "
 "first to activate "
 msgstr ""
 
-#: woocommerce-one-click-upsell-funnel-pro.php:368
+#: woocommerce-one-click-upsell-funnel-pro.php:378
 msgid " is not activated, Please activate WooCommerce first to activate "
 msgstr ""

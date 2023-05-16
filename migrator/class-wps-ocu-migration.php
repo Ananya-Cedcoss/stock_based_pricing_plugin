@@ -242,7 +242,6 @@ class WPS_OCU_Migration {
 		$pages = ! empty( $posted_data['pages'] ) ? $posted_data['pages'] : array();
 
 		if ( empty( $pages ) ) {
-			update_option( 'wocuf_pro_migration_status', true );
 			return array();
 		}
 
@@ -271,11 +270,6 @@ class WPS_OCU_Migration {
 				$elementor_data = str_replace( 'mwb_', 'wps_', $elementor_data );
 				update_post_meta( $page_id, '_elementor_data', $elementor_data );
 			}
-		}
-
-		if ( empty( $pages ) ) {
-			update_option( 'wocuf_pro_migration_status', true );
-			return array();
 		}
 
 		return $pages;

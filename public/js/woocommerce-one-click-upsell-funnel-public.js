@@ -31,8 +31,8 @@ jQuery(document).ready(function($) {
      */
     jQuery('#wps_upsell_quantity_field').on('ready change keyup', function(e) {
 
-        var updated_quantity = parseInt( jQuery(this).val() );
-        var max_quantity = parseInt( jQuery(this).attr('max') );
+        var updated_quantity = jQuery(this).val();
+        var max_quantity = jQuery(this).attr('max');
 
         if (max_quantity < updated_quantity) {
 
@@ -126,7 +126,6 @@ jQuery(document).ready(function($) {
         get_varition_wps_form(e);
 
     });
-
 
     function get_varition_wps_form(e) {
 

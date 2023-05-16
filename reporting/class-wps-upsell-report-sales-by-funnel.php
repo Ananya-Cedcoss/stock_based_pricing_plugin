@@ -62,7 +62,7 @@ class WPS_Upsell_Report_Sales_By_Funnel {
 	 */
 	protected function set_funnel_series() {
 
-		$this->funnel_series = get_option( 'wps_wocuf_pro_funnels_list', array() );
+		$this->funnel_series = get_option( 'wps_wocuf_funnels_list', array() );
 	}
 
 	/**
@@ -91,7 +91,7 @@ class WPS_Upsell_Report_Sales_By_Funnel {
 	 */
 	protected function save_funnel_series( $funnel_series = array() ) {
 
-		update_option( 'wps_wocuf_pro_funnels_list', $funnel_series );
+		update_option( 'wps_wocuf_funnels_list', $funnel_series );
 	}
 
 	/**

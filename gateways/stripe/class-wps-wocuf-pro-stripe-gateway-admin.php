@@ -74,7 +74,7 @@ class WPS_Wocuf_Pro_Stripe_Gateway_Admin extends WC_Payment_Gateway_CC {
 
 		// Load the settings.
 		$this->init_settings();
-	
+
 		// Get setting values.
 		$this->title               = $this->get_option( 'title' );
 		$this->enabled             = $this->get_option( 'enabled' );
@@ -210,7 +210,6 @@ class WPS_Wocuf_Pro_Stripe_Gateway_Admin extends WC_Payment_Gateway_CC {
 				<?php
 			endif;
 		}
-		
 
 		?>
 

@@ -111,7 +111,7 @@ class WPS_Upsell_Report_Sales_By_Category extends WC_Admin_Report {
 
 			$legend[] = array(
 				/* translators: 1: total items sold 2: category name */
-				'title'            => sprintf( __( '%1$s sales in %2$s', 'one-click-upsell-funnel-for-woocommerce-pro' ), '<strong>' . wc_price( $total ) . '</strong>', $category->name ),
+				'title'            => sprintf( __( '%1$s sales in %2$s', 'woocommerce' ), '<strong>' . wc_price( $total ) . '</strong>', $category->name ),
 				'color'            => isset( $this->chart_colours[ $index ] ) ? $this->chart_colours[ $index ] : $this->chart_colours[0],
 				'highlight_series' => $index,
 			);
@@ -128,10 +128,10 @@ class WPS_Upsell_Report_Sales_By_Category extends WC_Admin_Report {
 	public function output_report() {
 
 		$ranges = array(
-			'year'       => __( 'Year', 'one-click-upsell-funnel-for-woocommerce-pro' ),
-			'last_month' => __( 'Last month', 'one-click-upsell-funnel-for-woocommerce-pro' ),
-			'month'      => __( 'This month', 'one-click-upsell-funnel-for-woocommerce-pro' ),
-			'7day'       => __( 'Last 7 days', 'one-click-upsell-funnel-for-woocommerce-pro' ),
+			'year'       => __( 'Year', 'woocommerce' ),
+			'last_month' => __( 'Last month', 'woocommerce' ),
+			'month'      => __( 'This month', 'woocommerce' ),
+			'7day'       => __( 'Last 7 days', 'woocommerce' ),
 		);
 
 		$this->chart_colours = array( '#8eba36', '#3498db', '#1abc9c', '#34495e', '#2ecc71', '#f1c40f', '#e67e22', '#e74c3c', '#2980b9', '#8e44ad', '#2c3e50', '#16a085', '#27ae60', '#f39c12', '#d35400', '#c0392b' );
@@ -229,7 +229,7 @@ class WPS_Upsell_Report_Sales_By_Category extends WC_Admin_Report {
 
 		return array(
 			array(
-				'title'    => __( 'Categories', 'one-click-upsell-funnel-for-woocommerce-pro' ),
+				'title'    => __( 'Categories', 'woocommerce' ),
 				'callback' => array( $this, 'category_widget' ),
 			),
 		);
@@ -251,7 +251,7 @@ class WPS_Upsell_Report_Sales_By_Category extends WC_Admin_Report {
 		?>
 	<form method="GET">
 	<div>
-		<select multiple="multiple" data-placeholder="<?php esc_attr_e( 'Select categories&hellip;', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>" class="wc-enhanced-select" id="show_categories" name="show_categories[]" style="width: 205px;">
+		<select multiple="multiple" data-placeholder="<?php esc_attr_e( 'Select categories&hellip;', 'woocommerce' ); ?>" class="wc-enhanced-select" id="show_categories" name="show_categories[]" style="width: 205px;">
 		<?php
 			$r                 = array();
 			$r['pad_counts']   = 1;
@@ -265,9 +265,9 @@ class WPS_Upsell_Report_Sales_By_Category extends WC_Admin_Report {
 			echo wc_walk_category_dropdown_tree( $categories, 0, $r ); // phpcs:ignore
 		?>
 		</select>
-		<a href="#" class="select_none"><?php esc_html_e( 'None', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></a>
-		<a href="#" class="select_all"><?php esc_html_e( 'All', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></a>
-		<button type="submit" class="submit button" value="<?php esc_attr_e( 'Show', 'woocommerce' ); ?>"><?php esc_html_e( 'Show', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></button>
+		<a href="#" class="select_none"><?php esc_html_e( 'None', 'woocommerce' ); ?></a>
+		<a href="#" class="select_all"><?php esc_html_e( 'All', 'woocommerce' ); ?></a>
+		<button type="submit" class="submit button" value="<?php esc_attr_e( 'Show', 'woocommerce' ); ?>"><?php esc_html_e( 'Show', 'woocommerce' ); ?></button>
 		<input type="hidden" name="range" value="<?php echo ( ! empty( $_GET['range'] ) ) ? esc_attr( sanitize_text_field( wp_unslash( $_GET['range'] ) ) ) : ''; ?>" />
 		<input type="hidden" name="start_date" value="<?php echo ( ! empty( $_GET['start_date'] ) ) ? esc_attr( sanitize_text_field( wp_unslash( $_GET['start_date'] ) ) ) : ''; ?>" />
 		<input type="hidden" name="end_date" value="<?php echo ( ! empty( $_GET['end_date'] ) ) ? esc_attr( sanitize_text_field( wp_unslash( $_GET['end_date'] ) ) ) : ''; ?>" />
@@ -317,7 +317,7 @@ class WPS_Upsell_Report_Sales_By_Category extends WC_Admin_Report {
 			data-xaxes="<?php esc_attr_e( 'Date', 'woocommerce' ); ?>"
 			data-groupby="<?php echo esc_attr( $this->chart_groupby ); ?>"
 		>
-		<?php esc_html_e( 'Export CSV', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
+		<?php esc_html_e( 'Export CSV', 'woocommerce' ); ?>
 	</a>
 		<?php
 	}
@@ -331,7 +331,7 @@ class WPS_Upsell_Report_Sales_By_Category extends WC_Admin_Report {
 		if ( empty( $this->show_categories ) ) {
 			?>
 		<div class="chart-container">
-			<p class="chart-prompt"><?php esc_html_e( 'Choose a category to view stats', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></p>
+			<p class="chart-prompt"><?php esc_html_e( 'Choose a category to view stats', 'woocommerce' ); ?></p>
 		</div>
 			<?php
 		} else {

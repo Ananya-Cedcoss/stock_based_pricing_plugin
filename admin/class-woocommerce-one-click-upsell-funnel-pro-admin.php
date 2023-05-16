@@ -9,8 +9,6 @@
  * @subpackage woocommerce-one-click-upsell-funnel-pro/admin
  */
 
-use Elementor\Core\Admin\Admin;
-
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -303,15 +301,6 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Admin {
 	 */
 	public function upsell_menu_html() {
 
-		if ( ! empty( $_GET['reset_migration'] ) && true == $_GET['reset_migration'] ) {  //phpcs:ignore
-			$nonce = ! empty( $_GET['wocuf_nonce'] ) ? sanitize_text_field( wp_unslash( $_GET['wocuf_nonce'] ) ) : '';
-			if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, 'wocuf_migration' ) ) {
-				die( 'Nonce not verified' );
-			}
-			delete_option( 'wocuf_pro_migration_status' );
-			wp_safe_redirect( admin_url() . '?page=wps-wocuf-pro-setting&tab=funnels-list' );
-		}
-
 		$callname_lic         = Woocommerce_One_Click_Upsell_Funnel_pro::$lic_callback_function;
 		$callname_lic_initial = Woocommerce_One_Click_Upsell_Funnel_pro::$lic_ini_callback_function;
 		$day_count            = Woocommerce_One_Click_Upsell_Funnel_pro::$callname_lic_initial();
@@ -341,8 +330,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Admin {
 				</div>
 				<?php
 			endif;
-			if ( empty( get_option( 'wocuf_pro_migration_status', false ) ) ) {
-				?>
+			?>
 				<div id="wps-wocuf-thirty-days-notify" class="notice notice-error">
 					<p>
 						<strong>
@@ -354,21 +342,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Admin {
 						</strong>
 					</p>
 				</div>
-				<?php
-			} else {
-				?>
-				<div id="wps-wocuf-thirty-days-notify" class="notice notice-success">
-					<p>
-						<strong>
-							<?php esc_html_e( 'Migration was successful! If you want to reset the migration, please click here. ', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
-							<a href="?page=wps-wocuf-pro-setting&tab=funnels-list&reset_migration=1&wocuf_nonce=<?php echo esc_attr( wp_create_nonce( 'wocuf_migration' ) ); ?>">
-								<?php esc_html_e( 'Reset Migration', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
-							</a>
-						</strong>
-					</p>
-				</div>
-				<?php
-			}
+			<?php
 
 			require_once plugin_dir_path( __FILE__ ) . '/partials/woocommerce-one-click-upsell-funnel-pro-admin-display.php';
 		} else {
@@ -436,37 +410,21 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Admin {
 				<?php
 
 			endif;
+			?>
 
-			if ( empty( get_option( 'wocuf_pro_migration_status', false ) ) ) {
-				?>
+			<div id="wps-wocuf-thirty-days-notify" class="notice notice-warning">
+				<p>
+					<strong>
+						<?php esc_html_e( 'We have done a major changes in plugin please ', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
+						<a href="?page=wps-wocuf-pro-setting&tab=funnels-list#wps_wocuf_pro_migration_button">
+							<?php esc_html_e( 'Migrate', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
+						</a>
+						<?php esc_html_e( ' or you may risk losing data and the plugin will also become dysfunctional.', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
+					</strong>
+				</p>
+			</div>
 
-				<div id="wps-wocuf-thirty-days-notify" class="notice notice-warning">
-					<p>
-						<strong>
-							<?php esc_html_e( 'We have done a major changes in plugin please ', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
-							<a href="?page=wps-wocuf-pro-setting&tab=funnels-list#wps_wocuf_pro_migration_button">
-								<?php esc_html_e( 'Migrate', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
-							</a>
-							<?php esc_html_e( ' or you may risk losing data and the plugin will also become dysfunctional.', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
-						</strong>
-					</p>
-				</div>
-`
-				<?php
-			} else {
-				?>
-				<div id="wps-wocuf-thirty-days-notify" class="notice notice-success">
-					<p>
-						<strong>
-							<?php esc_html_e( 'Migration was successful! If you want to reset the migration, please click here. ', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
-							<a href="?page=wps-wocuf-pro-setting&tab=funnels-list&reset_migration=1&wocuf_nonce=<?php echo esc_attr( wp_create_nonce( 'wocuf_migration' ) ); ?>">
-								<?php esc_html_e( 'Reset Migration', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>
-							</a>
-						</strong>
-					</p>
-				</div>
-				<?php
-			}
+			<?php
 
 			require_once WPS_WOCUF_PRO_DIRPATH . 'admin/reporting-and-tracking/upsell-reporting-and-tracking-config-panel.php';
 
@@ -568,7 +526,10 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Admin {
 					update_option( 'wps_upsell_offer_post_ids', $upsell_offer_post_ids );
 
 				}
-			} else {    // When Elementor is not active.
+			} // phpcs:ignore
+
+			// When Elementor is not active.
+			else {
 
 				// Will return 'Feature not supported' part as $funnel_offer_post_id is empty.
 				$funnel_offer_template_section_html = $this->get_funnel_offer_template_section_html( $funnel_offer_post_id, $offer_index, $funnel_id );
@@ -648,7 +609,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Admin {
 
 			$new_data = apply_filters( 'wps_wocuf_pro_add_more_to_offers', $data );
 
-			echo $new_data; // phpcs:ignore
+			echo $new_data; // phpcs:ignore.
 		}
 
 		wp_die();
@@ -1532,28 +1493,28 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Admin {
 		register_post_status(
 			'wc-upsell-parent',
 			array(
-				'label'                     => _x( 'Parent Order Completed', 'Order status', 'one-click-upsell-funnel-for-woocommerce-pro' ),
+				'label'                     => _x( 'Parent Order Completed', 'Order status', 'woocommerce' ),
 				'public'                    => true,
 				'exclude_from_search'       => false,
 				'show_in_admin_all_list'    => true,
 				'show_in_admin_status_list' => true,
 
 				/* translators: %s: decimal */
-				'label_count'               => _n_noop( 'Parent Order Completed <span class="count">(%s)</span>', 'Parent Upsell Order<span class="count">(%s)</span>', 'one-click-upsell-funnel-for-woocommerce-pro' ),
+				'label_count'               => _n_noop( 'Parent Order Completed <span class="count">(%s)</span>', 'Parent Upsell Order<span class="count">(%s)</span>', 'woocommerce' ),
 			)
 		);
 
 		register_post_status(
 			'wc-upsell-failed',
 			array(
-				'label'                     => _x( 'Upsell Order Failed', 'Order status', 'one-click-upsell-funnel-for-woocommerce-pro' ),
+				'label'                     => _x( 'Upsell Order Failed', 'Order status', 'woocommerce' ),
 				'public'                    => true,
 				'exclude_from_search'       => false,
 				'show_in_admin_all_list'    => true,
 				'show_in_admin_status_list' => true,
 
 				/* translators: %s: decimal */
-				'label_count'               => _n_noop( 'Upsell Order Failed <span class="count">(%s)</span>', 'Upsell Order Failed<span class="count">(%s)</span>', 'one-click-upsell-funnel-for-woocommerce-pro' ),
+				'label_count'               => _n_noop( 'Upsell Order Failed <span class="count">(%s)</span>', 'Upsell Order Failed<span class="count">(%s)</span>', 'woocommerce' ),
 			)
 		);
 	}
@@ -1566,9 +1527,9 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Admin {
 	 */
 	public function wps_wocuf_pro_order_statuses( $order_statuses ) {
 
-		$order_statuses['wc-upsell-parent'] = _x( 'Parent Order Completed', 'Order status', 'one-click-upsell-funnel-for-woocommerce-pro' );
+		$order_statuses['wc-upsell-parent'] = _x( 'Parent Order Completed', 'Order status', 'woocommerce' );
 
-		$order_statuses['wc-upsell-failed'] = _x( 'Upsell Order Failed', 'Order status', 'one-click-upsell-funnel-for-woocommerce-pro' );
+		$order_statuses['wc-upsell-failed'] = _x( 'Upsell Order Failed', 'Order status', 'woocommerce' );
 
 		return $order_statuses;
 	}
@@ -1877,73 +1838,6 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Admin {
 		}
 	}
 
-	/**
-	 * Stripe Upsell Fees.
-	 *
-	 * @param [type] $order_id is the current order id of.
-	 * @return void
-	 */
-	public function display_order_fee_upsell( $order_id ) {
-		if ( apply_filters( 'wc_stripe_hide_display_order_payout', false, $order_id ) ) {
-			return;
-		}
-		$fees_stripe = get_post_meta( $order_id, 'upsell_stripe_fee', true );
-		$currency = get_post_meta( $order_id, '_stripe_currency', true );
-		if ( ! empty( $fees_stripe ) ) {
-			$fees_stripe = $fees_stripe / 100;
-		}
-		if ( ! $fees_stripe || ! $currency ) {
-			return;
-		}
-
-		?>
-
-	<tr>
-		<td class="label stripe-fee">
-			<?php echo wc_help_tip( __( 'This represents the fee Stripe collects for the transaction.', 'woocommerce-gateway-stripe' ) ); // wpcs: xss ok. ?>
-			<?php esc_html_e( 'Upsell Stripe Fee:', 'woocommerce-gateway-stripe' ); ?>
-		</td>
-		<td width="1%"></td>
-		<td class="total">
-			-<?php echo wc_price( $fees_stripe, array( 'currency' => $currency ) ); // wpcs: xss ok. ?>
-		</td>
-	</tr>
-
-		<?php
-	}
-
-	/**
-	 * Stripe upsell payout.
-	 *
-	 * @param [type] $order_id is the current order id of.
-	 * @return void
-	 */
-	public function display_order_payout_upsell( $order_id ) {
-		$fees_stripe = get_post_meta( $order_id, 'upsell_stripe_amount', true );
-		$currency = get_post_meta( $order_id, '_stripe_currency', true );
-		if ( ! empty( $fees_stripe ) ) {
-			$fees_stripe = $fees_stripe / 100;
-		}
-		if ( ! $fees_stripe || ! $currency ) {
-			return;
-		}
-		?>
-		<tr>
-			<td class="label stripe-payout">
-				<?php echo wc_help_tip( __( 'This represents the net total that will be credited to your Stripe bank account. This may be in the currency that is set in your Stripe account.', 'woocommerce-gateway-stripe' ) ); // wpcs: xss ok. ?>
-				<?php esc_html_e( 'Upsell Stripe Payout:', 'woocommerce-gateway-stripe' ); ?>
-			</td>
-			<td width="1%"></td>
-			<td class="total">
-				<?php echo wc_price( $fees_stripe, array( 'currency' => $currency ) ); // wpcs: xss ok. ?>
-			</td>
-		</tr>
-		<?php
-	}
-
-
-
-
-
 	// End of class.
 }
+?>

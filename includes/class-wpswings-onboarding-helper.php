@@ -374,7 +374,7 @@ class WPSwings_Onboarding_Helper {
 
 			wp_rand() => array(
 				'id'          => 'onboard-email',
-				'label'       => esc_html__( 'What is the best email address to contact you?', 'one-click-upsell-funnel-for-woocommerce-pro' ),
+				'label'       => esc_html__( 'What is the best email address to contact you?' ),
 				'type'        => 'email',
 				'name'        => 'email',
 				'value'       => $current_user_email,
@@ -384,7 +384,7 @@ class WPSwings_Onboarding_Helper {
 
 			wp_rand() => array(
 				'id'          => 'onboard-number',
-				'label'       => esc_html__( 'What is your contact number?', 'one-click-upsell-funnel-for-woocommerce-pro' ),
+				'label'       => esc_html__( 'What is your contact number?' ),
 				'type'        => 'text',
 				'name'        => 'phone',
 				'value'       => '',

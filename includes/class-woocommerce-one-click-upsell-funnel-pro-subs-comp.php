@@ -106,7 +106,6 @@ function wps_upsell_subs_supported_gateways() {
 		'braintree_cc', // Official Braintree for Woocommerce plugins.
 		'paypal_express', // Angeleye Paypal Express Checkout.
 		'stripe', // Official Stripe-CC.
-        'stripe_cc', // Official Stripe-CC.
 	);
 
 	return apply_filters( 'wps_wocuf_pro_subs_supported_gateways', $subs_supported_gateways );
@@ -444,10 +443,10 @@ function wps_upsell_subs_set_price_accordingly( $product ) {
 			$product->set_price( $product_price );
 		}
 	}
-	$upsell_offered_discount = wps_upsell_get_product_discount();
+
 	if ( $product_price_change ) {
 
-		$product = wps_upsell_change_product_price( $product, $upsell_offered_discount );
+		$product = wps_upsell_change_product_price( $product, $product_price );
 	}
 
 	return $product;

@@ -48,12 +48,9 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 	 * Constructor.
 	 */
 	public function __construct() {
-		var_dump($_GET['product_ids'] );
 		// @codingStandardsIgnoreStart
 		if ( isset( $_GET['product_ids'] ) && is_array( $_GET['product_ids'] ) ) {
-			$data = array_map( 'absint', $_GET['product_ids'] );
-			$this->product_ids = array_filter( $data );
-			var_dump($this->product_ids );die;
+			$this->product_ids = array_filter( array_map( 'absint', $_GET['product_ids'] ) );
 		} elseif ( isset( $_GET['product_ids'] ) ) {
 			$this->product_ids = array_filter( array( absint( $_GET['product_ids'] ) ) );
 		}
@@ -151,14 +148,14 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 
 		$legend[] = array(
 			/* translators: %s: total items sold */
-			'title'            => sprintf( __( '%s sales for the selected items', 'one-click-upsell-funnel-for-woocommerce-pro' ), '<strong>' . wc_price( $total_sales ) . '</strong>' ),
+			'title'            => sprintf( __( '%s sales for the selected items', 'woocommerce' ), '<strong>' . wc_price( $total_sales ) . '</strong>' ),
 			'color'            => $this->chart_colours['sales_amount'],
 			'highlight_series' => 1,
 		);
 
 		$legend[] = array(
 			/* translators: %s: total items purchased */
-			'title'            => sprintf( __( '%s purchases for the selected items', 'one-click-upsell-funnel-for-woocommerce-pro' ), '<strong>' . ( $total_items ) . '</strong>' ),
+			'title'            => sprintf( __( '%s purchases for the selected items', 'woocommerce' ), '<strong>' . ( $total_items ) . '</strong>' ),
 			'color'            => $this->chart_colours['item_count'],
 			'highlight_series' => 0,
 		);
@@ -172,10 +169,10 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 	public function output_report() {
 
 		$ranges = array(
-			'year'       => __( 'Year', 'one-click-upsell-funnel-for-woocommerce-pro' ),
-			'last_month' => __( 'Last month', 'one-click-upsell-funnel-for-woocommerce-pro' ),
-			'month'      => __( 'This month', 'one-click-upsell-funnel-for-woocommerce-pro' ),
-			'7day'       => __( 'Last 7 days', 'one-click-upsell-funnel-for-woocommerce-pro' ),
+			'year'       => __( 'Year', 'woocommerce' ),
+			'last_month' => __( 'Last month', 'woocommerce' ),
+			'month'      => __( 'This month', 'woocommerce' ),
+			'7day'       => __( 'Last 7 days', 'woocommerce' ),
 		);
 
 		$this->chart_colours = array(
@@ -211,7 +208,7 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 
 		if ( ! empty( $this->product_ids ) ) {
 			$widgets[] = array(
-				'title'    => __( 'Showing reports for:', 'one-click-upsell-funnel-for-woocommerce-pro' ),
+				'title'    => __( 'Showing reports for:', 'woocommerce' ),
 				'callback' => array( $this, 'current_filters' ),
 			);
 		}
@@ -243,7 +240,7 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 		}
 
 		echo '<p><strong>' . wp_kses_post( implode( ', ', $this->product_ids_titles ) ) . '</strong></p>';
-		echo '<p><a class="button" href="' . esc_url( remove_query_arg( 'product_ids' ) ) . '">' . esc_html__( 'Reset', 'one-click-upsell-funnel-for-woocommerce-pro' ) . '</a></p>';
+		echo '<p><a class="button" href="' . esc_url( remove_query_arg( 'product_ids' ) ) . '">' . esc_html__( 'Reset', 'woocommerce' ) . '</a></p>';
 	}
 
 	/**
@@ -251,13 +248,13 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 	 */
 	public function products_widget() {
 		?>
-	<h4 class="section_title"><span><?php esc_html_e( 'Product search', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></span></h4>
+	<h4 class="section_title"><span><?php esc_html_e( 'Product search', 'woocommerce' ); ?></span></h4>
 	<div class="section">
 		<form method="GET">
 		<div>
 		  <?php // @codingStandardsIgnoreStart ?>
-			<select class="wc-product-search" style="width:203px;" multiple="multiple" id="product_ids" name="product_ids[]" data-placeholder="<?php esc_attr_e( 'Search for a product&hellip;', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?>" data-action="woocommerce_json_search_products_and_variations"></select>
-			<button type="submit" class="submit button" value="<?php esc_attr_e( 'Show', 'woocommerce' ); ?>"><?php esc_html_e( 'Show', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></button>
+			<select class="wc-product-search" style="width:203px;" multiple="multiple" id="product_ids" name="product_ids[]" data-placeholder="<?php esc_attr_e( 'Search for a product&hellip;', 'woocommerce' ); ?>" data-action="woocommerce_json_search_products_and_variations"></select>
+			<button type="submit" class="submit button" value="<?php esc_attr_e( 'Show', 'woocommerce' ); ?>"><?php esc_html_e( 'Show', 'woocommerce' ); ?></button>
 			<input type="hidden" name="range" value="<?php echo ( ! empty( $_GET['range'] ) ) ? esc_attr( sanitize_text_field( wp_unslash( $_GET['range'] ) ) ) : ''; ?>" />
 			<input type="hidden" name="start_date" value="<?php echo ( ! empty( $_GET['start_date'] ) ) ? esc_attr( sanitize_text_field( wp_unslash( $_GET['start_date'] ) ) ) : ''; ?>" />
 			<input type="hidden" name="end_date" value="<?php echo ( ! empty( $_GET['end_date'] ) ) ? esc_attr( sanitize_text_field( wp_unslash( $_GET['end_date'] ) ) ) : ''; ?>" />
@@ -269,7 +266,7 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 		</div>
 		</form>
 	</div>
-	<h4 class="section_title"><span><?php esc_html_e( 'Top sellers', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></span></h4>
+	<h4 class="section_title"><span><?php esc_html_e( 'Top sellers', 'woocommerce' ); ?></span></h4>
 	<div class="section">
 	<table cellspacing="0">
 		<?php
@@ -322,13 +319,13 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 			// @codingStandardsIgnoreEnd
 		else :
 			?>
-			<tr><td colspan="3"><?php echo esc_html__( 'No products found in range', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></td></tr>
+			<tr><td colspan="3"><?php echo esc_html__( 'No products found in range', 'woocommerce' ); ?></td></tr>
 			<?php
 		endif;
 		?>
 	</table>
 	</div>
-	<h4 class="section_title"><span><?php esc_html_e( 'Top freebies', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></span></h4>
+	<h4 class="section_title"><span><?php esc_html_e( 'Top freebies', 'woocommerce' ); ?></span></h4>
 	<div class="section">
 		<table cellspacing="0">
 		<?php
@@ -385,11 +382,11 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 			// @codingStandardsIgnoreEnd
 		else :
 			?>
-			<tr><td colspan="3"><?php echo esc_html__( 'No products found in range', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></td></tr>
+			<tr><td colspan="3"><?php echo esc_html__( 'No products found in range', 'woocommerce' ); ?></td></tr>
 		<?php endif; ?>
 	</table>
 	</div>
-	<h4 class="section_title"><span><?php esc_html_e( 'Top earners', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></span></h4>
+	<h4 class="section_title"><span><?php esc_html_e( 'Top earners', 'woocommerce' ); ?></span></h4>
 	<div class="section">
 	<table cellspacing="0">
 		<?php
@@ -442,7 +439,7 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 			// @codingStandardsIgnoreEnd
 		else :
 			?>
-			<tr><td colspan="3"><?php echo esc_html__( 'No products found in range', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></td></tr>
+			<tr><td colspan="3"><?php echo esc_html__( 'No products found in range', 'woocommerce' ); ?></td></tr>
 		<?php endif; ?>
 	</table>
 	</div>
@@ -501,7 +498,7 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 		if ( empty( $this->product_ids ) ) {
 			?>
 		<div class="chart-container">
-		<p class="chart-prompt"><?php esc_html_e( 'Choose a product to view stats', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></p>
+		<p class="chart-prompt"><?php esc_html_e( 'Choose a product to view stats', 'woocommerce' ); ?></p>
 		</div>
 			<?php
 		} else {
@@ -622,7 +619,7 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 
 			var series = [
 			  {
-				label: "<?php echo esc_js( __( 'Number of items sold', 'one-click-upsell-funnel-for-woocommerce-pro' ) ); ?>",
+				label: "<?php echo esc_js( __( 'Number of items sold', 'woocommerce' ) ); ?>",
 				data: order_data.order_item_counts,
 				color: '<?php echo esc_html( $this->chart_colours['item_count'] ); //phpcs:ignore ?>',
 				bars: { fillColor: '<?php echo esc_html( $this->chart_colours['item_count'] ); //phpcs:ignore ?>', fill: true, show: true, lineWidth: 0, barWidth: <?php echo $this->barwidth; //phpcs:ignore ?> * 0.5, align: 'center' },
@@ -630,7 +627,7 @@ class WPS_Upsell_Report_Sales_By_Product extends WC_Admin_Report {
 				hoverable: false
 			  },
 			  {
-				label: "<?php echo esc_js( __( 'Sales amount', 'one-click-upsell-funnel-for-woocommerce-pro' ) ); ?>",
+				label: "<?php echo esc_js( __( 'Sales amount', 'woocommerce' ) ); ?>",
 				data: order_data.order_item_amounts,
 				yaxis: 2,
 				color: '<?php echo esc_html( $this->chart_colours['sales_amount'] ); //phpcs:ignore ?>',

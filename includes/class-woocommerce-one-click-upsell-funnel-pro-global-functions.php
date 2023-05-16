@@ -295,77 +295,6 @@ function wps_upsell_sync_funnels() {
  */
 function wps_upsell_change_product_price( $temp_product, $price ) {
 
-	$upsell_offered_discount = wps_upsell_get_product_discount();
-	$sign_up_price = get_post_meta($temp_product->get_id(), '_subscription_sign_up_fee', true);
-		
-	if ( $temp_product->get_type() == 'subscription_variation' || $temp_product->get_type() == 'subscription' && ! empty( $sign_up_price ) ) {
-
-			 $payable_price = $temp_product->get_price();
-		$sale_price    = $temp_product->get_sale_price();
-		$regular_price = $temp_product->get_regular_price();
-		$is_fixed      = false;
-		// Discount is in %.
-		if ( false !== strpos( $upsell_offered_discount, '%' ) ) {
-		
-			$discounted_percent = trim( $upsell_offered_discount, '%' );
-			if ( ! empty( $sign_up_price ) ) {
-				$discounted_price   = floatval( $sign_up_price ) * ( floatval( $discounted_percent ) / 100 );
-			} else{
-				$discounted_price   = floatval( $payable_price ) * ( floatval( $discounted_percent ) / 100 );
-			}
-			
-			// Original price must be greater than zero.
-			if ( $sign_up_price > 0 ) {
-
-				$offer_price = $sign_up_price - $discounted_price;
-
-			} else {
-
-				$offer_price = $payable_price - $discounted_price;
-			}
-		} else { // Discount is fixed.
-
-			$offer_price = floatval( $upsell_offered_discount );
-		}
-
-		if ( ! empty( $sign_up_price ) && ! empty( $offer_price ) ) {
-			//$upsell_product_price_html = str_replace($sign_up_price,$offer_price ,$upsell_product_price_html );
-			$temp_product->set_price( $offer_price );
-		}
-
-		$wps_upsell_global_settings = get_option( 'wps_upsell_global_options', array() );
-
-		 $price_html_format = ! empty( $wps_upsell_global_settings['offer_price_html_type'] ) ? $wps_upsell_global_settings['offer_price_html_type'] : 'regular';
-
-		// ̶S̶a̶l̶e̶ ̶P̶r̶i̶c̶e̶  Offer Price.
-		if ( 'sale' === $price_html_format ) {
-
-			if ( ! empty( $sale_price ) ) {
-
-				$temp_product->set_regular_price( $sale_price );
-				$temp_product->set_sale_price( $offer_price );
-			} else {
-
-				// No sale price is present.
-				$temp_product->set_sale_price( $offer_price );
-			}
-		} else { // ̶R̶e̶g̶u̶l̶a̶r̶ ̶P̶r̶i̶c̶e̶ Offer Price.
-
-			// In this case set the regular price as sale.
-			$temp_product->set_sale_price( $offer_price );
-		}
-
-		// Change amount in case of chargeable currency is different.
-		if ( false === $is_fixed && ! empty( WC()->session ) && WC()->session->__isset( 's_selected_currency' ) && class_exists( 'Mwb_Multi_Currency_Switcher_For_Woocommerce_Public' ) ) {
-			$currency_switcher_obj = new Mwb_Multi_Currency_Switcher_For_Woocommerce_Public( 'WPS Multi Currency Switcher For WooCommerce', '1.2.0' );
-			$offer_price           = $currency_switcher_obj->wps_mmcsfw_get_price_of_product( $offer_price, $temp_product->get_id() );
-		}
-
-		$temp_product->set_price( $offer_price );
-	
-		return $temp_product;
-	} 
-
 	if ( ! empty( $price ) && ! empty( $temp_product ) ) {
 
 		$payable_price = $temp_product->get_price();
@@ -465,22 +394,22 @@ function wps_upsell_supported_gateways() {
 		'wps-wocuf-pro-stripe-gateway', // Upsell Stripe.
 		'cardcom', // Official Cardcom.
 		'paypal',    // Woocommerce Paypal ( Standard ).
+		'wps-wocuf-pro-paypal-gateway', // Upsell Paypal ( Express Checkout ).
+		'ppec_paypal', // https://wordpress.org/plugins/woocommerce-gateway-paypal-express-checkout/.
 		'authorize', // https://wordpress.org/plugins/authorizenet-payment-gateway-for-woocommerce/.
 		'paystack', // https://wordpress.org/plugins/woo-paystack/.
-		'vipps', // https://wordpress.org/plugins/woo-vipps/ .
+		'vipps', // https://wordpress.org/plugins/woo-vipps/.
+		'transferuj', // TPAY.com https://wordpress.org/plugins/woocommerce-transferujpl-payment-gateway/.
 		'razorpay', // https://wordpress.org/plugins/woo-razorpay/.
 		'stripe_ideal', // Official Stripe - iDeal.
-		'authorize_net_cim_credit_card', // Official Authorize.Net-CC  https://wordpress.org/plugins/woocommerce-square/ .
-		'square_credit_card', // Official Square-XL plugins  https://woocommerce.com/products/authorize-net/ .
-		'braintree_cc', // Official Braintree for Woocommerce plugins  https://wordpress.org/plugins/woo-payment-gateway/ .
+		'authorize_net_cim_credit_card', // Official Authorize.Net-CC.
+		'square_credit_card', // Official Square-XL plugins.
+		'braintree_cc', // Official Braintree for Woocommerce plugins.
+		'paypal_express', // Angeleye Paypal Express Checkout.
 		'stripe', // Official Stripe - CC.
-        'stripe_cc', // Official Stripe - CC.
 		'', // For Free Product.
 		'ppcp-gateway', // For Paypal payments plugin.
 		'ppcp-credit-card-gateway', // For Paypal CC payments plugin.
-		'braintree_credit_card',
-		
-		
 	);
 
 	return apply_filters( 'wps_wocuf_pro_supported_gateways', $supported_gateways );
@@ -498,19 +427,18 @@ function wps_upsell_supported_gateways_with_redirection() {
 
 	$supported_gateways_with_redirection = array(
 		'wps-wocuf-pro-stripe-gateway', // Upsell Stripe ( not redirection ) Added coz we don't need cron for this.
+		'wps-wocuf-pro-paypal-gateway', // Upsell Paypal ( Express Checkout ).
 		'cardcom', // Official Cardcom.
 		'paypal',  // Woocommerce Paypal ( Standard ).
 		'ppec_paypal', // Upsell Paypal ( Express Checkout ).
 		'authorize', // https://wordpress.org/plugins/authorizenet-payment-gateway-for-woocommerce/.
 		'paystack', // https://wordpress.org/plugins/woo-paystack/.
 		'vipps', // https://wordpress.org/plugins/woo-vipps/.
+		'transferuj', // TPAY.com https://wordpress.org/plugins/woocommerce-transferujpl-payment-gateway/.
 		'razorpay', // https://wordpress.org/plugins/woo-razorpay/.
 		'stripe_ideal', // Official Stripe - iDeal.
 		'stripe', // Official Stripe - CC.
-        'stripe_cc', // Official Stripe - CC.
 		'', // For Free Product.
-		
-		
 	);
 
 	return apply_filters( 'wps_wocuf_pro_supported_gateways_with_redirection', $supported_gateways_with_redirection );
@@ -669,7 +597,6 @@ function wps_supported_gateways_with_upsell_parent_order() {
 	$supported_gateways = array(
 		'wps-wocuf-pro-stripe-gateway', // Upsell Stripe.
 		'stripe', // official stripe.
-        'stripe_cc', // Official Stripe - CC.
 	);
 
 	return apply_filters( 'wps_wocuf_pro_supported_gateways_with_upsell_parent_order', $supported_gateways );
@@ -691,7 +618,6 @@ function wps_upsell_supported_gateway_integrations() {
 		'paypal_express', // Angeleye Paypal Express Checkout.
 		'ppcp-gateway', // For Paypal payments plugin.
 		'ppcp-credit-card-gateway', // For Paypal CC payments plugin.
-		
 	);
 
 	return apply_filters( 'wps_wocuf_pro_supported_gateways_integrations', $supported_gateways );
@@ -713,7 +639,6 @@ function wps_upsell_payment_gateways_with_parent_secured() {
 		'authorize_net_cim_credit_card', // Official Authorize.Net-CC.
 		'square_credit_card', // Official Square-XL plugins.
 		'braintree_cc', // Official Braintree for Woocommerce plugins.
-		'braintree_credit_card',
 		'paypal_express', // Angeleye Paypal Express Checkout.
 		'', // For Free Product.
 		'ppcp-gateway', // For Paypal payments plugin.

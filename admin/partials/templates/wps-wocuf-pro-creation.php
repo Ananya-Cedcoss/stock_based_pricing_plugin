@@ -615,31 +615,31 @@ $wps_wocuf_pro_funnel_schedule_options = array(
 							<?php add_thickbox(); ?>
 								<div id="wps-fields-form" style="display:none;">
 									<div  class="wps_wocuf_addfield-box">
-										<p><label for="wps_funnel_popup_custom_input_name"><?php esc_html_e( 'Enter custom field name', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></label></p>
+										<p><label for="wps_funnel_popup_custom_input_name"><?php esc_html_e( 'Enter custom field name' ); ?></label></p>
 										<p><input type="text" maxlength="20" id="wps_funnel_popup_custom_input_name" name="wps_funnel_popup_custom_input_name"></p>
 									</div>
 
 									<div  class="wps_wocuf_addfield-box">
-										<label for="wps_funnel_popup_custom_input_placeholder"><?php esc_html_e( 'Enter custom field placeholder', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></label>
+										<label for="wps_funnel_popup_custom_input_placeholder"><?php esc_html_e( 'Enter custom field placeholder' ); ?></label>
 										<p><input type="text" maxlength="20" id="wps_funnel_popup_custom_input_placeholder" name="wps_funnel_popup_custom_input_placeholder"></p>
 									</div>
 
 									<div  class="wps_wocuf_addfield-box">
-										<label for="wps_funnel_popup_custom_input_description"><?php esc_html_e( 'Enter custom field description', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></label>
+										<label for="wps_funnel_popup_custom_input_description"><?php esc_html_e( 'Enter custom field description' ); ?></label>
 										<p><input type="text" maxlength="30" id="wps_funnel_popup_custom_input_description" name="wps_funnel_popup_custom_input_description"></p>
 									</div>
 
 									<div  class="wps_wocuf_addfield-box">
-										<label for="wps_funnel_popup_custom_input_type"><?php esc_html_e( 'Enter custom field type', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></label><br>
+										<label for="wps_funnel_popup_custom_input_type"><?php esc_html_e( 'Enter custom field type' ); ?></label><br>
 										<p>
 											<select name="wps_funnel_popup_custom_input_type" id="wps_funnel_popup_custom_input_type">
-												<option value=""><?php esc_html_e( 'Select the type of input', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-												<option value="number"><?php esc_html_e( 'Number', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-												<option value="text"><?php esc_html_e( 'Text', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-												<option value="checkbox"><?php esc_html_e( 'Checkbox', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-												<option value="email"><?php esc_html_e( 'Email', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-												<option value="date"><?php esc_html_e( 'Date', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-												<option value="time"><?php esc_html_e( 'Time', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
+												<option value=""><?php esc_html_e( 'Select the type of input' ); ?></option>
+												<option value="number"><?php esc_html_e( 'Number' ); ?></option>
+												<option value="text"><?php esc_html_e( 'Text' ); ?></option>
+												<option value="checkbox"><?php esc_html_e( 'Checkbox' ); ?></option>
+												<option value="email"><?php esc_html_e( 'Email' ); ?></option>
+												<option value="date"><?php esc_html_e( 'Date' ); ?></option>
+												<option value="time"><?php esc_html_e( 'Time' ); ?></option>
 											</select>
 										</p>
 									</div>
@@ -661,32 +661,32 @@ $wps_wocuf_pro_funnel_schedule_options = array(
 					<div id="wps-fields-form-edit" style="display:none;" >
 
 						<div  class="wps_wocuf_addfield-box">
-							<p><label for="wps_funnel_popup_custom_input_name"><?php esc_html_e( 'Enter custom field name', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></label></p>
+							<p><label for="wps_funnel_popup_custom_input_name"><?php esc_html_e( 'Enter custom field name' ); ?></label></p>
 							<p><input type="text" maxlength="20" id="wps_funnel_custom_input_name" name="wps_funnel_popup_custom_input_name"></p>
 							<input type="hidden" id="wps_hidden_name">
 						</div>
 
 						<div  class="wps_wocuf_addfield-box">
-							<label for="wps_funnel_popup_custom_input_placeholder"><?php esc_html_e( 'Enter custom field placeholder', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></label>
+							<label for="wps_funnel_popup_custom_input_placeholder"><?php esc_html_e( 'Enter custom field placeholder' ); ?></label>
 							<p><input type="text" maxlength="20" id="wps_funnel_custom_input_placeholder" name="wps_funnel_popup_custom_input_placeholder"></p>
 						</div>
 
 						<div  class="wps_wocuf_addfield-box">
-							<label for="wps_funnel_popup_custom_input_description"><?php esc_html_e( 'Enter custom field description', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></label>
+							<label for="wps_funnel_popup_custom_input_description"><?php esc_html_e( 'Enter custom field description' ); ?></label>
 							<p><input type="text" maxlength="30" id="wps_funnel_custom_input_description" name="wps_funnel_popup_custom_input_description"></p>
 						</div>
 
 						<div  class="wps_wocuf_addfield-box">
-							<label for="wps_funnel_popup_custom_input_type"><?php esc_html_e( 'Enter custom field type', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></label><br>
+							<label for="wps_funnel_popup_custom_input_type"><?php esc_html_e( 'Enter custom field type' ); ?></label><br>
 							<p>
 								<select name="wps_funnel_popup_custom_input_type" id="wps_funnel_custom_input_type">
-									<option value=""><?php esc_html_e( 'Select the type of input', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-									<option value="number"><?php esc_html_e( 'Number', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-									<option value="text"><?php esc_html_e( 'Text', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-									<option value="checkbox"><?php esc_html_e( 'Checkbox', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-									<option value="email"><?php esc_html_e( 'Email', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-									<option value="date"><?php esc_html_e( 'Date', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
-									<option value="time"><?php esc_html_e( 'Time', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></option>
+									<option value=""><?php esc_html_e( 'Select the type of input' ); ?></option>
+									<option value="number"><?php esc_html_e( 'Number' ); ?></option>
+									<option value="text"><?php esc_html_e( 'Text' ); ?></option>
+									<option value="checkbox"><?php esc_html_e( 'Checkbox' ); ?></option>
+									<option value="email"><?php esc_html_e( 'Email' ); ?></option>
+									<option value="date"><?php esc_html_e( 'Date' ); ?></option>
+									<option value="time"><?php esc_html_e( 'Time' ); ?></option>
 								</select>
 							</p>
 						</div>

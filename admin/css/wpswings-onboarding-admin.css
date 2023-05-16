@@ -308,15 +308,6 @@ input#s2id_autogen1 {
 .wps-customer-data-form-single-field .select2-search.select2-search--inline {
 	width: 100% !important;
 }
-
-/* Update( v3.6.7 ) starts*/
-.wps-info-img{
-    margin-right: 6px;
-	vertical-align: middle;
-    max-width: 15px;
-}
-/* Update( v3.6.7 ) ends*/
-
 /*=====  End of WPS POPUP FORM CSS  ======*/
 /*=====================================
 =            MEDIA QUERIES            =
@@ -412,6 +403,5 @@ input#s2id_autogen1 {
 		margin: 0 20px 0 0px !important;
 	}
 }
-
 /*=====  End of MEDIA QUERIES  ======*/
 

@@ -122,7 +122,6 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 	 * @throws Exception Throws exception when error.
 	 */
 	public function wps_wocuf_initate_upsell_orders( $order_id ) {
-
 		// Validate if correct hook.
 		if ( empty( $_GET['wc-ajax'] ) || 'checkout' !== $_GET['wc-ajax'] ) {
 			return;
@@ -598,17 +597,12 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 
 				if ( $funnel_redirect ) {
 
-					if ( ! empty( $_POST ) ) {
-						update_post_meta( $order_id, 'mwb_upsell_payment_data_post', $_POST );   // phpcs:ignore.
-						$funnel_redirect = true;
-					}
-
 					$available_gateways = WC()->payment_gateways->get_available_payment_gateways();
 
 					/**===============================================
 					 * Official/Custom Stripe payment method handling.
 					===============================================*/
-					if ( 'stripe' === $payment_method ||'stripe_cc' === $payment_method  ) {
+					if ( 'stripe' === $payment_method ) {
 
 						/**
 						 * Use process function of official stripe and if succesfull, then show and add.
@@ -638,7 +632,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 								$id_nonce_verified = wp_verify_nonce( $secure_nonce, 'wps-upsell-auth-nonce' );
 
 								if ( ! $id_nonce_verified ) {
-									wp_die( esc_html__( 'Nonce Not verified', 'one-click-upsell-funnel-for-woocommerce-pro' ) );
+									wp_die( esc_html__( 'Nonce Not verified', ' woo-one-click-upsell-funnel-pro' ) );
 								}
 
 								$compat_class = new Subscriptions_For_Woocommerce_Compatiblity( 'Subscriptions_For_Woocommerce_Compatiblity', '1.0.0' );
@@ -649,30 +643,8 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 							$stripe_class = $available_gateways[ $payment_method ];
 
 							$payment_result = $stripe_class->process_payment( $order_id, false, true );
-                            
-                            
-							$is_3d_supported = false;
 							$order          = wc_get_order( $order_id );
-							$payment_result_order = get_post_meta($order_id ,'_payment_intent',true);
-							if ( ! empty ( $payment_result_order )) {
-								if ( ! empty( $payment_result_order['payment_method'] ) ) {
-									if ( ! empty(  $payment_result_order['payment_method']['card'] ) ) {
-										if ( ! empty( $payment_result_order['payment_method']['card']['three_d_secure_usage'] ) ) {
-											$is_3d_supported = $payment_result_order['payment_method']['card']['three_d_secure_usage']['supported'];
-										}
-
-									}
-
-								}
-
-							}
-							
-                            
-							if ( $is_3d_supported ) {
-								return;
-							}
-                            
-                            if ( 'failed' === $order->get_status() ) {
+							if ( 'failed' === $order->get_status() ) {
 
 								/**
 								 * Initial order is failed.
@@ -1685,12 +1657,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 								<input type="hidden" name="ocuf_ofd" value="' . $offer_id . '">
 								<input type="hidden" name="ocuf_ok" value="' . $order_key . '">
 								<button data-id="' . $funnel_id . '" style="background-color:' . $wps_wocuf_pro_buy_button_color . '" class="wps_wocuf_pro_buy wps_wocuf_pro_custom_buy" type="submit" name="wps_wocuf_pro_buy">' . $wps_wocuf_pro_buy_text . '</button></form>
-								<a style="color:"' . $ocuf_th_button_color . '" 
-								class="wps_wocuf_pro_skip wps_wocuf_pro_no" href="?ocuf_ns="' . $wp_nonce . '"
-								&ocuf_th=1&ocuf_ok="' . $order_key . '"
-								&ocuf_ofd="' . $offer_id . '"
-								&ocuf_fid="' . $funnel_id . '"
-								>"' . $wps_wocuf_pro_no_text . '"</a>
+								<a style="color:' . $ocuf_th_button_color . '" class="wps_wocuf_pro_skip wps_wocuf_pro_no" href="?ocuf_ns=' . $wp_nonce . '&ocuf_th=1&ocuf_ok=' . $order_key . '&ocuf_ofd=' . $offer_id . '&ocuf_fid=' . $funnel_id . '">' . $wps_wocuf_pro_no_text . '</a>
 								</div>
 							</div></div>';
 
@@ -1744,10 +1711,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 	/**
 	 * When user clicks on Add upsell product to my Order.
 	 *
-	 * @return void
 	 * @since 1.0.0
-	 *
-	 * @throws Exception Exception.
 	 */
 	public function wps_wocuf_pro_charge_the_offer() {
 		$secure_nonce      = wp_create_nonce( 'wps-upsell-auth-nonce' );
@@ -1792,8 +1756,6 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 				$quantity = $live_offer_url_params['quantity'];
 
 				$order_id = wc_get_order_id_by_order_key( $order_key );
-
-				$_POST = get_post_meta( $order_id, 'mwb_upsell_payment_data_post' );
 
 				// Expire Offer when order already processed or process_payment was called.
 				if ( ! empty( $order_id ) ) {
@@ -1852,7 +1814,7 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 						 * Save item ids, which are being added.
 						 */
 						$upsell_items = get_post_meta( $order_id, '_upsell_remove_items_on_fail', true );
-						$upsell_item_id_subscription = '';
+
 						if ( empty( $upsell_items ) ) {
 
 							$upsell_items = array();
@@ -1865,27 +1827,10 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 
 							// If Subscription product then handle Subscription price that will be set for current Upsell Product to be added to Order.
 							$upsell_product_subs_modified = wps_upsell_subs_set_price_accordingly( $upsell_product );
-							$is_subscription_product = true;
-
-								$sale_price    = get_post_meta( $upsell_product->get_ID(), '_sale_price', true );
-								$regular_price = get_post_meta( $upsell_product->get_ID(), '_subscription_price', true );
-							if ( ! empty( $sale_price ) ) {
-
-								$get_sybscription_order_total = $sale_price;
-								$upsell_product_subs_modified->set_sale_price( $get_sybscription_order_total );
-							} else {
-								$get_sybscription_order_total = $regular_price;
-							}
-
-							$get_sybscription_order_total = $get_sybscription_order_total * $quantity;
 
 							$upsell_item_id = $order->add_product( $upsell_product_subs_modified, $quantity );
-							update_post_meta( $order_id, 'subscription_product_price' . $upsell_item_id, $get_sybscription_order_total );
-							update_post_meta( $order_id, 'subscription_product_price_meta_id', $upsell_item_id );
 
 						} else {
-
-							// Update ( v3.6.7 ) starts.
 							if ( class_exists( 'WC_PB_Order' ) && $upsell_product && $upsell_product->is_type( 'bundle' ) ) {
 
 								global $wpdb;
@@ -1914,40 +1859,18 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 										}
 									}
 								}
-								// Update ( v3.6.7 ) ends.
-
 							} else {
 								$upsell_item_id = $order->add_product( $upsell_product, $quantity );
 
 							}
 							/**
-							 * Process WPS Subscriptions for pre upsell products from Order.
+							 * Process MWB Subscriptions for pre upsell products from Order.
 							 */
 							if ( class_exists( 'Subscriptions_For_Woocommerce_Compatiblity' ) && true === Subscriptions_For_Woocommerce_Compatiblity::pg_supports_subs( $order_id ) && true === Subscriptions_For_Woocommerce_Compatiblity::is_subscription_product( $upsell_product ) ) {
 								$compat_class = new Subscriptions_For_Woocommerce_Compatiblity( 'Subscriptions_For_Woocommerce_Compatiblity', '1.0.0' );
 								$compat_class->create_upsell_subscription( $order_id, $upsell_item_id );
 							}
 						}
-
-						// Update (v3.6.7) starts.
-						try {
-							// Grant Download permissions if upsell product is downloadable.
-							if ( ! empty( $upsell_product ) && $upsell_product->is_downloadable() ) {
-								$downloads = (array) $upsell_product->get_downloads();
-								if ( ! empty( $downloads ) ) {
-									foreach ( $downloads as $d_id => $download ) {
-
-										wc_downloadable_file_permission( $d_id, $upsell_product, $order );
-									}
-								}
-							}
-						} catch ( Exception $e ) {
-
-							$error_message = $e->getMessage();
-							// For Woocommerce Try block.
-							throw new Exception( $error_message );
-						}
-						// Update(v3.6.7) ends.
 
 						// Add Offer Accept Count for the current Funnel.
 						$sales_by_funnel = new WPS_Upsell_Report_Sales_By_Funnel( $funnel_id );
@@ -2016,7 +1939,6 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 
 								$order->remove_item( $target_item_id );
 								$order->save();
-
 								$order->calculate_totals();
 								update_post_meta( $order_id, '_wps_wocufpro_replace_target', 'upgraded' );
 								$remove_flag = true;
@@ -2024,9 +1946,6 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 						}
 
 						$order->calculate_totals();
-						$order = wc_get_order( $order_id );
-
-						$order->save();
 
 						// Upsell product was purchased for this order.
 						update_post_meta( $order_id, 'wps_wocuf_upsell_order', 'true' );
@@ -2178,7 +2097,6 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 	 * @since 1.0.0
 	 */
 	public function order_payment_cron_fire_event() {
-
 		// Pending Orders.
 		$pending_upsell_orders = get_posts(
 			array(
@@ -2235,9 +2153,6 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 								if ( ! empty( $transaction_data ) ) {
 									$_POST = $transaction_data;
 									delete_post_meta( $order_id, $payment_method . '_transaction_data' );
-								}
-								if ( empty( $transaction_data ) ) {
-									$_POST = get_post_meta( $order_id, 'mwb_upsell_payment_data_post' );
 								}
 							}
 
@@ -2335,54 +2250,10 @@ class Woocommerce_One_Click_Upsell_Funnel_Pro_Public {
 		// Now process the payment.
 		$result = $this->upsell_order_final_payment( $order_id );
 		$url    = $order->get_checkout_order_received_url();
-		$old_order = $order;
 
 		if ( isset( $result['result'] ) && 'success' === $result['result'] ) {
 
-			$args = array(
-				'post_parent' => $order_id,
-				'post_type'   => 'shop_subscription',
-				'post_status' => array( 'closed' ),
-				'numberposts' => -1,
-			);
-if ( ! empty ($args) ) {
-	$all_plans = get_posts( $args );
-}
-		
-
-			$product_price = 0;
-			if ( ! empty( $all_plans ) ) {
-
-				$order = wc_get_order( $all_plans[0]->ID );
-				if ( ! empty( $order ) ) {
-
-					foreach ( $order->get_items() as $item_id => $item ) {
-
-						$product_id = $item->get_product_id();
-						$sale_price    = get_post_meta( $product_id, '_sale_price', true );
-						$regular_price = get_post_meta( $product_id, '_subscription_price', true );
-						if ( ! empty( $sale_price ) ) {
-							$get_sybscription_order_total = $sale_price;
-						} else {
-							$get_sybscription_order_total = $regular_price;
-						}
-						$product_price += $get_sybscription_order_total;
-						$item->set_subtotal( $get_sybscription_order_total );
-
-						$item->set_total( $get_sybscription_order_total );
-					}
-				}
-
-				$order->save();
-				update_post_meta( $all_plans[0]->ID, '_order_total', $product_price );
-			}
-
-			add_filter( 'woocommerce_new_order_email_allows_resend', '__return_true' );
-			WC()->mailer()->emails['WC_Email_New_Order']->trigger( $old_order->get_id(), $old_order, true );
-			remove_filter( 'woocommerce_new_order_email_allows_resend', '__return_true' );
-
 			wp_redirect( $result['redirect'] ); //phpcs:ignore
-
 			exit;
 		}
 
@@ -2444,8 +2315,8 @@ if ( ! empty ($args) ) {
 
 			$result = $gateways[ $payment_method ]->process_payment( $order_id );
 
-		} elseif ( 'stripe' === $payment_method || 'stripe_cc'== $payment_method ) { // If Payment Method is Official Stripe.
-	        $payment_method ='stripe';
+		} elseif ( 'stripe' === $payment_method ) { // If Payment Method is Official Stripe.
+
 			// Before initiating offer payment set payment complete flag open.
 			delete_post_meta( $order_id, '_wps_wocuf_stripe_parent_initiating' );
 			$stripe_compat  = new WPS_Stripe_Payment_Gateway();
@@ -2515,28 +2386,14 @@ if ( ! empty ($args) ) {
 					}
 				}
 			} else {
-				// stripe_bancontact..
-				// stripe_bancontact.
+
 				// Order total is stil zero.
 				$order->payment_complete();
 				wc_empty_cart();
 				return true;
 			}
 		} else {
-
-            if ( wps_upsell_order_contains_subscription( $order_id ) && wps_upsell_pg_supports_subs( $order_id ) ) {
-
-				WC_Subscriptions_Manager::activate_subscriptions_for_order( $order );
-			}
-
-			// Process WPS Subscriptions for pre upsell products from Order.
-			if ( class_exists( 'Subscriptions_For_Woocommerce_Compatiblity' ) && true === Subscriptions_For_Woocommerce_Compatiblity::pg_supports_subs( $order_id ) && true === Subscriptions_For_Woocommerce_Compatiblity::order_contains_subscription( $order_id ) ) {
-				$subs_compatibility = new Subscriptions_For_Woocommerce_Compatiblity( 'Subscriptions_For_Woocommerce', '1.0.1' );
-				$subs_compatibility->activate_subs_after_upsell( $order_id );
-			}
-
 			$result = $gateways[ $payment_method ]->process_payment( $order_id, 'true' );
-
 		}
 
 		return $result;
@@ -2562,7 +2419,7 @@ if ( ! empty ($args) ) {
 	 *
 	 * @since  1.0.0
 	 * @param  mixed $args args for variable product dropdown.
-	 * @return $html for variable product dropdown.
+	 * @return $html html for variable product dropdown
 	 */
 	public function wps_wocuf_pro_variation_attribute_options( $args = array() ) {
 		$args = wp_parse_args(
@@ -2816,7 +2673,7 @@ if ( ! empty ($args) ) {
 	}
 
 	/**
-	 * Validate shortcode for rendering content according to user( live offer ).
+	 * Validate shortcode for rendering content according to user( live offer )
 	 * and admin ( for viewing purpose ).
 	 *
 	 * @since 3.0.0
@@ -2845,7 +2702,7 @@ if ( ! empty ($args) ) {
 
 	/**
 	 * Shortcode for Upsell product title.
-	 * Returns : Just the Content :).
+	 * Returns : Just the Content :)
 	 *
 	 * @since 3.0.0
 	 */
@@ -2870,30 +2727,10 @@ if ( ! empty ($args) ) {
 				$upsell_product_title = $upsell_product->get_title();
 				$upsell_product_title = ! empty( $upsell_product_title ) ? $upsell_product_title : '';
 
-				if ( 'bundle' === $upsell_product->get_type() ) {
-					$bundled_items = $upsell_product->get_bundled_data_items();
-					if ( ! empty( $bundled_items ) && is_array( $bundled_items ) ) {
-
-						$bundle_products = '<div class="wocuf_pro_bundle_wrap">';
-						foreach ( $bundled_items as $item ) {
-
-							$data = $item->get_data();
-							$p_id = ! empty( $data['product_id'] ) ? $data['product_id'] : '';
-							if ( ! empty( $p_id ) ) {
-								$prod      = wc_get_product( $p_id );
-								$prod_data = $prod->get_data();
-								$prod_name = ! empty( $prod_data['name'] ) ? $prod_data['name'] : '';
-
-								$bundle_products .= '<a href="' . get_permalink( $p_id ) . '" class="wocuf_pro_bundle_show" target="_blank">' . $prod_name . '</a>';
-							}
-						}
-						$bundle_products       = '</div>' . $bundle_products;
-						$upsell_product_title .= $bundle_products;
-					}
-				}
 				return $upsell_product_title;
 			}
 		}
+
 	}
 
 	/**
@@ -3017,7 +2854,10 @@ if ( ! empty ($args) ) {
 						return $upsell_product_image_src_div;
 					}
 				}
-			} else {   // When not Live Offer.
+			} // phpcs:ignore
+
+			// When not Live Offer.
+			else {
 
 				global $post;
 				$offer_page_id = $post->ID;
@@ -3204,7 +3044,7 @@ if ( ! empty ($args) ) {
 		if ( $validate_shortcode ) {
 
 			$product_id = $this->get_upsell_product_id_for_shortcode();
-			$sign_up_price_boolean = false;
+
 			if ( ! empty( $product_id ) ) {
 
 				$post_type = get_post_type( $product_id );
@@ -3219,37 +3059,15 @@ if ( ! empty ($args) ) {
 				// Get offer discount.
 				$upsell_offered_discount = wps_upsell_get_product_discount();
 
-				 $upsell_product_price_html_sign_up = $upsell_product->get_price_html();
-
-				 $sign_up_price = get_post_meta( $upsell_product->get_id(), '_subscription_sign_up_fee', true );
-
-				if ( $upsell_product->get_type() == 'subscription_variation' || $upsell_product->get_type() == 'subscription' && ! empty( $sign_up_price ) ) {
-
-					if ( ! empty( $sign_up_price ) ) {
-
-						// $upsell_product_price_html = str_replace($sign_up_price,$offer_price ,$upsell_product_price_html );
-
-						$sign_up_price_boolean = true;
-
-					}
-				}
-
+				// Apply discount on product.
 				if ( ! empty( $upsell_offered_discount ) ) {
 
 					$upsell_product = wps_upsell_change_product_price( $upsell_product, $upsell_offered_discount );
-					$upsell_product_price_html = $upsell_product->get_price_html();
-
 				} else {
 					$upsell_product->set_price( 0 );
 				}
 
-				// Apply discount on product.
-				if ( ! empty( $sign_up_price_boolean ) ) {
-
-					 $offer_price = $upsell_product->get_price();
-					$upsell_product_price_html = str_replace( $sign_up_price, $offer_price, $upsell_product_price_html_sign_up );
-				}
-
+				$upsell_product_price_html = $upsell_product->get_price_html();
 				$upsell_product_price_html = ! empty( $upsell_product_price_html ) ? $upsell_product_price_html : '';
 
 				/**
@@ -3373,12 +3191,7 @@ if ( ! empty ($args) ) {
 						$offer_id  = isset( $_GET['ocuf_ofd'] ) ? sanitize_text_field( wp_unslash( $_GET['ocuf_ofd'] ) ) : '';
 						$funnel_id = isset( $_GET['ocuf_fid'] ) ? sanitize_text_field( wp_unslash( $_GET['ocuf_fid'] ) ) : '';
 
-						$buy_now_link = '?wps_wocuf_pro_buy=true&ocuf_ns=
-						' . $wp_nonce . '&ocuf_ok=
-						' . $order_key . '&ocuf_ofd=
-						' . $offer_id . '&ocuf_fid=
-						' . $funnel_id . '&product_id=
-						' . $product_id . '&quantity=1';
+						$buy_now_link = '?wps_wocuf_pro_buy=true&ocuf_ns=' . $wp_nonce . '&ocuf_ok=' . $order_key . '&ocuf_ofd=' . $offer_id . '&ocuf_fid=' . $funnel_id . '&product_id=' . $product_id . '&quantity=1';
 					}
 				} elseif ( 'admin_view' === $validate_shortcode ) {
 
@@ -4215,10 +4028,7 @@ if ( ! empty ($args) ) {
 
 		$order_received_url = add_query_arg( 'key', $order_key, $order_received_url );
 
-		$result = '<a href="' . $order_received_url . '"
-		 class="button' . $atts['class'] . '"
-		  style="' . $atts['style'] . '"
-		  >' . $content . '</a>';
+		$result = '<a href="' . $order_received_url . '" class="button' . $atts['class'] . '" style="' . $atts['style'] . '">' . $content . '</a>';
 
 		return $result;
 	}
@@ -4292,15 +4102,10 @@ if ( ! empty ($args) ) {
 
 			$product = $wps_wocuf_pro_offered_product;
 
-			$result .= '<div style="' . $atts['style'] . '"
-			 class="wps_wocuf_pro_custom_offer_price ' . $atts['class'] . '">
-			 ' . $wps_wocuf_pro_before_offer_price_text . ' :
-				 ' . $product->get_price_html() . '</div>';
+			$result .= '<div style="' . $atts['style'] . '" class="wps_wocuf_pro_custom_offer_price ' . $atts['class'] . '">' . $wps_wocuf_pro_before_offer_price_text . ' : ' . $product->get_price_html() . '</div>';
 
 		} else {
-			$result .= '<div style="' . $atts['style'] . '" 
-			class="wps_wocuf_pro_custom_offer_price ' . $atts['class'] . '">
-			' . $content . '</div>';
+			$result .= '<div style="' . $atts['style'] . '" class="wps_wocuf_pro_custom_offer_price ' . $atts['class'] . '">' . $content . '</div>';
 		}
 
 		return $result;
@@ -4475,17 +4280,9 @@ if ( ! empty ($args) ) {
 		}
 
 		if ( ! empty( $offer_id ) && ! empty( $order_key ) && ! empty( $wp_nonce ) ) {
-			$result .= '<a style="' . $atts['style'] . '" class="wps_wocuf_pro_no wps_wocuf_pro_custom_skip 
-			' . $atts['class'] . '" href="?ocuf_ns=
-			' . $wp_nonce . '&ocuf_th=1&ocuf_ok=
-			' . $order_key . '&ocuf_ofd=
-			' . $offer_id . '&ocuf_fid=
-			' . $funnel_id . '">
-			' . $content . '</a>';
+			$result .= '<a style="' . $atts['style'] . '" class="wps_wocuf_pro_no wps_wocuf_pro_custom_skip ' . $atts['class'] . '" href="?ocuf_ns=' . $wp_nonce . '&ocuf_th=1&ocuf_ok=' . $order_key . '&ocuf_ofd=' . $offer_id . '&ocuf_fid=' . $funnel_id . '">' . $content . '</a>';
 		} else {
-			$result .= '<a style="' . $atts['style'] . '" 
-			class="wps_wocuf_pro_custom_skip ' . $atts['class'] . '"
-			 href="">' . $content . '</a>';
+			$result .= '<a style="' . $atts['style'] . '" class="wps_wocuf_pro_custom_skip ' . $atts['class'] . '" href="">' . $content . '</a>';
 		}
 
 		return $result;
@@ -4977,7 +4774,7 @@ if ( ! empty ($args) ) {
 				$redirect_url          = get_post_meta( $order_id, '_upsell_redirect_link', true );
 				$do_not_redirect_again = get_post_meta( $order_id, '_wps_wocuf_stripe_parent_paid', true );
 
-				if ( 'stripe' === $order->get_payment_method() || 'stripe_cc' === $order->get_payment_method() && 'processing' === $order->get_status() && ! empty( $redirect_url ) && wp_http_validate_url( $redirect_url ) && empty( $do_not_redirect_again ) ) {
+				if ( 'stripe' === $order->get_payment_method() && 'processing' === $order->get_status() && ! empty( $redirect_url ) && wp_http_validate_url( $redirect_url ) && empty( $do_not_redirect_again ) ) {
 
 					// Safe to redirect.
 					update_post_meta( $order_id, '_wps_wocuf_stripe_parent_paid', true );
@@ -6208,7 +6005,7 @@ if ( ! empty ($args) ) {
 
 			$gateway = new WPS_Wocuf_Pro_Stripe_Gateway_Admin();
 
-		} elseif ( 'stripe' === $order->get_payment_method() || 'stripe_cc' === $order->get_payment_method()  ) {
+		} elseif ( 'stripe' === $order->get_payment_method() ) {
 
 			$gateway = new WC_Gateway_Stripe();
 		}
@@ -6270,7 +6067,6 @@ if ( ! empty ($args) ) {
 				$payment_method_obj = $gateways[ $payment_method ];
 
 				$refund_result = $payment_method_obj->process_refund( $order_id, $target_item_total, $reason );
-
 			} catch ( Exception $e ) { // Catch exception.
 				$order->add_order_note( $e->getMessage() );
 				$remove_flag = false;
@@ -6278,13 +6074,6 @@ if ( ! empty ($args) ) {
 
 			// Check if refund was successfull.
 			$remove_flag = ! empty( $refund_result ) ? $refund_result : false;
-
-			// Update (v3.6.7) starts.
-			// If the target product is free then manage error refund response in case of smart order upgrade.
-			if ( is_wp_error( $remove_flag ) && empty( $target_item_total ) ) {
-				$remove_flag = true;
-			}
-			// Update (v3.6.7) end.
 
 			if ( true === $remove_flag ) {
 
@@ -6454,7 +6243,7 @@ if ( ! empty ($args) ) {
 		 */
 		if ( true === $force_save_required ) {
 
-			if ( 'braintree_cc' === $payment_method || 'braintree_credit_card' == $payment_method ) {
+			if ( 'braintree_cc' === $payment_method ) {
 
 				$transaction_data['braintree_cc_save_method'] = 'on';
 			} elseif ( 'square_credit_card' === $payment_method && ! empty( $transaction_data['wc-square-credit-card-payment-nonce'] ) ) {
@@ -6565,7 +6354,6 @@ if ( ! empty ($args) ) {
 		// Sent to Admin when set to completed.
 		add_action( 'woocommerce_order_status_upsell-parent_to_completed', array( $wc_mails->emails['WC_Email_New_Order'], 'trigger' ), 10, 2 );
 		add_action( 'woocommerce_order_status_upsell-failed_to_completed', array( $wc_mails->emails['WC_Email_New_Order'], 'trigger' ), 10, 2 );
-
 	}
 
 	/**
@@ -6907,40 +6695,7 @@ if ( ! empty ($args) ) {
 
 		} else {
 
-			// Update (v3.6.7) starts.
-			if ( class_exists( 'WC_PB_Order' ) && $upsell_product && $upsell_product->is_type( 'bundle' ) ) {
-
-				global $wpdb;
-				$instance       = WC_PB_Order::instance();
-				$upsell_item_id = $instance->add_bundle_to_order( $upsell_product, $order, 1, array() );
-				$order->save();
-
-				$bundled_items = $upsell_product->get_bundled_data_items();
-
-				if ( ! empty( $bundled_items ) && is_array( $bundled_items ) ) {
-					foreach ( $bundled_items as $bundle_item ) {
-						$bundle_data  = $bundle_item->get_data();
-						$_product_id  = $bundle_data['product_id'];
-						$download_ids = array_keys( (array) wc_get_product( $_product_id )->get_downloads() );
-
-						if ( ! empty( $download_ids ) && is_array( $download_ids ) ) {
-							foreach ( $download_ids as $download_id ) {
-
-								if ( apply_filters( 'woocommerce_process_product_file_download_paths_grant_access_to_new_file', true, $download_id, $product_id, $order ) ) {
-									// Grant permission if it doesn't already exist.
-									if ( ! $wpdb->get_var( $wpdb->prepare( "SELECT 1=1 FROM {$wpdb->prefix}woocommerce_downloadable_product_permissions WHERE order_id = %d AND product_id = %d AND download_id = %s", $order->get_id(), $product_id, $download_id ) ) ) {
-										wc_downloadable_file_permission( $download_id, $_product_id, $order );
-									}
-								}
-							}
-						}
-					}
-				}
-				// Update (v3.6.7) ends.
-			} else {
-				$upsell_item_id = $order->add_product( $upsell_product, $quantity );
-
-			}
+			$upsell_item_id = $order->add_product( $upsell_product, $quantity );
 
 			// Process WPS Subscriptions for pre upsell products from Order.
 			if ( class_exists( 'Subscriptions_For_Woocommerce_Compatiblity' ) && true === Subscriptions_For_Woocommerce_Compatiblity::pg_supports_subs( $order_id ) && true === Subscriptions_For_Woocommerce_Compatiblity::is_subscription_product( $upsell_product ) ) {
@@ -7062,7 +6817,7 @@ if ( ! empty ($args) ) {
 			if ( 'return' === $action ) {
 				return $upsell_product_price_html_div;
 			} else {
-				echo wp_kses_post( $upsell_product_price_html_div, wps_upsell_lite_allowed_html() );
+				echo wp_kses_post( $upsell_product_price_html_div );
 			}
 		}
 	}
@@ -7144,7 +6899,7 @@ if ( ! empty ($args) ) {
 						)
 					);
 
-					echo $variation_dropdown;  // phpcs:ignore
+					echo $variation_dropdown;
 				?>
 			</div>
 
@@ -7225,3 +6980,4 @@ if ( ! empty ($args) ) {
 
 	// End of class.
 }
+?>

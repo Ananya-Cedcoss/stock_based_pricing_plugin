@@ -385,4 +385,3 @@ class Subscriptions_For_Woocommerce_Compatiblity extends Subscriptions_For_Wooco
 
 	// End of class.
 }
-

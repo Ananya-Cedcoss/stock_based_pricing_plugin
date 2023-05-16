@@ -365,15 +365,11 @@ if ( ! empty( $wps_wocuf_pro_funnels_list ) ) {
 	<a href="?page=wps-wocuf-pro-setting&tab=creation-setting&funnel_id=<?php echo esc_html( $wps_wocuf_pro_funnel_number + 1 ); ?>"><?php esc_html_e( '+Create New Funnel', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></a>
 </div>
 
-<?php if ( empty( get_option( 'wocuf_pro_migration_status', false ) ) ) { ?>
-
 <!-- Create New Migration -->
 <div class="wps_wocuf_pro_create_new_funnel">
 	<p class="wps_wocuf_pro_desc"><?php esc_html_e( 'Not getting saved funnels and settings from previous version?', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></p>
 	<a id="wps_wocuf_pro_migration_button" class="wps_wocuf_pro_init_migration" href="javascript:void(0)"><?php esc_html_e( 'Try Migration', 'one-click-upsell-funnel-for-woocommerce-pro' ); ?></a>
 </div>
-
-<?php } ?>
 
 <!-- Sync Funnels from ORG upsell plugin -->
 <div id="wps_upsell_sync_funnels">
